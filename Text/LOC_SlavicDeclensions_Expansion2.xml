@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_SlavicDeclensions_Expansion2 -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 13.08.2025 13:49:04 -->
+<GameData>
+	<LocalizedText>
+		<Replace Tag="LOC_ROUTE_RAILROAD_NAME" Language="ru_RU">
+			<Text>Железная дорога|железной дороги|железной дороге|железеую дорогу|железной дорогой|железной дороге</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_ROUTE_RAILROAD_NAME" Language="pl_PL">
+			<Text>Linia kolejowa|linii kolejowej|linii kolejowej|linię kolejową|linią kolejową|linii kolejowej|linio kolejowa</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+	</LocalizedText>
+</GameData>

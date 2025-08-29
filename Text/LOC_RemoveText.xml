@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_RemoveText -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 05.08.2025 22:32:49 -->
+<GameData>
+	<LocalizedText>
+		<!-- Row 1 -->
+		<Delete Tag="LOC_TOOLTIP_CITY_OWNER"/>
+		<!-- Row 3 -->
+		<Delete Tag="LOC_TOOLTIP_PLOT_BUILDINGS_TEXT"/>
+		<!-- Row 6 -->
+		<Delete Tag="LOC_TOOLTIP_MOVEMENT_COST"/>
+		<Delete Tag="LOC_TOOLTIP_ROUTE_MOVEMENT"/>
+		<Delete Tag="LOC_TOOLTIP_ROUTE_MOVEMENT_PILLAGED"/>
+		<!-- Row 7 -->
+		<Delete Tag="LOC_TOOLTIP_APPEAL"/>
+		<!-- Row 8 -->
+		<Delete Tag="LOC_TOOLTIP_DEFENSE_MODIFIER"/>
+		<!-- Row 9 -->
+		<Delete Tag="LOC_TOOLTIP_CONTINENT"/>
+		<!-- Worked --><!-- Bandit: the point of this deletion and replacement is that in the base gave it also puts a new line -->
+		<Delete Tag="LOC_TOOLTIP_PLOT_WORKED_TEXT"/>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_RemoveText_Expansion2 -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 21.08.2025 18:48:43 -->
+<GameData>
+	<LocalizedText>
+		<!-- Bandit: just unused -->
+		<Delete Tag="LOC_RIVER_TOOLTIP_STRING"/>
+		<!-- Bandit: actually later I found out that these are used not only in tooltips so...
+		<Delete Tag="LOC_COASTAL_LOWLAND_1M_NAME"/>
+		<Delete Tag="LOC_COASTAL_LOWLAND_2M_NAME"/>
+		<Delete Tag="LOC_COASTAL_LOWLAND_3M_NAME"/> -->
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_HelpingText -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 08.08.2025 00:55:22 -->
+<GameData>
+	<BaseGameText>
+		<!-- File optimization props -->
+		<Row Tag="LOC_MOD_TOOLTIP_COLORTAG_HEADING">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]{1_Content}[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="LOC_MOD_TOOLTIP_COLORTAG_WARNING">
+			<Text>[COLOR:Civ6Red]{1_Content}[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="LOC_MOD_TOOLTIP_COLORTAG_EMERGENCY">
+			<Text>[COLOR:Emergency_Bronze]{1_Content}[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="LOC_MOD_TOOLTIP_COLORTAG_CUSTOM">
+			<Text>[COLOR:{2_color}]{1_Content}[ENDCOLOR]</Text>
+		</Row>
+		<!-- Arguments -->
+		<!-- Great Work Icons -->
+		<Row Tag="ICON_GREATWORKOBJECT_SCULPTURE">
+			<Text>[ICON_GreatWork_Sculpture]</Text>
+		</Row>
+		<Row Tag="ICON_GREATWORKOBJECT_PORTRAIT">
+			<Text>[ICON_GreatWork_Portrait]</Text>
+		</Row>
+		<Row Tag="ICON_GREATWORKOBJECT_LANDSCAPE">
+			<Text>[ICON_GreatWork_Landscape]</Text>
+		</Row>
+		<Row Tag="ICON_GREATWORKOBJECT_RELIGIOUS">
+			<Text>[ICON_GreatWork_Religious]</Text>
+		</Row>
+		<Row Tag="ICON_GREATWORKOBJECT_ARTIFACT">
+			<Text>[ICON_GreatWork_Artifact]</Text>
+		</Row>
+		<Row Tag="ICON_GREATWORKOBJECT_WRITING">
+			<Text>[ICON_GreatWork_Writing]</Text>
+		</Row>
+		<Row Tag="ICON_GREATWORKOBJECT_MUSIC">
+			<Text>[ICON_GreatWork_Music]</Text>
+		</Row>
+		<Row Tag="ICON_GREATWORKOBJECT_RELIC">
+			<Text>[ICON_GreatWork_Relic]</Text>
+		</Row>
+		<!-- Just a little punctuation thing, fallback for non-Chinese round brackets -->
+		<Row Tag="LOC_PUNCTUATION_ROUND_BRACKETS">
+			<Text>({1_Content})</Text>
+		</Row>
+		<!-- This is needed for correct display of non-ASCII asian punctuation symbols -->
+		<Row Tag="LOC_JA_PUNCTUATION_COMMA">
+			<Text>、</Text>
+		</Row>
+		<Row Tag="LOC_ZH_PUNCTUATION_COLON">
+			<Text>：</Text>
+		</Row>
+		<Row Tag="LOC_ZH_PUNCTUATION_COMMA">
+			<Text>，</Text>
+		</Row>
+		<Row Tag="LOC_ZH_PUNCTUATION_ENUMERATION_COMMA">
+			<Text>、</Text>
+		</Row>
+		<Row Tag="LOC_ZH_PUNCTUATION_SEMICOLON">
+			<Text>；</Text>
+		</Row>
+		<Row Tag="LOC_ZH_PUNCTUATION_FULL_STOP">
+			<Text>。</Text>
+		</Row>
+		<Row Tag="LOC_ZH_PUNCTUATION_ROUND_BRACKETS">
+			<Text>（{1_Content}）</Text>
+		</Row>
+	</BaseGameText>
+</GameData>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_PlotToolTip_Expansion2 -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 21.08.2025 18:41:34 -->
+<GameData>
+	<EnglishText>
+		<!-- Named Area -->
+		<Row Tag="LOC_MOD_TOOLTIP_WATER_AREA">
+			<Text>Water Area</Text>
+		</Row>
+		<Row Tag="LOC_MOD_TOOLTIP_LAND_AREA">
+			<Text>Territory</Text>
+		</Row>
+		<Row Tag="LOC_MOD_TOOLTIP_MOUNTAIN_AREA">
+			<Text>Mountain Range</Text>
+		</Row>
+		<Row Tag="LOC_MOD_VOLCANO_UNNAMED">
+			<Text>not named yet</Text>
+		</Row>
+		<Row Tag="LOC_VOLCANO_INACTIVE_STRING">
+			<Text>(inactive)</Text>
+		</Row>
+		<Row Tag="LOC_MOD_TOOLTIP_RIVERS">
+			<Text>Rivers</Text>
+		</Row>
+		<!-- Disaster -->
+		<Row Tag="LOC_MOD_TOOLTIP_DISASTER">
+			<Text>Disaster</Text>
+		</Row>
+		<!-- Coastal Lowland -->
+		<Row Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND">
+			<Text>Coastal Lowland</Text>
+		</Row>
+		<Row Tag="LOC_MOD_TOOLTIP_HEIGHT">
+			<Text>{1_Num: number #} {1_Num : plural 1?meter; other?meters;}</Text>
+		</Row>
+	</EnglishText>
+	<LocalizedText>
+		<!-- Named Area -->
+		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="it_IT">
+			<Text>Territorio</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_LAND_AREA" Language="it_IT">
+			<Text>Territorio</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOUNTAIN_AREA" Language="it_IT">
+			<Text>Catena montuosa</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_VOLCANO_UNNAMED" Language="it_IT">
+			<Text>non ancora nominato</Text>
+		</Replace>
+		<Replace Tag="LOC_VOLCANO_INACTIVE_STRING" Language="it_IT">
+			<Text>(dormiente)</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="it_IT">
+			<Text>Fiumi</Text>
+		</Replace>
+		<!--
+		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="es_ES">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_LAND_AREA" Language="es_ES">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOUNTAIN_AREA" Language="es_ES">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_VOLCANO_UNNAMED" Language="es_ES">
+			<Text></Text>
+		</Replace>
+		-->
+		<Replace Tag="LOC_VOLCANO_INACTIVE_STRING" Language="es_ES">
+			<Text>(inactivo)</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="ru_RU">
+			<Text>Акватория</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_LAND_AREA" Language="ru_RU">
+			<Text>Территория</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOUNTAIN_AREA" Language="ru_RU">
+			<Text>Горный хребет</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_VOLCANO_UNNAMED" Language="ru_RU">
+			<Text>не назван</Text>
+		</Replace>
+		<Replace Tag="LOC_VOLCANO_INACTIVE_STRING" Language="ru_RU">
+			<Text>(спящий)</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="ru_RU">
+			<Text>Реки</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="pl_PL">
+			<Text>Obszar wodny</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_LAND_AREA" Language="pl_PL">
+			<Text>Terytoria</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOUNTAIN_AREA" Language="pl_PL">
+			<Text>Pasmo górskie</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_VOLCANO_UNNAMED" Language="pl_PL">
+			<Text>nie nazwany</Text>
+		</Replace>
+		<Replace Tag="LOC_VOLCANO_INACTIVE_STRING" Language="pl_PL">
+			<Text>(nieaktywny)</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="pl_PL">
+			<Text>Rzeki</Text>
+		</Replace>
+		<!-- Disaster -->
+		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="it_IT">
+			<Text>Disastro</Text>
+		</Replace>
+		<!--
+		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="es_ES">
+			<Text></Text>
+		</Replace>
+		-->
+		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="ru_RU">
+			<Text>Происшестве</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="pl_PL">
+			<Text>Klęska</Text>
+		</Replace>
+		<!-- Coastal Lowland -->
+		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="fr_FR">
+			<Text>Plaine côtière</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_HEIGHT" Language="fr_FR">
+			<Text>{1_Num: number #} {1_Num : plural 1?mètre; other?mètres;}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="de_DE">
+			<Text>Küsten-Tiefland</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_HEIGHT" Language="de_DE">
+			<Text>{1_Num: number #} meter</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="es_ES">
+			<Text>Bajío costero</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_HEIGHT" Language="es_ES">
+			<Text>{1_Num: number #} {1_Num : plural 1?metro; other?metros;}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="it_IT">
+			<Text>Bassopiano costiero</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_HEIGHT" Language="it_IT">
+			<Text>{1_Num: number #} {1_Num : plural 1?metro; other?metri;}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="ja_JP">
+			<Text>沿岸の低地</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_HEIGHT" Language="ja_JP">
+			<Text>海抜{1_Num: number #}メートル</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="ru_RU">
+			<Text>Прибрежная долина</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_HEIGHT" Language="ru_RU">
+			<Text>{1_Num: number #} {1_Num : plural 1?метр; 2?метра; 3?метра; 4?метра; other?метров;}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="pl_PL">
+			<Text>Przybrzeżna nizina</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_HEIGHT" Language="pl_PL">
+			<Text>{1_Num: number #} {1_Num : plural 1?metr; 2?metry; 3?metry; 4?metry; other?metrów;}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="ko_KR">
+			<Text>해안 저지대</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_HEIGHT" Language="ko_KR">
+			<Text>{1_Num: number #}미터</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="zh_Hant_HK">
+			<Text>海岸低地</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_HEIGHT" Language="zh_Hant_HK">
+			<Text>{1_Num: number #}公尺</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="zh_Hans_CN">
+			<Text>海岸低地</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_HEIGHT" Language="zh_Hans_CN">
+			<Text>{1_Num: number #}米</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="pt_BR">
+			<Text>Planície costeira</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_HEIGHT" Language="pt_BR">
+			<Text>{1_Num: number #} {1_Num : plural 1?metro; other?metros;}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

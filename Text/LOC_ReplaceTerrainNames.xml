@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_ReplaceTerrainNames -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 23.08.2025 00:23:28 -->
+<GameData>
+	<EnglishText>
+		<Row Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD">
+			<Text>Desert, Hills</Text>
+		</Row>
+		<Row Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD">
+			<Text>Desert, Mountain</Text>
+		</Row>
+		<Row Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD">
+			<Text>Grassland, Hills</Text>
+		</Row>
+		<Row Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD">
+			<Text>Grassland, Mountain</Text>
+		</Row>
+		<Row Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD">
+			<Text>Plains, Hills</Text>
+		</Row>
+		<Row Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD">
+			<Text>Plains, Mountain</Text>
+		</Row>
+		<Row Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD">
+			<Text>Snow, Hills</Text>
+		</Row>
+		<Row Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD">
+			<Text>Snow, Mountain</Text>
+		</Row>
+		<Row Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD">
+			<Text>Tundra, Hills</Text>
+		</Row>
+		<Row Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD">
+			<Text>Tundra, Mountain</Text>
+		</Row>
+	</EnglishText>
+	<LocalizedText>
+		<Replace Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD" Language="fr_FR">
+			<Text>Désert, Colline</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD" Language="fr_FR">
+			<Text>Désert, Montagne</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD" Language="fr_FR">
+			<Text>Prairie, Colline</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD" Language="fr_FR">
+			<Text>Prairie, Montagne</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD" Language="fr_FR">
+			<Text>Plaines, Colline</Text>
+			<Gender>Feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD" Language="fr_FR">
+			<Text>Plaines, Montagne</Text>
+			<Gender>Feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD" Language="fr_FR">
+			<Text>Neige, Colline</Text>
+			<Gender>Feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD" Language="fr_FR">
+			<Text>Neige, Montagne</Text>
+			<Gender>Feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD" Language="fr_FR">
+			<Text>Toundra, Colline</Text>
+			<Gender>Feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD" Language="fr_FR">
+			<Text>Toundra, Montagne</Text>
+			<Gender>Feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD" Language="de_DE">
+			<Text>Wüste, Hügel</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD" Language="de_DE">
+			<Text>Wüste, Berg</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD" Language="de_DE">
+			<Text>Grasland, Hügel</Text>
+			<Gender>neuter</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD" Language="de_DE">
+			<Text>Grasland, Berg</Text>
+			<Gender>neuter</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD" Language="de_DE">
+			<Text>Ebene, Hügel</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD" Language="de_DE">
+			<Text>Ebene, Berg</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD" Language="de_DE">
+			<Text>Schnee, Hügel</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD" Language="de_DE">
+			<Text>Schnee, Berg</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD" Language="de_DE">
+			<Text>Tundra, Hügel</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD" Language="de_DE">
+			<Text>Tundra, Berg</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD" Language="it_IT">
+			<Text>Deserto, Collina</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD" Language="it_IT">
+			<Text>Deserto, Montagna</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD" Language="it_IT">
+			<Text>Prateria, Collina</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD" Language="it_IT">
+			<Text>Prateria, Montagna</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD" Language="it_IT">
+			<Text>Pianura, Collina</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD" Language="it_IT">
+			<Text>Pianura, Montagna</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD" Language="it_IT">
+			<Text>Neve, Collina</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD" Language="it_IT">
+			<Text>Neve, Montagna</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD" Language="it_IT">
+			<Text>Tundra, Collina</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD" Language="it_IT">
+			<Text>Tundra, Montagna</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD" Language="es_ES">
+			<Text>Desierto, Colinas</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD" Language="es_ES">
+			<Text>Desierto, Montaña</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD" Language="es_ES">
+			<Text>Pradera, Colinas</Text>
+			<Gender>femenine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD" Language="es_ES">
+			<Text>Pradera, Montaña</Text>
+			<Gender>femenine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD" Language="es_ES">
+			<Text>Llanura, Colinas</Text>
+			<Gender>femenine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD" Language="es_ES">
+			<Text>Llanura, Montaña</Text>
+			<Gender>femenine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD" Language="es_ES">
+			<Text>Nieve, Colinas</Text>
+			<Gender>femenine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD" Language="es_ES">
+			<Text>Nieve, Montaña</Text>
+			<Gender>femenine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD" Language="es_ES">
+			<Text>Tundra, Colinas</Text>
+			<Gender>femenine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD" Language="es_ES">
+			<Text>Tundra, Montaña</Text>
+			<Gender>femenine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD" Language="ja_JP">
+			<Text>砂漠、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD" Language="ja_JP">
+			<Text>砂漠、山岳</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD" Language="ja_JP">
+			<Text>草原、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD" Language="ja_JP">
+			<Text>草原、山岳</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD" Language="ja_JP">
+			<Text>平原、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD" Language="ja_JP">
+			<Text>平原、山岳</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD" Language="ja_JP">
+			<Text>雪原、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD" Language="ja_JP">
+			<Text>雪原、山岳</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD" Language="ja_JP">
+			<Text>ツンドラ、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD" Language="ja_JP">
+			<Text>ツンドラ、山岳</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD" Language="ru_RU">
+			<Text>Пустыня, Холмы</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD" Language="ru_RU">
+			<Text>Пустыня, Горы</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD" Language="ru_RU">
+			<Text>Луг, Холмы</Text>
+			<Gender>masculine</Gender>
+			<Plurality>2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD" Language="ru_RU">
+			<Text>Луг, Горы</Text>
+			<Gender>masculine</Gender>
+			<Plurality>2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD" Language="ru_RU">
+			<Text>Равнина, Холмы</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD" Language="ru_RU">
+			<Text>Равнина, Горы</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD" Language="ru_RU">
+			<Text>Снег, Холмы</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD" Language="ru_RU">
+			<Text>Снег, Горы</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD" Language="ru_RU">
+			<Text>Тундра, Холмы</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD" Language="ru_RU">
+			<Text>Тундра, Горы</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD" Language="pl_PL">
+			<Text>Pustynia, Wzgórza</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD" Language="pl_PL">
+			<Text>Pustynia, Góry</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD" Language="pl_PL">
+			<Text>Łąki, Wzgórza</Text>
+			<Gender>feminine</Gender>
+			<Plurality>2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD" Language="pl_PL">
+			<Text>Łąki, Góry</Text>
+			<Gender>feminine</Gender>
+			<Plurality>2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD" Language="pl_PL">
+			<Text>Równiny, Wzgórza</Text>
+			<Gender>feminine</Gender>
+			<Plurality>2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD" Language="pl_PL">
+			<Text>Równiny, Góry</Text>
+			<Gender>feminine</Gender>
+			<Plurality>2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD" Language="pl_PL">
+			<Text>Śnieg, Wzgórza</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD" Language="pl_PL">
+			<Text>Śnieg, Góry</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD" Language="pl_PL">
+			<Text>Tundra, Wzgórza</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD" Language="pl_PL">
+			<Text>Tundra, Góry</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD" Language="ko_KR">
+			<Text>사막, 언덕</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD" Language="ko_KR">
+			<Text>사막, 산</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD" Language="ko_KR">
+			<Text>초원, 언덕</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD" Language="ko_KR">
+			<Text>초원, 산</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD" Language="ko_KR">
+			<Text>평원, 언덕</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD" Language="ko_KR">
+			<Text>평원, 산</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD" Language="ko_KR">
+			<Text>설원, 언덕</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD" Language="ko_KR">
+			<Text>설원, 산</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD" Language="ko_KR">
+			<Text>툰드라, 언덕</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD" Language="ko_KR">
+			<Text>툰드라, 산</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD" Language="zh_Hant_HK">
+			<Text>沙漠、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD" Language="zh_Hant_HK">
+			<Text>沙漠、山脈</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD" Language="zh_Hant_HK">
+			<Text>草原、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD" Language="zh_Hant_HK">
+			<Text>草原、山脈</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD" Language="zh_Hant_HK">
+			<Text>平原、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD" Language="zh_Hant_HK">
+			<Text>平原、山脈</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD" Language="zh_Hant_HK">
+			<Text>雪地、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD" Language="zh_Hant_HK">
+			<Text>雪地、山脈</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD" Language="zh_Hant_HK">
+			<Text>凍土、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD" Language="zh_Hant_HK">
+			<Text>凍土、山脈</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD" Language="zh_Hans_CN">
+			<Text>沙漠、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD" Language="zh_Hans_CN">
+			<Text>沙漠、山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD" Language="zh_Hans_CN">
+			<Text>草原、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD" Language="zh_Hans_CN">
+			<Text>草原、山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD" Language="zh_Hans_CN">
+			<Text>平原、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD" Language="zh_Hans_CN">
+			<Text>平原、山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD" Language="zh_Hans_CN">
+			<Text>雪地、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD" Language="zh_Hans_CN">
+			<Text>雪地、山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD" Language="zh_Hans_CN">
+			<Text>冻土、丘陵</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD" Language="zh_Hans_CN">
+			<Text>冻土、山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_HILLS_NAME_MOD" Language="pt_BR">
+			<Text>Deserto, Colinas|Desertos, Colinas</Text>
+			<Gender>masculine|masculine</Gender>
+			<Plurality>1|2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_DESERT_MOUNTAIN_NAME_MOD" Language="pt_BR">
+			<Text>Deserto, Montanhas|Desertos, Montanhas</Text>
+			<Gender>masculine|masculine</Gender>
+			<Plurality>1|2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_HILLS_NAME_MOD" Language="pt_BR">
+			<Text>Pradaria, Colinas|Pradarias, Colinas</Text>
+			<Gender>feminine|feminine</Gender>
+			<Plurality>1|2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_GRASS_MOUNTAIN_NAME_MOD" Language="pt_BR">
+			<Text>Pradaria, Montanhas|Pradarias, Montanhas</Text>
+			<Gender>feminine|feminine</Gender>
+			<Plurality>1|2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_HILLS_NAME_MOD" Language="pt_BR">
+			<Text>Planície, Colinas|Planícies, Colinas</Text>
+			<Gender>feminine|feminine</Gender>
+			<Plurality>1|2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_PLAINS_MOUNTAIN_NAME_MOD" Language="pt_BR">
+			<Text>Planície, Montanhas|Planícies, Montanhas</Text>
+			<Gender>feminine|feminine</Gender>
+			<Plurality>1|2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_HILLS_NAME_MOD" Language="pt_BR">
+			<Text>Neve, Colinas</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_SNOW_MOUNTAIN_NAME_MOD" Language="pt_BR">
+			<Text>Neve, Montanhas</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_HILLS_NAME_MOD" Language="pt_BR">
+			<Text>Tundra, Colinas|Tundras, Colinas</Text>
+			<Gender>feminine|feminine</Gender>
+			<Plurality>1|2</Plurality>
+		</Replace>
+		<Replace Tag="LOC_TERRAIN_TUNDRA_MOUNTAIN_NAME_MOD" Language="pt_BR">
+			<Text>Tundra, Montanhas|Tundras, Montanhas</Text>
+			<Gender>feminine|feminine</Gender>
+			<Plurality>1|2</Plurality>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_SlavicDeclensions -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 08.08.2025 03:33:29 -->
+<GameData>
+	<LocalizedText>
+		<!-- Roads -->
+		<Replace Tag="LOC_ROUTE_ANCIENT_ROAD_NAME" Language="ru_RU">
+			<Text>Тропа|тропы|тропе|тропу|тропой|тропе</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_ROUTE_MEDIEVAL_ROAD_NAME" Language="ru_RU">
+			<Text>Античная дорога|античной дороги|античной дороге|античную дорогу|античной дорогой|античной дороге</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_ROUTE_INDUSTRIAL_ROAD_NAME" Language="ru_RU">
+			<Text>Дорога Промышленной эры|дороги Промышленной эры|дороге Промышленной эры|дорогу Промышленной эры|дорогой Промышленной эры|дороге Промышленной эры</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_ROUTE_MODERN_ROAD_NAME" Language="ru_RU">
+			<Text>Современная дорога|современной дороги|современной дороге|современную дорогу|современной дорогой|современной дороге</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_ROUTE_ANCIENT_ROAD_NAME" Language="pl_PL">
+			<Text>Starożytna droga|starożytnej drogi|starożytnej drodze|starożytną drogę|starożytną drogą|starożytnej drodze|starożytna drogo</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_ROUTE_MEDIEVAL_ROAD_NAME" Language="pl_PL">
+			<Text>Klasyczna droga|klasycznej drogi|klasycznej drodze|klasyczną drogę|klasyczną drogą|klasycznej drodze|klasyczna drogo</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_ROUTE_INDUSTRIAL_ROAD_NAME" Language="pl_PL">
+			<Text>Przemysłowa droga|przemysłowej drogi|przemysłowej drodze|przemysłową drogę|przemysłową drogą|przemysłowej drodze|przemysłowa drogo</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+		<Replace Tag="LOC_ROUTE_MODERN_ROAD_NAME" Language="pl_PL">
+			<Text>Nowoczesna droga|nowoczesnej drogi|nowoczesnej drodze|nowoczesną drogę|nowoczesną drogą|nowoczesnej drodze|nowoczesna drogo</Text>
+			<Gender>feminine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
+	</LocalizedText>
+</GameData>

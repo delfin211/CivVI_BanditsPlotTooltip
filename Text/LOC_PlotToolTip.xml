@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_PlotToolTip -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 05.08.2025 18:18:28 -->
+
+<!-- Languages order
+English
+French
+German
+Italian
+Spanish
+Japanese
+Russian
+Polish
+Korean
+Chinese (traditional)
+Chinese (simplified)
+Portuguese
+-->
+<!-- Rows
+1   Ownership
+2   National Park
+3   District    or    Natural wonder    or    Improvement
+4   Buildings    or    Wonder    [Great works in the according biuldings]
+5   Resouce
+6   Terrain
+7   Movement Cost [Impassable]
+8   Appeal
+9   Defence Modifier
+10  Continent
+11  Worked
+12  Yields [from district] [from specialists]
+13  Natural Wonder description
+14  Contamination
+-->
+
+<GameData>
+	<EnglishText>
+		<!-- Ownership -->
+		<!-- Replaces LOC_TOOLTIP_CITY_OWNER -->
+		<Row Tag="LOC_MOD_TOOLTIP_OWNER">
+			<Text>Owner</Text>
+		</Row>
+		<Row Tag="LOC_MOD_TOOLTIP_CLAN">
+			<Text>Clan</Text>
+		</Row>
+		
+		<!-- Buildings -->
+		<!-- Replaces LOC_TOOLTIP_PLOT_BUILDINGS_TEXT -->
+		<Row Tag="LOC_MOD_TOOLTIP_BUILDINGS">
+			<Text>Buildings</Text>
+		</Row>
+		
+		<!-- Terrain -->
+		<Row Tag="LOC_MOD_TOOLTIP_TERRAIN">
+			<Text>Terrain</Text>
+		</Row>
+		
+		<!-- Movement Cost -->
+		<!-- Replaces LOC_TOOLTIP_MOVEMENT_COST -->
+		<Row Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Movement Cost[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+		</Row>
+		<!-- Fallback for unsupported languages -->
+		<!-- Replaces LOC_TOOLTIP_ROUTE_MOVEMENT -->
+		<Row Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Route Movement[ENDCOLOR]: {1_Amount} ({2_RouteName})</Text>
+		</Row>
+		<!-- Replaces LOC_TOOLTIP_ROUTE_MOVEMENT_PILLAGED -->
+		<Row Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Route Movement[ENDCOLOR]: {1_Amount} ({2_RouteName} [COLOR:Civ6Red](PILLAGED!)[ENDCOLOR])</Text>
+		</Row>
+		
+		<!-- Appeal -->
+		<!-- Replaces LOC_TOOLTIP_APPEAL -->
+		<Row Tag="LOC_MOD_TOOLTIP_APPEAL">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Appeal[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+		</Row>
+		
+		<!-- Defence Modifier -->
+		<!-- Replaces LOC_TOOLTIP_DEFENSE_MODIFIER -->
+		<Row Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Defense Modifier[ENDCOLOR]: {1_Amount}</Text>
+		</Row>
+		
+		<!-- Continent -->
+		<!-- Replaces LOC_TOOLTIP_CONTINENT -->
+		<Row Tag="LOC_MOD_TOOLTIP_CONTINENT">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Continent[ENDCOLOR]: {1_ContinentName}</Text>
+		</Row>
+		
+		<!-- Worked -->
+		<!-- Replaces LOC_TOOLTIP_PLOT_WORKED_TEXT -->
+		<Row Tag="LOC_MOD_TOOLTIP_WORKERS">
+			<Text>Worked by {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?Citizen; other?Citizens;}.</Text>
+		</Row>
+		
+		<!-- Yields -->
+		<Row Tag="LOC_MOD_TOOLTIP_YIELDS">
+			<Text>Yields</Text>
+		</Row>
+		<Row Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT">
+			<Text>from district: {1_Yields}</Text>
+		</Row>
+		<Row Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS">
+			<Text>from specialists: {1_Yields}</Text>
+		</Row>
+		
+		<!-- Natural Wonder description -->
+		<Row Tag="LOC_MOD_TOOLTIP_DESCRIPTION">
+			<Text>Description</Text>
+		</Row>
+	</EnglishText>
+	<LocalizedText>
+		<!-- Ownership -->
+		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="fr_FR">
+			<Text>Propriétaire</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="de_DE">
+			<Text>Besitzer</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="it_IT">
+			<Text>Possessore</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CLAN" Language="it_IT">
+			<Text>Clan</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="es_ES">
+			<Text>Propietario</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="ja_JP">
+			<Text>所有者</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="ru_RU">
+			<Text>Владелец</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CLAN" Language="ru_RU">
+			<Text>Клан</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="pl_PL">
+			<Text>Właściciel</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CLAN" Language="pl_PL">
+			<Text>Klan</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="ko_KR">
+			<Text>소유자</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="zh_Hant_HK">
+			<Text>所有者</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="zh_Hans_CN">
+			<Text>拥有者</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="pt_BR">
+			<Text>Proprietário</Text>
+		</Replace>
+		<!-- Buildings -->
+		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="fr_FR">
+			<Text>Bâtiments</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="de_DE">
+			<Text>Gebäude</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="it_IT">
+			<Text>Edifici</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="es_ES">
+			<Text>Edificios</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="ja_JP">
+			<Text>建造物</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="ru_RU">
+			<Text>Здания</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="pl_PL">
+			<Text>Budowle</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="ko_KR">
+			<Text>건물</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="zh_Hant_HK">
+			<Text>建築</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="zh_Hans_CN">
+			<Text>建筑</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="pt_BR">
+			<Text>Edificações</Text>
+		</Replace>
+		<!-- Terrain -->
+		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="fr_FR">
+			<Text>Terrain</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="de_DE">
+			<Text>Gelände</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="it_IT">
+			<Text>Terreno</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="es_ES">
+			<Text>Terreno</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="ja_JP">
+			<Text>地形</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="ru_RU">
+			<Text>Местность</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="pl_PL">
+			<Text>Teren</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="ko_KR">
+			<Text>지형</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="zh_Hant_HK">
+			<Text>地形</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="zh_Hans_CN">
+			<Text>地形</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="pt_BR">
+			<Text>Terreno</Text>
+		</Replace>
+		<!-- Movement Cost -->
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="en_US">
+			<Text>({1_Amount}[ICON_Movement] on the {2_RouteName})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="en_US">
+			<Text>({1_Amount}[ICON_Movement] on the {2_RouteName} [COLOR:Civ6Red](PILLAGED!)[ENDCOLOR])</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="fr_FR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Coût en PM[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="fr_FR">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Déplacement sur route[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="fr_FR">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Déplacement sur route[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}, pillée(e))</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="de_DE">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Fortbewegungskosten[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="de_DE">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Weg-Fortbewegung[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="de_DE">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Weg-Fortbewegung[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}, geplündert)</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="it_IT">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Costo di movimento[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="it_IT">
+			<Text>({1_Amount}[ICON_Movement] sulla {2_RouteName})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="it_IT">
+			<Text>({1_Amount}[ICON_Movement] sulla {2_RouteName} [COLOR:Civ6Red](SACCHEGGIATA!)[ENDCOLOR])</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="es_ES">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Coste de movimiento[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="es_ES">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Movimiento en ruta[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="es_ES">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Movimiento en ruta[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}, saqueada)</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="ja_JP">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="ja_JP">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]道路の移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="ja_JP">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]道路の移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}、略奪に遭遇)</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="ru_RU">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Цена перемещения[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="ru_RU">
+			<Text>({1_Amount}[ICON_Movement] по {2_RouteName[3]})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="ru_RU">
+			<Text>({1_Amount}[ICON_Movement] по {2_RouteName[3]} [COLOR:Civ6Red](РАЗГРАБЛЕНО!)[ENDCOLOR])</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="pl_PL">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Koszt ruchu[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="pl_PL">
+			<Text>({1_Amount}[ICON_Movement] na {2_RouteName[4]})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="pl_PL">
+			<Text>({1_Amount}[ICON_Movement] na {2_RouteName[4]}) [COLOR:Civ6Red]SPLĄDROWANA![ENDCOLOR])</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="ko_KR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]이동 비용[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="ko_KR">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]경로 이동[ENDCOLOR]: {1_Amount}[ICON_Movement]({2_RouteName})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="ko_KR">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]경로 이동[ENDCOLOR]: {1_Amount}[ICON_Movement]({2_RouteName}, 약탈당함)</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="zh_Hant_HK">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]移動力消耗[ENDCOLOR]：{1_Amount}[ICON_Movement]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="zh_Hant_HK">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]路線移動力[ENDCOLOR]：{1_Amount}[ICON_Movement] （{2_RouteName}）</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="zh_Hant_HK">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]路線移動力[ENDCOLOR]：{1_Amount}[ICON_Movement] （{2_RouteName}, 掠奪）</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="zh_Hans_CN">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]移动力消耗[ENDCOLOR]：{1_Amount}[ICON_Movement]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="zh_Hans_CN">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]路线移动力[ENDCOLOR]：{1_Amount}[ICON_Movement]（{2_RouteName}）</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="zh_Hans_CN">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]路线移动力[ENDCOLOR]：{1_Amount}[ICON_Movement]（{2_RouteName}, 掠夺）</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="pt_BR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Custo de movimento[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="pt_BR">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Movimento na rota[ENDCOLOR]: {1_Amount}[ICON_Movement] em ({2_RouteName})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="pt_BR">
+			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Movimento na rota[ENDCOLOR]: {1_Amount}[ICON_Movement] em ({2_RouteName}, saqueada)</Text>
+		</Replace>
+		<!-- Appeal -->
+		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="fr_FR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Attrait[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="de_DE">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Anziehungskraft[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="it_IT">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Appeal[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="es_ES">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Atractivo[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="ja_JP">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]アピール[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="ru_RU">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Престиж[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="pl_PL">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Atrakcyjność[ENDCOLOR]: {1_AppealDesc[7]} ({2_AppealValue[7]})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="ko_KR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]매력도[ENDCOLOR]: {1_AppealDesc}({2_AppealValue})</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="zh_Hant_HK">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]魅力[ENDCOLOR]：{1_AppealDesc}（{2_AppealValue}）</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="zh_Hans_CN">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]魅力[ENDCOLOR]：{1_AppealDesc}（{2_AppealValue}）</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="pt_BR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Apelo[ENDCOLOR]: ({2_AppealValue}) {1_AppealDesc}</Text>
+		</Replace>
+		<!-- Defence Modifier -->
+		<Replace Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER" Language="fr_FR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Modificateur de défense[ENDCOLOR]: {1_Amount}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER" Language="de_DE">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Verteidigungsmodifikator[ENDCOLOR]: {1_Amount}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER" Language="it_IT">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Modificatore alla difesa[ENDCOLOR]: {1_Amount}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER" Language="es_ES">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Modificador de defensa[ENDCOLOR]: {1_Amount}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER" Language="ja_JP">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]防御修正値[ENDCOLOR]: {1_Amount}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER" Language="ru_RU">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Модификатор обороны[ENDCOLOR]: {1_Amount}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER" Language="pl_PL">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Modyfikator obrony[ENDCOLOR]: {1_Amount}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER" Language="ko_KR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]방어 보정치[ENDCOLOR]: {1_Amount}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER" Language="zh_Hant_HK">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]防禦修正[ENDCOLOR]：{1_Amount}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER" Language="zh_Hans_CN">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]防御值变更[ENDCOLOR]：{1_Amount}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER" Language="pt_BR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Modificador de defesa[ENDCOLOR]: {1_Amount}</Text>
+		</Replace>
+		<!-- Continent -->
+		<Replace Tag="LOC_MOD_TOOLTIP_CONTINENT" Language="fr_FR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Continent[ENDCOLOR]: {1_ContinentName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CONTINENT" Language="de_DE">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Kontinent[ENDCOLOR]: {1_ContinentName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CONTINENT" Language="it_IT">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Continente[ENDCOLOR]: {1_ContinentName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CONTINENT" Language="es_ES">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Continente[ENDCOLOR]: {1_ContinentName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CONTINENT" Language="ja_JP">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]大陸[ENDCOLOR]: {1_ContinentName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CONTINENT" Language="ru_RU">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Континент[ENDCOLOR]: {1_ContinentName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CONTINENT" Language="pl_PL">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Kontynent[ENDCOLOR]: {1_ContinentName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CONTINENT" Language="ko_KR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]대륙[ENDCOLOR]: {1_ContinentName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CONTINENT" Language="zh_Hant_HK">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]大陸[ENDCOLOR]：{1_ContinentName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CONTINENT" Language="zh_Hans_CN">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]大陆[ENDCOLOR]：{1_ContinentName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CONTINENT" Language="pt_BR">
+			<Text>[COLOR:COLOR_MEDIUM_GREEN]Continente[ENDCOLOR]: {1_ContinentName}</Text>
+		</Replace>
+		<!-- Worked -->
+		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="fr_FR">
+			<Text>Exploitée par {1_Citizens} [ICON_Citizen] {1_Citizens: plural 1?citoyen; other?citoyens;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="de_DE">
+			<Text>Von {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?Bürger; other?Bürgern;} bearbeitet.</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="it_IT">
+			<Text>Sfruttata da {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?cittadino; other?cittadini;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="es_ES">
+			<Text>Explotada por {1_Citizens} [ICON_Citizen] {1_Citizens: plural 1?Ciudadano; other?Ciudadanos;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="ja_JP">
+			<Text>{1_Citizens}人の [ICON_Citizen] {1_Citizens : plural 1?市民; other?市民;}が従事。</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="ru_RU">
+			<Text>Работники: {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?горожанин; 2?горожанина; other?горожан;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="pl_PL">
+			<Text>Eksploatowane przez {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?obywatela; other?obywateli;}.</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="ko_KR">
+			<Text>[ICON_Citizen] {1_Citizens : plural 1?시민; other?시민;} {1_Citizens}명이 작업합니다.</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="zh_Hant_HK">
+			<Text>有{1_Citizens}位 [ICON_Citizen] {1_Citizens : plural 1?公民; other?公民;}在此工作。</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="zh_Hans_CN">
+			<Text>有{1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?公民; other?公民;}在此工作。</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="pt_BR">
+			<Text>Trabalhado por {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?cidadão; other?cidadãos;}.</Text>
+		</Replace>
+		<!-- Yields -->
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="it_IT">
+			<Text>Produzione</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT" Language="it_IT">
+			<Text>del distretto: {1_Yields}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="it_IT">
+			<Text>dei lavoratori: {1_Yields}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="ru_RU">
+			<Text>Производство</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT" Language="ru_RU">
+			<Text>от района: {1_Yields}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="ru_RU">
+			<Text>от специалистов: {1_Yields}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="pl_PL">
+			<Text>Produkcja</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT" Language="pl_PL">
+			<Text>z dzielnicy: {1_Yields}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="pl_PL">
+			<Text>od specjalistów: {1_Yields}</Text>
+		</Replace>
+		<!-- Natural Wonder description -->
+		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="it_IT">
+			<Text>Descrizione</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="it_IT">
+			<Text>Descripción</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="ru_RU">
+			<Text>Описание</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="pl_PL">
+			<text>Opis</text>
+		</Replace>
+	</LocalizedText>
+</GameData>

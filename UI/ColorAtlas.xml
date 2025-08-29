@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ColorAtlas -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 06.08.2025 01:57:39 -->
+<GameInfo>
+	<Colors>
+		<Row>
+			<Type>COLOR_MOD_BanditsToolTip</Type>
+			<Color>0,0,0,255</Color>
+		</Row>
+	</Colors>
+</GameInfo>

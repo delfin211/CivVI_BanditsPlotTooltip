@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="a939c131-1a59-4ccc-b1c0-1df9aabe61d7" version="1">
+  <Properties>
+    <Name>Bandit's Plot Tooltip [Alpha]</Name>
+    <Description>WORK IN PROGRESS. Replaces the default tooltip which shows tile info as randomly ordered unstructured list of features with Civilization V -like one which shows tile info as categorized list.[NEWLINE][NEWLINE]Read the recent change notes you can on the Steam Workshop page.</Description>
+    <CustomProperties></CustomProperties>
+    <Created>1756452885</Created>
+    <Teaser>WORK IN PROGRESS. Replaces the default tooltip with Civilization V -like.</Teaser>
+    <Authors>Bandit Heeler</Authors>
+    <SpecialThanks>SomePolishGuy for Polish translation, ThatMarchingArrow for Italian translation.</SpecialThanks>
+    <AffectsSavedGames>0</AffectsSavedGames>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <ActionCriteria>
+    <Criteria id="Expansion2">
+      <GameCoreInUse>Expansion2</GameCoreInUse>
+    </Criteria>
+    <Criteria id="BarbarianClansMode">
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAMEMODE_BARBARIAN_CLANS</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+  </ActionCriteria>
+  <FrontEndActions />
+  <InGameActions>
+    <ReplaceUIScript id="BanditsPlotToolTip">
+      <Properties>
+        <LuaContext>PlotToolTip</LuaContext>
+        <LuaReplace>UI/ToolTips/BanditsPlotTooltip.lua</LuaReplace>
+        <LoadOrder>2</LoadOrder>
+      </Properties>
+    </ReplaceUIScript>
+    <ImportFiles id="BanditsPlotToolTipImport">
+      <Properties>
+        <LoadOrder>0</LoadOrder>
+      </Properties>
+      <File>UI/ToolTips/PlotToolTip.xml</File>
+      <File>UI/ToolTips/BanditsPlotTooltip.lua</File>
+    </ImportFiles>
+    <UpdateText id="BanditsPlotToolTipText">
+      <File priority="1">Text/LOC_RemoveText.xml</File>
+      <File>Text/LOC_PlotToolTip.xml</File>
+      <File>Text/LOC_HelpingText.xml</File>
+      <File>Text/LOC_SlavicDeclensions.xml</File>
+      <File>Text/LOC_ReplaceTerrainNames.xml</File>
+    </UpdateText>
+    <UpdateDatabase id="BanditsPlotToolTipColors" />
+    <ReplaceUIScript id="BanditsPlotToolTip_Expansion2">
+      <Properties>
+        <LuaContext>PlotToolTip</LuaContext>
+        <LuaReplace>UI\ToolTips\PlotTooltip_Expansion2.lua</LuaReplace>
+        <LoadOrder>3</LoadOrder>
+      </Properties>
+      <Criteria>Expansion2</Criteria>
+    </ReplaceUIScript>
+    <ImportFiles id="BanditsPlotToolTipImport_Expansion2">
+      <Properties>
+        <LoadOrder>1</LoadOrder>
+      </Properties>
+      <Criteria>Expansion2</Criteria>
+      <File>UI/ToolTips/PlotTooltip_Expansion2.lua</File>
+    </ImportFiles>
+    <UpdateText id="BanditsPlotToolTipText_Expansion2">
+      <Properties>
+        <LoadOrder>1</LoadOrder>
+      </Properties>
+      <Criteria>Expansion2</Criteria>
+      <File>Text/LOC_SlavicDeclensions_Expansion2.xml</File>
+      <File priority="1">Text/LOC_RemoveText.xml</File>
+      <File>Text/LOC_PlotToolTip_Expansion2.xml</File>
+    </UpdateText>
+  </InGameActions>
+  <Files>
+    <File>HelloWorld.lua</File>
+    <File>Text/LOC_HelpingText.xml</File>
+    <File>Text/LOC_PlotToolTip.xml</File>
+    <File>Text/LOC_PlotToolTip_Expansion2.xml</File>
+    <File>Text/LOC_RemoveText.xml</File>
+    <File>Text/LOC_RemoveText_Expansion2.xml</File>
+    <File>Text/LOC_ReplaceTerrainNames.xml</File>
+    <File>Text/LOC_SlavicDeclensions.xml</File>
+    <File>Text/LOC_SlavicDeclensions_Expansion2.xml</File>
+    <File>UI/ColorAtlas.xml</File>
+    <File>UI/ToolTips/BanditsPlotTooltip.lua</File>
+    <File>UI/ToolTips/PlotToolTip.xml</File>
+    <File>UI/ToolTips/PlotTooltip_Expansion2.lua</File>
+  </Files>
+</Mod>
