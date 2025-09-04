@@ -4,6 +4,11 @@
 <!-- DateCreated: 13.08.2025 13:49:04 -->
 <GameData>
 	<LocalizedText>
+		<Replace Tag="LOC_ROUTE_RAILROAD_NAME" Language="es_ES">
+			<Text>Ferrocarril</Text>
+			<Gender>masculine</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
 		<Replace Tag="LOC_ROUTE_RAILROAD_NAME" Language="ru_RU">
 			<Text>Железная дорога|железной дороги|железной дороге|железеую дорогу|железной дорогой|железной дороге</Text>
 			<Gender>feminine</Gender>

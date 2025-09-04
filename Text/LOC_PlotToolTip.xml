@@ -128,6 +128,9 @@ Portuguese
 		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="es_ES">
 			<Text>Propietario</Text>
 		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CLAN" Language="es_ES">
+			<Text>Clan</Text>
+		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="ja_JP">
 			<Text>所有者</Text>
 		</Replace>
@@ -261,10 +264,10 @@ Portuguese
 			<Text>[COLOR:COLOR_MEDIUM_GREEN]Coste de movimiento[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="es_ES">
-			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Movimiento en ruta[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
+			<Text>({1_Amount}[ICON_Movement] en {2: gender masculine?el; feminine?la; neuter?lo;} {2_RouteName})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="es_ES">
-			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Movimiento en ruta[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}, saqueada)</Text>
+			<Text>({1_Amount}[ICON_Movement] en {2: gender masculine?el; feminine?la; neuter?lo;} {2_RouteName} [COLOR:Civ6Red](SAQUEADA!)[ENDCOLOR])</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="ja_JP">
 			<Text>[COLOR:COLOR_MEDIUM_GREEN]移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
@@ -475,6 +478,15 @@ Portuguese
 		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="it_IT">
 			<Text>dei lavoratori: {1_Yields}</Text>
 		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="it_IT">
+			<Text>Rendimientos</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT" Language="it_IT">
+			<Text>del distrito: {1_Yields}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="it_IT">
+			<Text>de especialistas: {1_Yields}</Text>
+		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="ru_RU">
 			<Text>Производство</Text>
 		</Replace>
@@ -508,3 +520,4 @@ Portuguese
 		</Replace>
 	</LocalizedText>
 </GameData>
+

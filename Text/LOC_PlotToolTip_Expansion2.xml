@@ -55,22 +55,23 @@
 		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="it_IT">
 			<Text>Fiumi</Text>
 		</Replace>
-		<!--
 		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="es_ES">
-			<Text></Text>
+			<Text>Territorio</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_LAND_AREA" Language="es_ES">
-			<Text></Text>
+			<Text>Territorio</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOUNTAIN_AREA" Language="es_ES">
-			<Text></Text>
+			<Text>Cordillera</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_VOLCANO_UNNAMED" Language="es_ES">
-			<Text></Text>
+			<Text>sin nombre</Text>
 		</Replace>
-		-->
 		<Replace Tag="LOC_VOLCANO_INACTIVE_STRING" Language="es_ES">
 			<Text>(inactivo)</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="es_ES">
+			<Text>Rios</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="ru_RU">
 			<Text>Акватория</Text>
@@ -112,11 +113,9 @@
 		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="it_IT">
 			<Text>Disastro</Text>
 		</Replace>
-		<!--
 		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="es_ES">
-			<Text></Text>
+			<Text>Desastre</Text>
 		</Replace>
-		-->
 		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="ru_RU">
 			<Text>Происшестве</Text>
 		</Replace>

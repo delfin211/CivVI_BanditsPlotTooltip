@@ -5,20 +5,7 @@
 		<Stack ID="InfoStack" StackGrowth="Bottom" Anchor="L,B" Offset="7,12" StackPadding="5">
 			<!--<Label ID="PlotName" WrapWidth="200" Style="TTText" d="3"/>-->
 			<Label ID="PlotDetails" WrapWidth="400" Style="TTText"/>
-			<Label ID="DebugTxt" WrapWidth="200" Style="TTText" d="5"/>
+			<Label ID="DebugTxt" WrapWidth="200" Style="TTText"/>
 		</Stack>
 	</AlphaAnim>
 </Context>
-<!-- Rows
-1   Ownership
-2   District    or    Wonder    or    Natural wonder    or    Improvement
-3   Buildings [Great works in the according biuldings]
-4   Resouce
-5   Terrain
-6   Movement cost [Impassable]
-7   Appeal
-8   Defence modifier
-9   Continent
-10  Worked
-11  Yields [from district] [from specialists]
--->
