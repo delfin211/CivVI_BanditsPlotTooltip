@@ -9,8 +9,10 @@ local m_isShowDebug    = (Options.GetAppOption("Debug", "EnableDebugPlotInfo") =
 local m_isWorldBuilder = GameConfiguration.IsWorldBuilderEditor();
 
 -- Bandit: ...
-mod_tooltip_isActive_Expansion2     = false;
-mod_tooltip_isActive_BarbarianClans = Modding.IsModActive("19ED1A36-D744-4A58-8F8B-0376C2BA86E5");
+mod_tooltip_isActive_Expansion2         = false;
+mod_tooltip_isActive_BarbarianClans     = Modding.IsModActive("19ED1A36-D744-4A58-8F8B-0376C2BA86E5");
+mod_tooltip_isActive_PiratesScenario    = Modding.IsModActive("A55FAFB4-9070-4597-9453-B28A99910CDA");
+mod_tooltip_isActive_BlackDeathScenario = Modding.IsModActive("C1F775D8-59B5-401B-B86D-78FAF3446EC7");
 
 -- Bandit: this is needed for simple language processing, punctuation
 local Language:string = Options.GetAppOption("Language", "DisplayLanguage");
@@ -90,6 +92,7 @@ function GetDetails(data)
 	local RowCoastalLowland:string = "";
 	local RowDisaster:string = "";
 	local RowNamedArea:string = "";
+	local ResourceExtraction:string = "";
 
 	-- Bandit: Ownership
 	if (data.Owner ~= nil) then
@@ -119,8 +122,6 @@ function GetDetails(data)
 		RowNationalPark = Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_HEADING", "LOC_HUD_MAP_SEARCH_TERMS_NATIONAL_PARK")..PUNC_SEPARATOR_COLON..Locale.Lookup(data.NationalPark);
 	end
 
-	local requiredImprovement = "";
-
 	if (data.ResourceType ~= nil) then
 		--if it's a resource that requires a tech to improve, let the player know that in the tooltip
 		local resourceType = data.ResourceType;
@@ -135,6 +136,8 @@ function GetDetails(data)
 		local valid_feature = false;
 		local valid_terrain = false;
 		local valid_resources = false;
+
+		local requiredImprovement = "";
 
 		-- Are there any improvements that specifically require this resource?
 		for row in GameInfo.Improvement_ValidResources() do
@@ -174,7 +177,7 @@ function GetDetails(data)
 					end
 				end
 
-				if( GameInfo.Terrains[terrainType].TerrainType  == "TERRAIN_COAST") then
+				if (GameInfo.Terrains[terrainType].TerrainType == "TERRAIN_COAST") then
 					if ("DOMAIN_SEA" == GameInfo.Improvements[improvementType].Domain) then
 						valid_terrain = true;
 					elseif ("DOMAIN_LAND" == GameInfo.Improvements[improvementType].Domain) then
@@ -194,17 +197,33 @@ function GetDetails(data)
 				end
 			end
 		end
+
 		local localPlayer = Players[Game.GetLocalPlayer()];
 		if (localPlayer ~= nil) then
 			local playerResources = localPlayer:GetResources();
-			if(playerResources:IsResourceVisible(resourceHash)) then
+			if (playerResources:IsResourceVisible(resourceHash)) then
 				RowResource = Locale.Lookup(resource.Name);
-				if (resourceTechType ~= nil and ((valid_feature == true and valid_terrain == true) or valid_resources == true)) then
+				if (resourceTechType ~= nil) then
 					local playerTechs = localPlayer:GetTechs();
 					local techType = GameInfo.Technologies[resourceTechType];
-					if (techType ~= nil and not playerTechs:HasTech(techType.Index)) then
-						--RowResource = RowResource.." "..Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_WARNING", Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)));
-						RowResource = RowResource.." "..ColorText(Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)), "Civ6Red");
+					if (techType ~= nil) then
+						if (playerTechs:HasTech(techType.Index)) then
+							if (mod_tooltip_isActive_Expansion2 and (data.DistrictType ~= nil or (data.ImprovementType and not data.ImprovementPillaged and data.ImprovementType == requiredImprovement))) then
+								local kConsumption:table = GameInfo.Resource_Consumption[data.ResourceType];
+								if (kConsumption ~= nil and data.Owner ~= nil) then
+									if (kConsumption.Accumulate and Players[data.Owner]:GetTechs():HasTech(techType.Index)) then
+										local iExtraction = kConsumption.ImprovedExtractionRate;
+										if (iExtraction > 0) then
+											ResourceExtraction = iExtraction.."[ICON_"..data.ResourceType.."]";
+										end
+									end
+								end
+							end
+						else
+							if ((valid_feature == true and valid_terrain == true) or valid_resources == true) then
+								RowResource = RowResource.." "..ColorText(Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)), "Civ6Red");
+							end
+						end
 					end
 				end
 			end
@@ -218,7 +237,7 @@ function GetDetails(data)
 			end
 		end
 		if (RowResource ~= "") then
-			RowResource = Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_HEADING", "LOC_RESOURCE_NAME")..PUNC_SEPARATOR_COLON.."[ICON_"..resourceType.."]"..RowResource;
+			RowResource = CreateHeading("LOC_RESOURCE_NAME").."[ICON_"..resourceType.."]"..RowResource;
 		end
 	end
 
@@ -239,103 +258,49 @@ function GetDetails(data)
 		return yields;
 	end -- function ParseYields
 
-	-- Bandit: type might be "District" or "Wonder" or "Improvement"
-	function ParseResource(localPlayer, type)
-		local playerResources = localPlayer:GetResources();
-		--if (playerResources:IsResourceVisible(resourceHash) and playerResources:IsResourceExtractableAt(Map.GetPlotByIndex(data.Index))) then
-		if (playerResources:IsResourceVisible(resourceHash)) then
-			--if ((type == "Improvement" and data.ImprovementPillaged) or (type == "Improvement" and not playerResources:IsResourceExtractableAt(Map.GetPlotByIndex(data.Index)))) then
-			if (type == "Improvement" and (data.ImprovementPillaged or data.ImprovementType ~= requiredImprovement)) then
-				return
-			end
-			local resourceTechType = GameInfo.Resources[data.ResourceType].PrereqTech;
-			if (resourceTechType ~= nil) then
-				local playerTechs = localPlayer:GetTechs();
-				local techType = GameInfo.Technologies[resourceTechType];
-				if (techType ~= nil and playerTechs:HasTech(techType.Index)) then
-					local kConsumption:table = GameInfo.Resource_Consumption[data.ResourceType];	
-					if (kConsumption ~= nil) then
-						if (kConsumption.Accumulate) then
-							local iExtraction = kConsumption.ImprovedExtractionRate;
-							if (iExtraction > 0) then
-								local resourceIcon:string = "[ICON_"..data.ResourceType.."]";
-								if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA; end
-								RowYields = RowYields..iExtraction..resourceIcon;
-							end
-						end
-					end
-				end
-			end
-		end
-	end -- function ParseResource
-
 	-- CITY TILE
 	if (data.IsCity == true and data.DistrictType ~= nil) then
-		RowDistrict = Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_HEADING", "LOC_DISTRICT_NAME")..PUNC_SEPARATOR_COLON..Locale.Lookup(GameInfo.Districts[data.DistrictType].Name);
+		RowDistrict = CreateHeading("LOC_DISTRICT_NAME")..Locale.Lookup(GameInfo.Districts[data.DistrictType].Name);
 
-		if (data.Yields ~= nil) then
-			RowYields = ParseYields(data.Yields);
+		if (table.count(data.Yields) > 0) then RowYields = ParseYields(data.Yields) end
+		if (ResourceExtraction ~= "")     then
+			if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA end
+			RowYields = RowYields..ResourceExtraction;
 		end
-		
-		if (mod_tooltip_isActive_Expansion2 and data.ResourceType ~= nil) then
-			local localPlayer = Players[Game.GetLocalPlayer()];
-			if (localPlayer ~= nil) then
-				ParseResource(localPlayer);
-			end
-		end
-
-		if (RowYields ~= "") then
-			RowYields = Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_HEADING", "LOC_MOD_TOOLTIP_YIELDS").." "..Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT", RowYields);
-		end
+		if (RowYields ~= "")              then RowYields = ColorText("LOC_MOD_TOOLTIP_YIELDS", "COLOR_MEDIUM_GREEN").." "..Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT", RowYields) end
 
 	-- DISTRICT TILE
 	elseif (data.DistrictID ~= -1 and data.DistrictType ~= nil) then
-		--print(GameInfo.Districts[data.DistrictType]);
 		if (not GameInfo.Districts[data.DistrictType].InternalOnly) then	--Ignore 'Wonder' districts
 			-- Inherent district yields
-			RowDistrict = Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_HEADING", "LOC_DISTRICT_NAME")..PUNC_SEPARATOR_COLON..Locale.Lookup(GameInfo.Districts[data.DistrictType].Name);
+			RowDistrict = CreateHeading("LOC_DISTRICT_NAME")..Locale.Lookup(GameInfo.Districts[data.DistrictType].Name);
 			if (data.DistrictPillaged) then
 				RowDistrict = RowDistrict .. " " .. Locale.Lookup("LOC_TOOLTIP_PLOT_PILLAGED_TEXT");
 			elseif (not data.DistrictComplete) then
 				RowDistrict = RowDistrict .. " " .. Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT");
 			end
 
-			if (data.DistrictYields ~= nil) and (table.count(data.DistrictYields) > 0) then
-				RowYields = ParseYields(data.DistrictYields);
+			if (data.DistrictYields ~= nil) and (table.count(data.DistrictYields) > 0) then RowYields = ParseYields(data.DistrictYields) end
+			if (ResourceExtraction ~= "") then
+				if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA end
+				RowYields = RowYields..ResourceExtraction;
 			end
-			if (mod_tooltip_isActive_Expansion2 and data.ResourceType ~= nil) then
-				local localPlayer = Players[Game.GetLocalPlayer()];
-				if (localPlayer ~= nil) then
-					ParseResource(localPlayer);
-				end
-			end
-			if (RowYields ~= "") then
-				RowYields = Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT", RowYields);
-			end
+			if (RowYields ~= "") then RowYields = Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT", RowYields) end
 
 			-- Plot yields (ie. from Specialists)
 			-- Don't show specialist info to other players
 			if (data.Owner ~= nil) and (data.Owner == Game.GetLocalPlayer()) then
-				if (data.Yields ~= nil) then
-					if (table.count(data.Yields) > 0) then
-						if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_SEMICOLON; end
-						RowYields = RowYields..Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS", ParseYields(data.Yields));
-					end
+				if (data.Yields ~= nil and table.count(data.Yields) > 0) then
+					if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_SEMICOLON; end
+					RowYields = RowYields..Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS", ParseYields(data.Yields));
 				end
 			end
-			if (RowYields ~= "") then RowYields = Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_HEADING", "LOC_MOD_TOOLTIP_YIELDS").." "..RowYields; end
+			if (RowYields ~= "") then RowYields = ColorText("LOC_MOD_TOOLTIP_YIELDS", "COLOR_MEDIUM_GREEN").." "..RowYields; end
 		end
 
 	-- OTHER TILE
 	else
-		if (table.count(data.Yields) > 0) then RowYields = Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_HEADING", "LOC_MOD_TOOLTIP_YIELDS")..PUNC_SEPARATOR_COLON..ParseYields(data.Yields); end
 		if (data.ImprovementType ~= nil) then
-			if (mod_tooltip_isActive_Expansion2 and data.ResourceType ~= nil) then
-			local localPlayer = Players[Game.GetLocalPlayer()];
-				if (localPlayer ~= nil) then
-					ParseResource(localPlayer, "Improvement");
-				end
-			end
 			-- Barbarian Clan Info
 			if (mod_tooltip_isActive_BarbarianClans and data.ImprovementType == "IMPROVEMENT_BARBARIAN_CAMP") then
 				local pBarbManager = Game.GetBarbarianManager();
@@ -358,6 +323,14 @@ function GetDetails(data)
 				RowImprovement = RowImprovement.." "..Locale.Lookup("LOC_TOOLTIP_PLOT_PILLAGED_TEXT");
 			end
 		end
+
+		if (table.count(data.Yields) > 0) then RowYields = ParseYields(data.Yields) end
+		if (ResourceExtraction ~= "")     then
+			if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA end
+			RowYields = RowYields..ResourceExtraction;
+		end
+		if (RowYields ~= "")              then RowYields = CreateHeading("LOC_MOD_TOOLTIP_YIELDS")..RowYields end
+
 	end
 
 	-- For districts, city center show all building info including Great Works
@@ -368,14 +341,7 @@ function GetDetails(data)
 			if (data.WonderType ~= nil) then
 				RowBuildings = CreateHeading("LOC_WONDER_NAME")..Locale.Lookup(GameInfo.Buildings[data.WonderType].Name);
 				if (data.WonderCompete == false) then RowBuildings = RowBuildings.." "..Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT"); end
-
-				if (mod_tooltip_isActive_Expansion2 and data.ResourceType ~= nil) then
-					local localPlayer = Players[Game.GetLocalPlayer()];
-					if (localPlayer ~= nil) then
-						ParseResource(localPlayer);
-						RowYields = CreateHeading("LOC_MOD_TOOLTIP_YIELDS")..RowYields;
-					end
-				end
+				if (ResourceExtraction ~= "") then RowYields = CreateHeading("LOC_MOD_TOOLTIP_YIELDS")..ResourceExtraction end
 			else
 				RowBuildings = CreateHeading("LOC_MOD_TOOLTIP_BUILDINGS");
 			end
@@ -486,7 +452,6 @@ function GetDetails(data)
 			-- 6 water area
 
 			if (TerritoryClass == 1) then
-				-- Bandit: can enter this state only if RowNamedArea contains info about volcano
 				if (RowNamedArea ~= "") then RowNamedArea = RowNamedArea.."[NEWLINE]"; end
 				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_MOD_TOOLTIP_MOUNTAIN_AREA", "RESOURCECLASS_OTHER")..data.TerritoryName;
 			elseif (TerritoryClass == 3) then
@@ -626,6 +591,39 @@ function GetDetails(data)
 	if (RowCoastalLowland ~= "") then table.insert(details, RowCoastalLowland); end
 	if (RowDisaster ~= "") then table.insert(details, RowDisaster); end
 	if (RowContamination ~= "") then table.insert(details, RowContamination); end
+
+	if (mod_tooltip_isActive_PiratesScenario) then
+		if(data.TreasureSearchTooltip ~= nil) then
+			table.insert(details, data.TreasureSearchTooltip);
+		end
+
+		if(data.InfamousPirateTooltip ~= nil) then
+			table.insert(details, data.InfamousPirateTooltip);
+		end
+
+		if(data.TreasureFleetTooltip ~= nil) then
+			table.insert(details, data.TreasureFleetTooltip);
+		end
+
+		if(data.TreasureOwnerTooltip ~= nil)then
+			table.insert(details, data.TreasureOwnerTooltip);
+		end
+	end
+
+	if (mod_tooltip_isActive_BlackDeathScenario) then
+		if (data.Owner == Game.GetLocalPlayer()) then
+			local pPlayerConfig = PlayerConfigurations[data.Owner];
+			if (pPlayerConfig ~= nil) then
+				
+				-- England UA: show Coerced tiles
+				if (pPlayerConfig:GetCivilizationTypeName() == RULES.EnglandTypeString) then
+					if (data.CoerceTurns ~= nil) then
+						table.insert(details, Locale.Lookup("LOC_PLOTINFO_COERCED_TURNS_LABEL", data.CoerceTurns));
+					end
+				end
+			end
+		end
+	end
 
 	return details;
 end
