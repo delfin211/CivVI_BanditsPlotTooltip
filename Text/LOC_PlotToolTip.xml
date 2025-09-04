@@ -263,12 +263,11 @@ Portuguese
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="es_ES">
 			<Text>[COLOR:COLOR_MEDIUM_GREEN]Coste de movimiento[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
-		<!-- en la *f* Carretera / en el *m* Ferrocarril -->
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="es_ES">
 			<Text>({1_Amount}[ICON_Movement] en {2: gender masculine?el; feminine?la; neuter?lo;} {2_RouteName})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="es_ES">
-			<Text>[NEWLINE][COLOR:COLOR_MEDIUM_GREEN]Movimiento en ruta[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}, saqueada)</Text>
+			<Text>({1_Amount}[ICON_Movement] en {2: gender masculine?el; feminine?la; neuter?lo;} {2_RouteName} [COLOR:Civ6Red](SAQUEADA!)[ENDCOLOR])</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="ja_JP">
 			<Text>[COLOR:COLOR_MEDIUM_GREEN]移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
@@ -521,3 +520,4 @@ Portuguese
 		</Replace>
 	</LocalizedText>
 </GameData>
+
