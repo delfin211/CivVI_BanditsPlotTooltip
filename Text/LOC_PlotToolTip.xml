@@ -478,13 +478,13 @@ Portuguese
 		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="it_IT">
 			<Text>dei lavoratori: {1_Yields}</Text>
 		</Replace>
-		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="it_IT">
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="es_ES">
 			<Text>Rendimientos</Text>
 		</Replace>
-		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT" Language="it_IT">
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT" Language="es_ES">
 			<Text>del distrito: {1_Yields}</Text>
 		</Replace>
-		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="it_IT">
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="es_ES">
 			<Text>de especialistas: {1_Yields}</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="ru_RU">
@@ -509,7 +509,7 @@ Portuguese
 		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="it_IT">
 			<Text>Descrizione</Text>
 		</Replace>
-		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="it_IT">
+		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="es_ES">
 			<Text>Descripción</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="ru_RU">
@@ -520,4 +520,5 @@ Portuguese
 		</Replace>
 	</LocalizedText>
 </GameData>
+
 
