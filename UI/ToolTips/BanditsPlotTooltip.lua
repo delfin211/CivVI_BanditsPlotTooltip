@@ -114,12 +114,12 @@ function GetDetails(data)
 		end
 
 		--table.insert(details, Locale.Lookup("LOC_MOD_TOOLTIP_OWNER", szOwnerString, data.OwningCityName));
-		RowOwnership = Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_HEADING", "LOC_MOD_TOOLTIP_OWNER")..PUNC_SEPARATOR_COLON..Locale.Lookup(data.OwningCityName)..PUNC_SEPARATOR_COMMA..szOwnerString;
+		RowOwnership = CreateHeading("LOC_MOD_TOOLTIP_OWNER")..Locale.Lookup(data.OwningCityName)..PUNC_SEPARATOR_COMMA..szOwnerString;
 	end
 
 	-- Bandit: National Park
 	if (data.NationalPark ~= "") then
-		RowNationalPark = Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_HEADING", "LOC_HUD_MAP_SEARCH_TERMS_NATIONAL_PARK")..PUNC_SEPARATOR_COLON..Locale.Lookup(data.NationalPark);
+		RowNationalPark = CreateHeading("LOC_HUD_MAP_SEARCH_TERMS_NATIONAL_PARK")..Locale.Lookup(data.NationalPark);
 	end
 
 	if (data.ResourceType ~= nil) then
