@@ -4,6 +4,7 @@
 <!-- DateCreated: 13.08.2025 13:49:04 -->
 <GameData>
 	<LocalizedText>
+		<!-- Roads -->
 		<Replace Tag="LOC_ROUTE_RAILROAD_NAME" Language="es_ES">
 			<Text>Ferrocarril</Text>
 			<Gender>masculine</Gender>
