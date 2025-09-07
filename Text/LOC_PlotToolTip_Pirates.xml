@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_PlotTooltip_Pirates -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 08.09.2025 03:57:54 -->
+<GameData>
+	<EnglishText>
+		<!-- Replaces LOC_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER -->
+		<Row Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER">
+			<Text>[COLOR:{2_Color}]Treasure Owner[ENDCOLOR]: {1_OwnerName}</Text>
+		</Row>
+	</EnglishText>
+	<LocalizedText>
+		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="fr_FR">
+			<Text>Trésor {1: gender *:vowel?d'; other?de ;}{1_OwnerName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="de_DE">
+			<Text>Schatz von {1_OwnerName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="it_IT">
+			<Text>[COLOR:{2_Color}]Proprietario del tesoro[ENDCOLOR]: {1_OwnerName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="es_ES">
+			<Text>[COLOR:{2_Color}]Dueño del tesoro[ENDCOLOR]: {1_OwnerName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="ja_JP">
+			<Text>{1_OwnerName}の財宝</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="ru_RU">
+			<Text>[COLOR:{2_Color}]Владелец сокровища[ENDCOLOR]: {1_OwnerName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="pl_PL">
+			<Text>[COLOR:{2_Color}]Właściciel skarbu[ENDCOLOR]: {1_OwnerName}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="ko_KR">
+			<Text>{1_OwnerName}의 보물</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="zh_Hant_HK">
+			<Text>{1_OwnerName}的寶藏</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="zh_Hans_CN">
+			<Text>{1_OwnerName}的宝藏</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="pt_BR">
+			<Text>Tesouro de {1_OwnerName}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>
