@@ -610,7 +610,7 @@ function GetDetails(data)
 				-- England UA: show Coerced tiles
 				if (pPlayerConfig:GetCivilizationTypeName() == RULES.EnglandTypeString) then
 					if (data.CoerceTurns ~= nil) then
-						RowContamination = Locale.Lookup("LOC_PLOTINFO_COERCED_TURNS_LABEL", data.CoerceTurns);
+						RowAddition = Locale.Lookup("LOC_PLOTINFO_COERCED_TURNS_LABEL", data.CoerceTurns);
 					end
 				end
 			end
@@ -719,3 +719,4 @@ function View(data:table)
 end
 
 print("Bandit's tooltip loaded!");
+
