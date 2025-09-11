@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_PlotToolTip_BlackDeath -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 08.09.2025 14:31:28 -->
+<GameData>
+	<EnglishText>
+		<!-- Contamination -->
+		<!-- Replaces LOC_TOOLTIP_PLOT_CONTAMINATED_TEXT -->
+		<Row Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT">
+			<Text>[COLOR:{2_Color}]PLAGUE-STRICKEN: {1_Num} {1_Num: plural 1?turn; other?turns;}[ENDCOLOR]</Text>
+		</Row>
+		<!-- Coercion -->
+		<!-- Replaces LOC_PLOTINFO_COERCED_TURNS_LABEL -->
+		<Row Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL">
+			<Text>[COLOR:{2_Color}]Coerced[ENDCOLOR]: {1_Num} {1_Num: plural 1?turn; other?turns;}</Text>
+		</Row>
+	</EnglishText>
+	<LocalizedText>
+		<!-- Contamination -->
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT" Language="fr_FR">
+			<Text>[COLOR:{2_Color}]PESTIFÉRÉE : {1_Turns} {1_Turns: plural 1?tour; other?tours;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT" Language="de_DE">
+			<Text>[COLOR:{2_Color}]VON DER PEST BEFALLEN: {1_Turns} {1_Turns: plural 1?Runde; other?Runden;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT" Language="it_IT">
+			<Text>[COLOR:{2_Color}]COLPITA DALLA PESTE: {1_Turns} {1: plural 1?turno; other?turni;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT" Language="es_ES">
+			<Text>[COLOR:{2_Color}]AFECTADA POR LA PESTE: {1_Turns} {1: plural 1?turno; other?turnos;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT" Language="ja_JP">
+			<Text>[COLOR:{2_Color}]疫病汚染: {1_Turns}ターン[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT" Language="ru_RU">
+			<Text>[COLOR:{2_Color}]ЗАРАЖЕНИЕ ЧУМОЙ: {1_Turns} {1: plural 1?ход; 2?хода; other?ходов;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT" Language="pl_PL">
+			<Text>[COLOR:{2_Color}]DOTKNIĘTE EPIDEMIĄ: {1_Turns} {1_Num: plural 1?tura; 2?tury; other?tur;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT" Language="ko_KR">
+			<Text>[COLOR:{2_Color}]흑사병 유행: {1_Turns}턴[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT" Language="zh_Hant_HK">
+			<Text>[COLOR:{2_Color}]受到瘟疫侵襲：{1_Turns}回合[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT" Language="zh_Hans_CN">
+			<Text>[COLOR:{2_Color}]瘟疫侵袭：{1_Turns}回合[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT" Language="pt_BR">
+			<Text>[COLOR:{2_Color}]ASSOLADO PELA PESTE: {1_Turns} turnos[ENDCOLOR]</Text>
+		</Replace>
+		<!-- Coercion -->
+		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="fr_FR">
+			<Text>[COLOR:{2_Color}]Contrainte[ENDCOLOR] : {1_Num} {1_Num: plural 1?tour; other?tours;}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="de_DE">
+			<Text>[COLOR:{2_Color}]Gezwungen[ENDCOLOR]: {1_Num} {1_Num: plural 1?Runde; other?Runden;}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="it_IT">
+			<Text>[COLOR:{2_Color}]Coercizione[ENDCOLOR]: {1_Num} {1: plural 1?turno; other?turni;}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="es_ES">
+			<Text>[COLOR:{2_Color}]Forzada[ENDCOLOR]: {1_Num} {1: plural 1?turno; other?turnos;}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="ja_JP">
+			<Text>[COLOR:{2_Color}]強要[ENDCOLOR]: {1_Num} ターン</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="ru_RU">
+			<Text>[COLOR:{2_Color}]Принудительные работы[ENDCOLOR]: {1_Num} {1: plural 1?ход; 2?хода; other?ходов;}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="pl_PL">
+			<Text>[COLOR:{2_Color}]Przymus[ENDCOLOR]: {1_Num} {1_Num: plural 1?tura; 2?tury; other?tur;}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="ko_KR">
+			<Text>[COLOR:{2_Color}]노동 강제됨[ENDCOLOR]: {1_Num}턴</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="zh_Hant_HK">
+			<Text>[COLOR:{2_Color}]已強徵[ENDCOLOR]：{1_Num}回合</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="zh_Hans_CN">
+			<Text>[COLOR:{2_Color}]强征[ENDCOLOR]：{1_Num}回合</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="pt_BR">
+			<Text>[COLOR:{2_Color}]Coagido[ENDCOLOR]: {1_Num} turnos</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>
