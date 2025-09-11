@@ -1,6 +1,6 @@
 include("BanditsPlotTooltip.lua");
 
--- Bandit: the code below is untouched parts of Firaxis' code
+-- Bandit: the code below is almost untouched parts of Firaxis' code, I commented the modified strings
 
 -- Copyright 2020, Firaxis Games
 include "PiratesScenario_Shared_Script";
@@ -43,12 +43,14 @@ function FetchData(pPlot : object)
 		local treasureOwnerID : number = pPlot:GetImprovementOwner();
 		if(treasureOwnerID == -1)then
 			local ownerName : string = pPlot:GetProperty(g_plotPropertyKeys.TreasureOwnerName);
-			kData.TreasureOwnerTooltip = Locale.Lookup("LOC_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER", ownerName);
+			-- Bandit: the string below is modified
+			kData.TreasureOwnerTooltip = ownerName;
 			return kData;
 		end
 		local playerConfig : table = PlayerConfigurations[treasureOwnerID];
 		local playerName : string = playerConfig:GetPlayerName();
-		kData.TreasureOwnerTooltip = Locale.Lookup("LOC_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER", playerName);
+		-- Bandit: the string below is modified
+		kData.TreasureOwnerTooltip = playerName;
 	end
 
 	----Check if pPlot is in an infamous pirate search area

@@ -14,6 +14,15 @@ mod_tooltip_isActive_BarbarianClans     = Modding.IsModActive("19ED1A36-D744-4A5
 mod_tooltip_isActive_PiratesScenario    = Modding.IsModActive("A55FAFB4-9070-4597-9453-B28A99910CDA");
 mod_tooltip_isActive_BlackDeathScenario = Modding.IsModActive("C1F775D8-59B5-401B-B86D-78FAF3446EC7");
 
+-- Bandit: custom colors
+local Palette:table = {
+	Regular = "COLOR_MEDIUM_GREEN",
+	WarningLow = "219,109,23,255",
+	WarningHigh = "Civ6Red",
+	Water = "8,81,140,255",
+	Land = "67,71,63,255"
+};
+
 -- Bandit: this is needed for simple language processing, punctuation
 local Language:string = Options.GetAppOption("Language", "DisplayLanguage");
 
@@ -38,7 +47,7 @@ end
 
 -- Bandit: custom functions, needed for readability
 local function CreateHeading(text)
-	return Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_HEADING", text)..PUNC_SEPARATOR_COLON;
+	return Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_CUSTOM", text, Palette.Regular)..PUNC_SEPARATOR_COLON;
 end
 
 local function CreateHeading_Color(text, color)
@@ -93,6 +102,9 @@ function GetDetails(data)
 	local RowDisaster:string = "";
 	local RowNamedArea:string = "";
 	local ResourceExtraction:string = "";
+
+	-- Bandit: used for scenarios
+	local RowAddition:string = "";
 
 	-- Bandit: Ownership
 	if (data.Owner ~= nil) then
@@ -221,7 +233,7 @@ function GetDetails(data)
 							end
 						else
 							if ((valid_feature == true and valid_terrain == true) or valid_resources == true) then
-								RowResource = RowResource.." "..ColorText(Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)), "Civ6Red");
+								RowResource = RowResource.." "..ColorText(Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)), Palette.WarningHigh);
 							end
 						end
 					end
@@ -232,7 +244,7 @@ function GetDetails(data)
 			if (resourceTechType ~= nil and ((valid_feature == true and valid_terrain == true) or valid_resources == true)) then
 				local techType = GameInfo.Technologies[resourceTechType];
 				if (techType ~= nil) then
-					RowResource = RowResource.." "..Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_WARNING", Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)));
+					RowResource = RowResource.." "..ColorText(Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)), Palette.WarningLow);
 				end
 			end
 		end
@@ -267,7 +279,7 @@ function GetDetails(data)
 			if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA end
 			RowYields = RowYields..ResourceExtraction;
 		end
-		if (RowYields ~= "")              then RowYields = ColorText("LOC_MOD_TOOLTIP_YIELDS", "COLOR_MEDIUM_GREEN").." "..Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT", RowYields) end
+		if (RowYields ~= "")              then RowYields = ColorText("LOC_MOD_TOOLTIP_YIELDS", Palette.Regular).." "..Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT", RowYields) end
 
 	-- DISTRICT TILE
 	elseif (data.DistrictID ~= -1 and data.DistrictType ~= nil) then
@@ -295,7 +307,7 @@ function GetDetails(data)
 					RowYields = RowYields..Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS", ParseYields(data.Yields));
 				end
 			end
-			if (RowYields ~= "") then RowYields = ColorText("LOC_MOD_TOOLTIP_YIELDS", "COLOR_MEDIUM_GREEN").." "..RowYields; end
+			if (RowYields ~= "") then RowYields = ColorText("LOC_MOD_TOOLTIP_YIELDS", Palette.Regular).." "..RowYields; end
 		end
 
 	-- OTHER TILE
@@ -310,12 +322,12 @@ function GetDetails(data)
 					if (GameInfo.BarbarianTribeNames[eTribeName] ~= nil) then
 						--local tribeNameStr = Locale.Lookup("LOC_TOOLTIP_BARBARIAN_CLAN_NAME", GameInfo.BarbarianTribeNames[eTribeName].TribeDisplayName);
 						if (RowOwnership ~= "") then RowOwnership = RowOwnership.."[NEWLINE]"; end
-						RowOwnership = RowOwnership..CreateHeading_Color("LOC_MOD_TOOLTIP_CLAN", "Emergency_Bronze")..Locale.Lookup(GameInfo.BarbarianTribeNames[eTribeName].TribeDisplayName);
+						RowOwnership = RowOwnership..CreateHeading_Color("LOC_MOD_TOOLTIP_CLAN", Palette.WarningLow)..Locale.Lookup(GameInfo.BarbarianTribeNames[eTribeName].TribeDisplayName);
 					end
 				end
 			end
 			if (data.ImprovementType == "IMPROVEMENT_BARBARIAN_CAMP") then
-				RowImprovement = CreateHeading_Color("LOC_IMPROVEMENT_NAME", "Emergency_Bronze")..Locale.Lookup(GameInfo.Improvements[data.ImprovementType].Name);
+				RowImprovement = CreateHeading_Color("LOC_IMPROVEMENT_NAME", Palette.WarningLow)..Locale.Lookup(GameInfo.Improvements[data.ImprovementType].Name);
 			else
 				RowImprovement = CreateHeading("LOC_IMPROVEMENT_NAME")..Locale.Lookup(GameInfo.Improvements[data.ImprovementType].Name);
 			end
@@ -426,9 +438,9 @@ function GetDetails(data)
 
 		if (data.IsVolcano) then
 			if (data.VolcanoName ~= "") then
-				RowNamedArea = CreateHeading_Color("LOC_FEATURE_VOLCANO_NAME", "RESOURCECLASS_OTHER")..data.VolcanoName;
+				RowNamedArea = CreateHeading_Color("LOC_FEATURE_VOLCANO_NAME", Palette.Land)..data.VolcanoName;
 			else
-				RowNamedArea = CreateHeading_Color("LOC_FEATURE_VOLCANO_NAME", "RESOURCECLASS_OTHER")..Locale.Lookup("LOC_MOD_VOLCANO_UNNAMED");
+				RowNamedArea = CreateHeading_Color("LOC_FEATURE_VOLCANO_NAME", Palette.Land)..Locale.Lookup("LOC_MOD_VOLCANO_UNNAMED");
 			end
 			if (data.Erupting) then
 				RowNamedArea = RowNamedArea.." "..Locale.Lookup("LOC_VOLCANO_ERUPTING_STRING");
@@ -453,13 +465,13 @@ function GetDetails(data)
 
 			if (TerritoryClass == 1) then
 				if (RowNamedArea ~= "") then RowNamedArea = RowNamedArea.."[NEWLINE]"; end
-				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_MOD_TOOLTIP_MOUNTAIN_AREA", "RESOURCECLASS_OTHER")..data.TerritoryName;
+				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_MOD_TOOLTIP_MOUNTAIN_AREA", Palette.Land)..data.TerritoryName;
 			elseif (TerritoryClass == 3) then
-				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_TERRAIN_DESERT_NAME", "RESOURCECLASS_OTHER")..data.TerritoryName;
+				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_TERRAIN_DESERT_NAME", Palette.Land)..data.TerritoryName;
 			elseif (TerritoryClass == 6) then
-				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_MOD_TOOLTIP_WATER_AREA", "DarkBlue")..data.TerritoryName;
+				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_MOD_TOOLTIP_WATER_AREA", Palette.Water)..data.TerritoryName;
 			else --Bandit: fallback for modded stuff
-				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_MOD_TOOLTIP_LAND_AREA", "RESOURCECLASS_OTHER")..data.TerritoryName;
+				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_MOD_TOOLTIP_LAND_AREA", Palette.Land)..data.TerritoryName;
 			end
 		end
 
@@ -467,9 +479,9 @@ function GetDetails(data)
 			if (RowNamedArea ~= "") then RowNamedArea = RowNamedArea.."[NEWLINE]"; end
 			local Rivers = RiverManager.EnumerateRivers(data.Index);
 			if (#Rivers > 1) then
-				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_MOD_TOOLTIP_RIVERS", "DarkBlue");
+				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_MOD_TOOLTIP_RIVERS", Palette.Water);
 			else
-				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_TOOLTIP_RIVER", "DarkBlue");
+				RowNamedArea = RowNamedArea..CreateHeading_Color("LOC_TOOLTIP_RIVER", Palette.Water);
 			end
 			-- Bandit: the game puts fullwidhth comma in chinese between river names instead of enumerating comma so this is why I made a custom iteration
 			for i, v in ipairs(Rivers) do
@@ -493,8 +505,7 @@ function GetDetails(data)
 		end
 
 		if (RowDisaster ~= "") then
-			--RowDisaster = Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_EMERGENCY", "LOC_MOD_TOOLTIP_DISASTER")..PUNC_SEPARATOR_COLON..RowDisaster;
-			RowDisaster = CreateHeading_Color("LOC_MOD_TOOLTIP_DISASTER", "Emergency_Bronze")..RowDisaster;
+			RowDisaster = CreateHeading_Color("LOC_MOD_TOOLTIP_DISASTER", Palette.WarningLow)..RowDisaster;
 		end
 
 		if (data.CoastalLowland ~= -1) then
@@ -507,36 +518,35 @@ function GetDetails(data)
 		end
 	end
 
-	-- Movement cost
-	if (not data.Impassable and data.MovementCost > 0) then
-		RowMovementCost = Locale.Lookup("LOC_MOD_TOOLTIP_MOVEMENT_COST", data.MovementCost);
-	end
+	-- Movement Cost
+	if (not data.Impassable) then
+		if (data.MovementCost > 0) then
+			RowMovementCost = Locale.Lookup("LOC_MOD_TOOLTIP_MOVEMENT_COST", data.MovementCost, Palette.Regular);
+		end
 
-	-- ROUTE TILE
-	if (data.IsRoute and not data.Impassable) then
-		local routeInfo = GameInfo.Routes[data.RouteType];
-		if (routeInfo ~= nil and routeInfo.MovementCost ~= nil and routeInfo.Name ~= nil) then
-			if(data.RoutePillaged) then
-				RowMovementCost = RowMovementCost.." "..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED", routeInfo.MovementCost, routeInfo.Name);
-			else
-				RowMovementCost = RowMovementCost.." "..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT", routeInfo.MovementCost, routeInfo.Name);
+		if (data.IsRoute) then
+			local routeInfo = GameInfo.Routes[data.RouteType];
+			if (routeInfo ~= nil and routeInfo.MovementCost ~= nil and routeInfo.Name ~= nil) then
+				if(data.RoutePillaged) then
+					-- Bandit: tags order:                                                                           1_Amount                2_RouteName     3_ColorHeading   4_ColorWarning
+					RowMovementCost = RowMovementCost.." "..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED", routeInfo.MovementCost, routeInfo.Name, Palette.Regular, Palette.WarningHigh);
+				else
+					-- Bandit: tags order:                                                                  1_Amount                2_RouteName     3_ColorHeading
+					RowMovementCost = RowMovementCost.." "..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT", routeInfo.MovementCost, routeInfo.Name, Palette.Regular);
+				end
 			end
-		end		
+		end
 	end
 
-	--if(data.Impassable == true) then
-	--	movementCost = movementCost.." "..Locale.Lookup("LOC_TOOLTIP_PLOT_IMPASSABLE_TEXT");
-	--end
-
-	-- Defense modifier
+	-- Defense Modifier
 	if (data.DefenseModifier ~= 0) then
-		RowDefenceModifier = Locale.Lookup("LOC_MOD_TOOLTIP_DEFENSE_MODIFIER", data.DefenseModifier);
+		RowDefenceModifier = CreateHeading("LOC_MOD_TOOLTIP_DEFENSE_MODIFIER")..data.DefenseModifier;
 	end
 
 	-- Appeal
 	local feature = nil;
 	if (data.FeatureType ~= nil) then
-	    feature = GameInfo.Features[data.FeatureType];
+		feature = GameInfo.Features[data.FeatureType];
 	end
 		
 	if GameCapabilities.HasCapability("CAPABILITY_LENS_APPEAL") then
@@ -551,24 +561,64 @@ function GetDetails(data)
 				end
 			end
 			if (strAppealDescriptor) then
-				RowAppeal = Locale.Lookup("LOC_MOD_TOOLTIP_APPEAL", strAppealDescriptor, data.Appeal);
+				RowAppeal = Locale.Lookup("LOC_MOD_TOOLTIP_APPEAL", strAppealDescriptor, data.Appeal, Palette.Regular);
 			end
 		end
 	end
 
 	-- Do not include ('none') continent line unless continent plot. #35955
 	if (data.Continent ~= nil) then
-		RowContinent = Locale.Lookup("LOC_MOD_TOOLTIP_CONTINENT", GameInfo.Continents[data.Continent].Description);
+		RowContinent = CreateHeading("LOC_MOD_TOOLTIP_CONTINENT")..Locale.Lookup(GameInfo.Continents[data.Continent].Description);
 	end
 
 	-- Show number of civilians working here
 	if (data.Owner == Game.GetLocalPlayer() and data.Workers > 0) then
-		--RowWorked = Locale.Lookup("LOC_MOD_TOOLTIP_WORKERS", data.Workers);
 		RowWorked = Locale.Lookup("LOC_MOD_TOOLTIP_WORKERS", data.Workers);
 	end
 
 	if (data.Fallout > 0) then
-		RowContamination = Locale.Lookup("LOC_TOOLTIP_PLOT_CONTAMINATED_TEXT", data.Fallout);
+		if (mod_tooltip_isActive_BlackDeathScenario) then
+			-- Bandit: I did this as a workaround, for some reason localization file was failing to parse with CONTAMINATED tag and I have absolutely no idea why
+			-- Issue https://forums.civfanatics.com/threads/error-parsing-xml-file-cant-make-localization-files-work-as-supposed.699775/
+			RowContamination = Locale.Lookup("LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT", data.Fallout, Palette.WarningHigh);
+		else
+			RowContamination = Locale.Lookup("LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT", data.Fallout, Palette.WarningHigh);
+		end
+	end
+
+	if (mod_tooltip_isActive_PiratesScenario) then
+		if (data.TreasureFleetTooltip ~= nil) then
+			RowAddition = data.TreasureFleetTooltip;
+		end
+
+		if (data.TreasureSearchTooltip ~= nil) then
+			if (RowAddition ~= "") then RowAddition = RowAddition.."[NEWLINE]" end
+			RowAddition = RowAddition..data.TreasureSearchTooltip;
+		end
+
+		if (data.InfamousPirateTooltip ~= nil) then
+			if (RowAddition ~= "") then RowAddition = RowAddition.."[NEWLINE]" end
+			RowAddition = RowAddition..data.InfamousPirateTooltip;
+		end
+
+		if (data.TreasureOwnerTooltip ~= nil)then
+			if (RowOwnership ~= "") then RowOwnership = RowOwnership.."[NEWLINE]" end
+			RowOwnership = RowOwnership..Locale.Lookup("LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER", data.TreasureOwnerTooltip, Palette.Regular);
+		end
+	end
+
+	if (mod_tooltip_isActive_BlackDeathScenario) then
+		if (data.Owner == Game.GetLocalPlayer()) then
+			local pPlayerConfig = PlayerConfigurations[data.Owner];
+			if (pPlayerConfig ~= nil) then
+				-- England UA: show Coerced tiles
+				if (pPlayerConfig:GetCivilizationTypeName() == RULES.EnglandTypeString) then
+					if (data.CoerceTurns ~= nil) then
+						RowAddition = Locale.Lookup("LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL", data.CoerceTurns, Palette.WarningLow);
+					end
+				end
+			end
+		end
 	end
 
 	-- Bandit: I know it would be probably better to put these in table and cycle but here you can just simply select the needed row and put in another order
@@ -591,39 +641,7 @@ function GetDetails(data)
 	if (RowCoastalLowland ~= "") then table.insert(details, RowCoastalLowland); end
 	if (RowDisaster ~= "") then table.insert(details, RowDisaster); end
 	if (RowContamination ~= "") then table.insert(details, RowContamination); end
-
-	if (mod_tooltip_isActive_PiratesScenario) then
-		if(data.TreasureSearchTooltip ~= nil) then
-			table.insert(details, data.TreasureSearchTooltip);
-		end
-
-		if(data.InfamousPirateTooltip ~= nil) then
-			table.insert(details, data.InfamousPirateTooltip);
-		end
-
-		if(data.TreasureFleetTooltip ~= nil) then
-			table.insert(details, data.TreasureFleetTooltip);
-		end
-
-		if(data.TreasureOwnerTooltip ~= nil)then
-			table.insert(details, data.TreasureOwnerTooltip);
-		end
-	end
-
-	if (mod_tooltip_isActive_BlackDeathScenario) then
-		if (data.Owner == Game.GetLocalPlayer()) then
-			local pPlayerConfig = PlayerConfigurations[data.Owner];
-			if (pPlayerConfig ~= nil) then
-				
-				-- England UA: show Coerced tiles
-				if (pPlayerConfig:GetCivilizationTypeName() == RULES.EnglandTypeString) then
-					if (data.CoerceTurns ~= nil) then
-						table.insert(details, Locale.Lookup("LOC_PLOTINFO_COERCED_TURNS_LABEL", data.CoerceTurns));
-					end
-				end
-			end
-		end
-	end
+	if (RowAddition ~= "") then table.insert(details, RowAddition); end
 
 	return details;
 end

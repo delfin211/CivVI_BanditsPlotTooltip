@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_RemoveText_BlackDeath -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 08.09.2025 14:32:22 -->
+<GameData>
+	<LocalizedText>
+		<!-- Bandit: Unused -->
+		<Delete Tag="LOC_TOOLTIP_PLOT_CONTAMINATED_TEXT"/>
+		<!-- Bandit: Replaced -->
+		<Delete Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT"/>
+		<!-- Bandit: Replaced with MOD -->
+		<Delete Tag="LOC_PLOTINFO_COERCED_TURNS_LABEL"/>
+	</LocalizedText>
+</GameData>

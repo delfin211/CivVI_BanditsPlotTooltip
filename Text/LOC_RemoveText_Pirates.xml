@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LOC_RemoveText_Pirates -->
+<!-- Author: Bandit -->
+<!-- DateCreated: 08.09.2025 03:59:09 -->
+<GameData>
+	<LocalizedText>
+		<!-- Bandit: Replaced -->
+		<Delete Tag="LOC_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER"/>
+	</LocalizedText>
+</GameData>

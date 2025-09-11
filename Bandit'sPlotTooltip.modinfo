@@ -4,7 +4,7 @@
     <Name>Bandit's Plot Tooltip [Alpha]</Name>
     <Description>WORK IN PROGRESS. Replaces the default tooltip which shows tile info as randomly ordered unstructured list of features with Civilization V -like one which shows tile info as categorized list.[NEWLINE][NEWLINE]Read the recent change notes you can on the Steam Workshop page.</Description>
     <CustomProperties></CustomProperties>
-    <Created>1757077257</Created>
+    <Created>1757593632</Created>
     <Teaser>WORK IN PROGRESS. Replaces the default tooltip with Civilization V -like.</Teaser>
     <Authors>Bandit Heeler</Authors>
     <SpecialThanks>SomePolishGuy for Polish translation, ThatMarchingArrow for Italian translation.</SpecialThanks>
@@ -96,6 +96,8 @@
         <LoadOrder>1</LoadOrder>
       </Properties>
       <Criteria>PiratesScenario</Criteria>
+      <File priority="1">Text/LOC_RemoveText_Pirates.xml</File>
+      <File>Text/LOC_PlotToolTip_Pirates.xml</File>
     </UpdateText>
     <ReplaceUIScript id="BanditsPlotToolTip_BlackDeath">
       <Properties>
@@ -114,9 +116,11 @@
     </ImportFiles>
     <UpdateText id="BanditsPlotToolTipText_BlackDeath">
       <Properties>
-        <LoadOrder>1</LoadOrder>
+        <LoadOrder>2</LoadOrder>
       </Properties>
       <Criteria>BlackDeathScenario</Criteria>
+      <File priority="1">Text/LOC_RemoveText_BlackDeath.xml</File>
+      <File>Text/LOC_PlotToolTip_BlackDeath.xml</File>
     </UpdateText>
   </InGameActions>
   <Files>
@@ -125,11 +129,14 @@
     <File>Text/LOC_GrammaticalAdditions_Expansion2.xml</File>
     <File>Text/LOC_HelpingText.xml</File>
     <File>Text/LOC_PlotToolTip.xml</File>
+    <File>Text/LOC_PlotToolTip_BlackDeath.xml</File>
     <File>Text/LOC_PlotToolTip_Expansion2.xml</File>
+    <File>Text/LOC_PlotToolTip_Pirates.xml</File>
     <File>Text/LOC_RemoveText.xml</File>
+    <File>Text/LOC_RemoveText_BlackDeath.xml</File>
     <File>Text/LOC_RemoveText_Expansion2.xml</File>
+    <File>Text/LOC_RemoveText_Pirates.xml</File>
     <File>Text/LOC_ReplaceTerrainNames.xml</File>
-    <File>UI/ColorAtlas.xml</File>
     <File>UI/ToolTips/BanditsPlotTooltip.lua</File>
     <File>UI/ToolTips/PlotToolTip.xml</File>
     <File>UI/ToolTips/PlotToolTip_BlackDeathScenario.lua</File>
