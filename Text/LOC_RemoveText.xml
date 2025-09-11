@@ -4,21 +4,24 @@
 <!-- DateCreated: 05.08.2025 22:32:49 -->
 <GameData>
 	<LocalizedText>
-		<!-- Row 1 -->
+		<!-- Ownership -->
 		<Delete Tag="LOC_TOOLTIP_CITY_OWNER"/>
-		<!-- Row 3 -->
+		<!-- Buildings -->
 		<Delete Tag="LOC_TOOLTIP_PLOT_BUILDINGS_TEXT"/>
-		<!-- Row 6 -->
+		<!-- Movement Cost -->
 		<Delete Tag="LOC_TOOLTIP_MOVEMENT_COST"/>
 		<Delete Tag="LOC_TOOLTIP_ROUTE_MOVEMENT"/>
 		<Delete Tag="LOC_TOOLTIP_ROUTE_MOVEMENT_PILLAGED"/>
-		<!-- Row 7 -->
+		<Delete Tag="LOC_TOOLTIP_PLOT_IMPASSABLE_TEXT"/>
+		<!-- Appeal -->
 		<Delete Tag="LOC_TOOLTIP_APPEAL"/>
-		<!-- Row 8 -->
+		<!-- Defence Modifier -->
 		<Delete Tag="LOC_TOOLTIP_DEFENSE_MODIFIER"/>
-		<!-- Row 9 -->
+		<!-- Continent -->
 		<Delete Tag="LOC_TOOLTIP_CONTINENT"/>
 		<!-- Worked --><!-- Bandit: the point of this deletion and replacement is that in the base gave it also puts a new line -->
 		<Delete Tag="LOC_TOOLTIP_PLOT_WORKED_TEXT"/>
+		<!-- Contamination -->
+		<Delete Tag="LOC_TOOLTIP_PLOT_CONTAMINATED_TEXT"/>
 	</LocalizedText>
 </GameData>

@@ -233,7 +233,7 @@ function GetDetails(data)
 							end
 						else
 							if ((valid_feature == true and valid_terrain == true) or valid_resources == true) then
-								RowResource = RowResource.." "..ColorText(Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)), "Civ6Red");
+								RowResource = RowResource.." "..ColorText(Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)), Palette.WarningHigh);
 							end
 						end
 					end
@@ -244,7 +244,7 @@ function GetDetails(data)
 			if (resourceTechType ~= nil and ((valid_feature == true and valid_terrain == true) or valid_resources == true)) then
 				local techType = GameInfo.Technologies[resourceTechType];
 				if (techType ~= nil) then
-					RowResource = RowResource.." "..Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_WARNING", Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)));
+					RowResource = RowResource.." "..ColorText(Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)), Palette.WarningLow);
 				end
 			end
 		end
@@ -505,7 +505,6 @@ function GetDetails(data)
 		end
 
 		if (RowDisaster ~= "") then
-			--RowDisaster = Locale.Lookup("LOC_MOD_TOOLTIP_COLORTAG_EMERGENCY", "LOC_MOD_TOOLTIP_DISASTER")..PUNC_SEPARATOR_COLON..RowDisaster;
 			RowDisaster = CreateHeading_Color("LOC_MOD_TOOLTIP_DISASTER", Palette.WarningLow)..RowDisaster;
 		end
 
@@ -519,28 +518,27 @@ function GetDetails(data)
 		end
 	end
 
-	-- Movement cost
-	if (not data.Impassable and data.MovementCost > 0) then
-		RowMovementCost = Locale.Lookup("LOC_MOD_TOOLTIP_MOVEMENT_COST", data.MovementCost, Palette.Regular);
-	end
+	-- Movement Cost
+	if (not data.Impassable) then
+		if (data.MovementCost > 0) then
+			RowMovementCost = Locale.Lookup("LOC_MOD_TOOLTIP_MOVEMENT_COST", data.MovementCost, Palette.Regular);
+		end
 
-	-- ROUTE TILE
-	if (data.IsRoute and not data.Impassable) then
-		local routeInfo = GameInfo.Routes[data.RouteType];
-		if (routeInfo ~= nil and routeInfo.MovementCost ~= nil and routeInfo.Name ~= nil) then
-			if(data.RoutePillaged) then
-				RowMovementCost = RowMovementCost.." "..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED", routeInfo.MovementCost, routeInfo.Name, Palette.Regular);
-			else
-				RowMovementCost = RowMovementCost.." "..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT", routeInfo.MovementCost, routeInfo.Name, Palette.Regular);
+		if (data.IsRoute) then
+			local routeInfo = GameInfo.Routes[data.RouteType];
+			if (routeInfo ~= nil and routeInfo.MovementCost ~= nil and routeInfo.Name ~= nil) then
+				if(data.RoutePillaged) then
+					-- Bandit: tags order:                                                                           1_Amount                2_RouteName     3_ColorHeading   4_ColorWarning
+					RowMovementCost = RowMovementCost.." "..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED", routeInfo.MovementCost, routeInfo.Name, Palette.Regular, Palette.WarningHigh);
+				else
+					-- Bandit: tags order:                                                                  1_Amount                2_RouteName     3_ColorHeading
+					RowMovementCost = RowMovementCost.." "..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT", routeInfo.MovementCost, routeInfo.Name, Palette.Regular);
+				end
 			end
-		end		
+		end
 	end
 
-	--if(data.Impassable == true) then
-	--	movementCost = movementCost.." "..Locale.Lookup("LOC_TOOLTIP_PLOT_IMPASSABLE_TEXT");
-	--end
-
-	-- Defense modifier
+	-- Defense Modifier
 	if (data.DefenseModifier ~= 0) then
 		RowDefenceModifier = CreateHeading("LOC_MOD_TOOLTIP_DEFENSE_MODIFIER")..data.DefenseModifier;
 	end
@@ -548,7 +546,7 @@ function GetDetails(data)
 	-- Appeal
 	local feature = nil;
 	if (data.FeatureType ~= nil) then
-	    feature = GameInfo.Features[data.FeatureType];
+		feature = GameInfo.Features[data.FeatureType];
 	end
 		
 	if GameCapabilities.HasCapability("CAPABILITY_LENS_APPEAL") then
@@ -579,7 +577,13 @@ function GetDetails(data)
 	end
 
 	if (data.Fallout > 0) then
-		RowContamination = Locale.Lookup("LOC_TOOLTIP_PLOT_CONTAMINATED_TEXT", data.Fallout);
+		if (mod_tooltip_isActive_BlackDeathScenario) then
+			-- Bandit: I did this as a workaround, for some reason localization file was failing to parse with CONTAMINATED tag and I have absolutely no idea why
+			-- Issue https://forums.civfanatics.com/threads/error-parsing-xml-file-cant-make-localization-files-work-as-supposed.699775/
+			RowContamination = Locale.Lookup("LOC_MOD_TOOLTIP_PLOT_PLAGUE_TEXT", data.Fallout, Palette.WarningHigh);
+		else
+			RowContamination = Locale.Lookup("LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT", data.Fallout, Palette.WarningHigh);
+		end
 	end
 
 	if (mod_tooltip_isActive_PiratesScenario) then
@@ -610,7 +614,7 @@ function GetDetails(data)
 				-- England UA: show Coerced tiles
 				if (pPlayerConfig:GetCivilizationTypeName() == RULES.EnglandTypeString) then
 					if (data.CoerceTurns ~= nil) then
-						RowAddition = Locale.Lookup("LOC_PLOTINFO_COERCED_TURNS_LABEL", data.CoerceTurns);
+						RowAddition = Locale.Lookup("LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL", data.CoerceTurns, Palette.WarningLow);
 					end
 				end
 			end
@@ -719,4 +723,3 @@ function View(data:table)
 end
 
 print("Bandit's tooltip loaded!");
-
