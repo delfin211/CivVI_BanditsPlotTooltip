@@ -64,11 +64,11 @@ Portuguese
 		<!-- Fallback for unsupported languages -->
 		<!-- Replaces LOC_TOOLTIP_ROUTE_MOVEMENT -->
 		<Row Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT">
-			<Text>[NEWLINE][COLOR:{3_Color}]Route Movement[ENDCOLOR]: {1_Amount} ({2_RouteName})</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]Route Movement[ENDCOLOR]: {1_Amount} ({2_RouteName})</Text>
 		</Row>
 		<!-- Replaces LOC_TOOLTIP_ROUTE_MOVEMENT_PILLAGED -->
 		<Row Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED">
-			<Text>[NEWLINE][COLOR:{3_Color}]Route Movement[ENDCOLOR]: {1_Amount} ({2_RouteName} [COLOR:Civ6Red](PILLAGED!)[ENDCOLOR])</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]Route Movement[ENDCOLOR]: {1_Amount} ({2_RouteName} [COLOR:{4_ColorWarning}](PILLAGED!)[ENDCOLOR])</Text>
 		</Row>
 		
 		<!-- Appeal -->
@@ -92,7 +92,7 @@ Portuguese
 		<!-- Worked -->
 		<!-- Replaces LOC_TOOLTIP_PLOT_WORKED_TEXT -->
 		<Row Tag="LOC_MOD_TOOLTIP_WORKERS">
-			<Text>Worked by {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?Citizen; other?Citizens;}.</Text>
+			<Text>Worked by {1_Citizens}[ICON_Citizen] {1_Citizens: plural 1?Citizen; other?Citizens;}.</Text>
 		</Row>
 		
 		<!-- Yields -->
@@ -109,6 +109,12 @@ Portuguese
 		<!-- Natural Wonder description -->
 		<Row Tag="LOC_MOD_TOOLTIP_DESCRIPTION">
 			<Text>Description</Text>
+		</Row>
+		
+		<!-- Contamination -->
+		<!-- Replaces LOC_TOOLTIP_PLOT_CONTAMINATED_TEXT -->
+		<Row Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT">
+			<Text>[COLOR:{2_Color}]CONTAMINATED: {1_Fallout} {1: plural 1?turn; other?turns;}[ENDCOLOR]</Text>
 		</Row>
 	</EnglishText>
 	<LocalizedText>
@@ -231,106 +237,106 @@ Portuguese
 			<Text>({1_Amount}[ICON_Movement] on the {2_RouteName})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="en_US">
-			<Text>({1_Amount}[ICON_Movement] on the {2_RouteName} [COLOR:Civ6Red](PILLAGED!)[ENDCOLOR])</Text>
+			<Text>({1_Amount}[ICON_Movement] on the {2_RouteName} [COLOR:{4_ColorWarning}](PILLAGED!)[ENDCOLOR])</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="fr_FR">
-			<Text>[COLOR:{2_Color}]Coût en PM[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+			<Text>[COLOR:{2_Color}]Coût en PM[ENDCOLOR] : {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="fr_FR">
-			<Text>[NEWLINE][COLOR:{3_Color}]Déplacement sur route[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]Déplacement sur route[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="fr_FR">
-			<Text>[NEWLINE][COLOR:{3_Color}]Déplacement sur route[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}, pillée(e))</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]Déplacement sur route[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}, pillée(e))</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="de_DE">
-			<Text>[COLOR:{2_Color}]Fortbewegungskosten[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+			<Text>[COLOR:{2_ColorHeading}]Fortbewegungskosten[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="de_DE">
-			<Text>[NEWLINE][COLOR:{3_Color}]Weg-Fortbewegung[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]Weg-Fortbewegung[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="de_DE">
-			<Text>[NEWLINE][COLOR:{3_Color}]Weg-Fortbewegung[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}, geplündert)</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]Weg-Fortbewegung[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}, geplündert)</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="it_IT">
-			<Text>[COLOR:{2_Color}]Costo di movimento[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+			<Text>[COLOR:{2_ColorHeading}]Costo di movimento[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="it_IT">
 			<Text>({1_Amount}[ICON_Movement] sulla {2_RouteName})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="it_IT">
-			<Text>({1_Amount}[ICON_Movement] sulla {2_RouteName} [COLOR:Civ6Red](SACCHEGGIATA!)[ENDCOLOR])</Text>
+			<Text>({1_Amount}[ICON_Movement] sulla {2_RouteName} [COLOR:{4_ColorWarning}](SACCHEGGIATA!)[ENDCOLOR])</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="es_ES">
-			<Text>[COLOR:{2_Color}]Coste de movimiento[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+			<Text>[COLOR:{2_ColorHeading}]Coste de movimiento[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="es_ES">
 			<Text>({1_Amount}[ICON_Movement] en {2: gender masculine?el; feminine?la; neuter?lo;} {2_RouteName})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="es_ES">
-			<Text>({1_Amount}[ICON_Movement] en {2: gender masculine?el; feminine?la; neuter?lo;} {2_RouteName} [COLOR:Civ6Red](SAQUEADA!)[ENDCOLOR])</Text>
+			<Text>({1_Amount}[ICON_Movement] en {2: gender masculine?el; feminine?la; neuter?lo;} {2_RouteName} [COLOR:{4_ColorWarning}](SAQUEADA!)[ENDCOLOR])</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="ja_JP">
-			<Text>[COLOR:{2_Color}]移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+			<Text>[COLOR:{2_ColorHeading}]移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="ja_JP">
-			<Text>[NEWLINE][COLOR:{3_Color}]道路の移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]道路の移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="ja_JP">
-			<Text>[NEWLINE][COLOR:{3_Color}]道路の移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}、略奪に遭遇)</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]道路の移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}、略奪に遭遇)</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="ru_RU">
-			<Text>[COLOR:{2_Color}]Цена перемещения[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+			<Text>[COLOR:{2_ColorHeading}]Цена перемещения[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="ru_RU">
 			<Text>({1_Amount}[ICON_Movement] по {2_RouteName[3]})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="ru_RU">
-			<Text>({1_Amount}[ICON_Movement] по {2_RouteName[3]} [COLOR:Civ6Red](РАЗГРАБЛЕНО!)[ENDCOLOR])</Text>
+			<Text>({1_Amount}[ICON_Movement] по {2_RouteName[3]} [COLOR:{4_ColorWarning}](РАЗГРАБЛЕНО!)[ENDCOLOR])</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="pl_PL">
-			<Text>[COLOR:{2_Color}]Koszt ruchu[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+			<Text>[COLOR:{2_ColorHeading}]Koszt ruchu[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="pl_PL">
 			<Text>({1_Amount}[ICON_Movement] na {2_RouteName[4]})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="pl_PL">
-			<Text>({1_Amount}[ICON_Movement] na {2_RouteName[4]}) [COLOR:Civ6Red]SPLĄDROWANA![ENDCOLOR])</Text>
+			<Text>({1_Amount}[ICON_Movement] na {2_RouteName[4]}) [COLOR:{4_ColorWarning}]SPLĄDROWANA![ENDCOLOR])</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="ko_KR">
-			<Text>[COLOR:{2_Color}]이동 비용[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+			<Text>[COLOR:{2_ColorHeading}]이동 비용[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="ko_KR">
-			<Text>[NEWLINE][COLOR:{3_Color}]경로 이동[ENDCOLOR]: {1_Amount}[ICON_Movement]({2_RouteName})</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]경로 이동[ENDCOLOR]: {1_Amount}[ICON_Movement]({2_RouteName})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="ko_KR">
-			<Text>[NEWLINE][COLOR:{3_Color}]경로 이동[ENDCOLOR]: {1_Amount}[ICON_Movement]({2_RouteName}, 약탈당함)</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]경로 이동[ENDCOLOR]: {1_Amount}[ICON_Movement]({2_RouteName}, 약탈당함)</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="zh_Hant_HK">
-			<Text>[COLOR:{2_Color}]移動力消耗[ENDCOLOR]：{1_Amount}[ICON_Movement]</Text>
+			<Text>[COLOR:{2_ColorHeading}]移動力消耗[ENDCOLOR]：{1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="zh_Hant_HK">
-			<Text>[NEWLINE][COLOR:{3_Color}]路線移動力[ENDCOLOR]：{1_Amount}[ICON_Movement] （{2_RouteName}）</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]路線移動力[ENDCOLOR]：{1_Amount}[ICON_Movement] （{2_RouteName}）</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="zh_Hant_HK">
-			<Text>[NEWLINE][COLOR:{3_Color}]路線移動力[ENDCOLOR]：{1_Amount}[ICON_Movement] （{2_RouteName}, 掠奪）</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]路線移動力[ENDCOLOR]：{1_Amount}[ICON_Movement] （{2_RouteName}, 掠奪）</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="zh_Hans_CN">
-			<Text>[COLOR:{2_Color}]移动力消耗[ENDCOLOR]：{1_Amount}[ICON_Movement]</Text>
+			<Text>[COLOR:{2_ColorHeading}]移动力消耗[ENDCOLOR]：{1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="zh_Hans_CN">
-			<Text>[NEWLINE][COLOR:{3_Color}]路线移动力[ENDCOLOR]：{1_Amount}[ICON_Movement]（{2_RouteName}）</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]路线移动力[ENDCOLOR]：{1_Amount}[ICON_Movement]（{2_RouteName}）</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="zh_Hans_CN">
-			<Text>[NEWLINE][COLOR:{3_Color}]路线移动力[ENDCOLOR]：{1_Amount}[ICON_Movement]（{2_RouteName}, 掠夺）</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]路线移动力[ENDCOLOR]：{1_Amount}[ICON_Movement]（{2_RouteName}, 掠夺）</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="pt_BR">
-			<Text>[COLOR:{2_Color}]Custo de movimento[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
+			<Text>[COLOR:{2_ColorHeading}]Custo de movimento[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="pt_BR">
-			<Text>[NEWLINE][COLOR:{3_Color}]Movimento na rota[ENDCOLOR]: {1_Amount}[ICON_Movement] em ({2_RouteName})</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]Movimento na rota[ENDCOLOR]: {1_Amount}[ICON_Movement] em ({2_RouteName})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="pt_BR">
-			<Text>[NEWLINE][COLOR:{3_Color}]Movimento na rota[ENDCOLOR]: {1_Amount}[ICON_Movement] em ({2_RouteName}, saqueada)</Text>
+			<Text>[NEWLINE][COLOR:{3_ColorHeading}]Movimento na rota[ENDCOLOR]: {1_Amount}[ICON_Movement] em ({2_RouteName}, saqueada)</Text>
 		</Replace>
 		<!-- Appeal -->
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="fr_FR">
@@ -352,7 +358,7 @@ Portuguese
 			<Text>[COLOR:{3_Color}]Престиж[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="pl_PL">
-			<Text>[COLOR:{3_Color}]Atrakcyjność[ENDCOLOR]: {1_AppealDesc[7]} ({2_AppealValue[7]})</Text>
+			<Text>[COLOR:{3_Color}]Atrakcyjność[ENDCOLOR]: {1_AppealDesc[7]} ({2_AppealValue})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="ko_KR">
 			<Text>[COLOR:{3_Color}]매력도[ENDCOLOR]: {1_AppealDesc}({2_AppealValue})</Text>
@@ -436,37 +442,37 @@ Portuguese
 		</Replace>
 		<!-- Worked -->
 		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="fr_FR">
-			<Text>Exploitée par {1_Citizens} [ICON_Citizen] {1_Citizens: plural 1?citoyen; other?citoyens;}.</Text>
+			<Text>Exploitée par {1_Citizens}[ICON_Citizen] {1_Citizens: plural 1?citoyen; other?citoyens;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="de_DE">
-			<Text>Von {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?Bürger; other?Bürgern;} bearbeitet.</Text>
+			<Text>Von {1_Citizens}[ICON_Citizen] {1_Citizens : plural 1?Bürger; other?Bürgern;} bearbeitet.</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="it_IT">
-			<Text>Sfruttata da {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?cittadino; other?cittadini;}.</Text>
+			<Text>Sfruttata da {1_Citizens}[ICON_Citizen] {1_Citizens: plural 1?cittadino; other?cittadini;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="es_ES">
-			<Text>Explotada por {1_Citizens} [ICON_Citizen] {1_Citizens: plural 1?Ciudadano; other?Ciudadanos;}.</Text>
+			<Text>Explotada por {1_Citizens}[ICON_Citizen] {1_Citizens: plural 1?Ciudadano; other?Ciudadanos;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="ja_JP">
-			<Text>{1_Citizens}人の [ICON_Citizen] {1_Citizens : plural 1?市民; other?市民;}が従事。</Text>
+			<Text>{1_Citizens}人の [ICON_Citizen] 市民が従事。</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="ru_RU">
-			<Text>Работники: {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?горожанин; 2?горожанина; other?горожан;}.</Text>
+			<Text>Работники: {1_Citizens}[ICON_Citizen] {1_Citizens: plural 1?горожанин; 2?горожанина; other?горожан;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="pl_PL">
-			<Text>Eksploatowane przez {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?obywatela; other?obywateli;}.</Text>
+			<Text>Eksploatowane przez {1_Citizens} [ICON_Citizen] {1_Citizens: plural 1?obywatela; other?obywateli;}.</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="ko_KR">
-			<Text>[ICON_Citizen] {1_Citizens : plural 1?시민; other?시민;} {1_Citizens}명이 작업합니다.</Text>
+			<Text>[ICON_Citizen] 시민 {1_Citizens}명이 작업합니다.</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="zh_Hant_HK">
-			<Text>有{1_Citizens}位 [ICON_Citizen] {1_Citizens : plural 1?公民; other?公民;}在此工作。</Text>
+			<Text>有{1_Citizens}位[ICON_Citizen] 公民在此工作。</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="zh_Hans_CN">
-			<Text>有{1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?公民; other?公民;}在此工作。</Text>
+			<Text>有{1_Citizens}[ICON_Citizen] 公民在此工作。</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WORKERS" Language="pt_BR">
-			<Text>Trabalhado por {1_Citizens} [ICON_Citizen] {1_Citizens : plural 1?cidadão; other?cidadãos;}.</Text>
+			<Text>Trabalhado por {1_Citizens}[ICON_Citizen] {1_Citizens: plural 1?cidadão; other?cidadãos;}.</Text>
 		</Replace>
 		<!-- Yields -->
 		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="it_IT">
@@ -517,6 +523,40 @@ Portuguese
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="pl_PL">
 			<text>Opis</text>
+		</Replace>
+		<!-- Contamination -->
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="fr_FR">
+			<Text>[COLOR:{2_Color}]CONTAMINATION : {1_Fallout} {1_Fallout: plural 1?tour; other?tours;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="de_DE">
+			<Text>[COLOR:{2_Color}]KONTAMINIERT: {1_Fallout} {1_Fallout: plural 1?Runde; other?Runden;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="it_IT">
+			<Text>[COLOR:{2_Color}]CONTAMINAZIONE: {1_Fallout} {1: plural 1?turno; other?turni;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="es_ES">
+			<Text>[COLOR:{2_Color}]CONTAMINADO: {1_Fallout} {1: plural 1?turno; other?turnos;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="ja_JP">
+			<Text>[COLOR:{2_Color}]汚染: {1_Fallout}ターン[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="ru_RU">
+			<Text>[COLOR:{2_Color}]ЗАГРЯЗНЕНИЕ: {1_Fallout} {1: plural 1?ход; 2?хода; other?ходов;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="pl_PL">
+			<Text>[COLOR:{2_Color}]ZANIECZYSZCZENIE: {1_Fallout} {1_Num: plural 1?tura; 2?tury; other?tur;}[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="ko_KR">
+			<Text>[COLOR:{2_Color}]오염: {1_Fallout}턴[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="zh_Hant_HK">
+			<Text>[COLOR:{2_Color}]已被污染：{1_Fallout}回合[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="zh_Hans_CN">
+			<Text>[COLOR:{2_Color}]已被污染：{1_Fallout}回合[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="pt_BR">
+			<Text>[COLOR:{2_Color}]CONTAMINADO: {1_Fallout} turnos[ENDCOLOR]</Text>
 		</Replace>
 	</LocalizedText>
 </GameData>
