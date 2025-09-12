@@ -106,6 +106,8 @@ function GetDetails(data)
 	-- Bandit: used for scenarios
 	local RowAddition:string = "";
 
+	local localPlayer = Players[Game.GetLocalPlayer()];
+
 	-- Bandit: Ownership
 	if (data.Owner ~= nil) then
 
@@ -210,7 +212,6 @@ function GetDetails(data)
 			end
 		end
 
-		local localPlayer = Players[Game.GetLocalPlayer()];
 		if (localPlayer ~= nil) then
 			local playerResources = localPlayer:GetResources();
 			if (playerResources:IsResourceVisible(resourceHash)) then
@@ -270,6 +271,14 @@ function GetDetails(data)
 		return yields;
 	end -- function ParseYields
 
+	function ParseTourism()
+		local tourism = localPlayer:GetCulture():GetTourismAt(data.Index);
+		if (tourism > 0) then
+			if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA end
+			RowYields = RowYields..tourism.."[ICON_Tourism]";
+		end
+	end
+
 	-- CITY TILE
 	if (data.IsCity == true and data.DistrictType ~= nil) then
 		RowDistrict = CreateHeading("LOC_DISTRICT_NAME")..Locale.Lookup(GameInfo.Districts[data.DistrictType].Name);
@@ -279,6 +288,7 @@ function GetDetails(data)
 			if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA end
 			RowYields = RowYields..ResourceExtraction;
 		end
+		ParseTourism();
 		if (RowYields ~= "")              then RowYields = ColorText("LOC_MOD_TOOLTIP_YIELDS", Palette.Regular).." "..Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT", RowYields) end
 
 	-- DISTRICT TILE
@@ -297,6 +307,7 @@ function GetDetails(data)
 				if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA end
 				RowYields = RowYields..ResourceExtraction;
 			end
+			ParseTourism();
 			if (RowYields ~= "") then RowYields = Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT", RowYields) end
 
 			-- Plot yields (ie. from Specialists)
@@ -341,6 +352,7 @@ function GetDetails(data)
 			if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA end
 			RowYields = RowYields..ResourceExtraction;
 		end
+		if (localPlayer ~= nil)           then ParseTourism(); end
 		if (RowYields ~= "")              then RowYields = CreateHeading("LOC_MOD_TOOLTIP_YIELDS")..RowYields end
 
 	end
@@ -353,7 +365,9 @@ function GetDetails(data)
 			if (data.WonderType ~= nil) then
 				RowBuildings = CreateHeading("LOC_WONDER_NAME")..Locale.Lookup(GameInfo.Buildings[data.WonderType].Name);
 				if (data.WonderCompete == false) then RowBuildings = RowBuildings.." "..Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT"); end
-				if (ResourceExtraction ~= "") then RowYields = CreateHeading("LOC_MOD_TOOLTIP_YIELDS")..ResourceExtraction end
+				if (ResourceExtraction ~= "") then RowYields = ResourceExtraction end
+				ParseTourism();
+				if (RowYields ~= "") then RowYields = CreateHeading("LOC_MOD_TOOLTIP_YIELDS")..RowYields end
 			else
 				RowBuildings = CreateHeading("LOC_MOD_TOOLTIP_BUILDINGS");
 			end
@@ -407,7 +421,6 @@ function GetDetails(data)
 			if (data.IsVolcano) then RowTerrain = RowTerrain..PUNC_SEPARATOR_COMMA..Locale.Lookup("LOC_FEATURE_VOLCANO_NAME") end
 		else
 			local szFeatureString = Locale.Lookup(GameInfo.Features[data.FeatureType].Name);
-			local localPlayer = Players[Game.GetLocalPlayer()];
 			local addCivicName = GameInfo.Features[data.FeatureType].AddCivic;
 			if (localPlayer ~= nil and addCivicName ~= nil) then
 				local civicIndex = GameInfo.Civics[addCivicName].Index;
