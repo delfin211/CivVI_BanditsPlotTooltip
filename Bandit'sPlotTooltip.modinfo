@@ -1,16 +1,47 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Mod id="a939c131-1a59-4ccc-b1c0-1df9aabe61d7" version="1">
   <Properties>
-    <Name>Bandit's Plot Tooltip [Alpha]</Name>
-    <Description>WORK IN PROGRESS. Replaces the default tooltip which shows tile info as randomly ordered unstructured list of features with Civilization V -like one which shows tile info as categorized list.[NEWLINE][NEWLINE]Read the recent change notes you can on the Steam Workshop page.</Description>
-    <CustomProperties></CustomProperties>
-    <Created>1757593632</Created>
-    <Teaser>WORK IN PROGRESS. Replaces the default tooltip with Civilization V -like.</Teaser>
+    <Name>LOC_MOD_BANDITSPLOTTOOLTIP_NAME</Name>
+    <Description>LOC_MOD_BANDITSPLOTTOOLTIP_DESCRIPTION</Description>
+    <Created>1757604388</Created>
+    <Teaser>LOC_MOD_BANDITSPLOTTOOLTIP_TEASER</Teaser>
     <Authors>Bandit Heeler</Authors>
-    <SpecialThanks>SomePolishGuy for Polish translation, ThatMarchingArrow for Italian translation.</SpecialThanks>
+    <SpecialThanks>SomePolishGuy for Polish translation, ThatMarchingArrow for Italian and partly Spanish translation, ViccStarr for Spanish translation.</SpecialThanks>
     <AffectsSavedGames>0</AffectsSavedGames>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
+  <LocalizedText>
+    <Text id="LOC_MOD_BANDITSPLOTTOOLTIP_NAME">
+      <en_US>Bandit's Plot Tooltip [Alpha]</en_US>
+      <ru_RU>Bandit's Plot Tooltip [Альфа]</ru_RU>
+      <pl_PL>Bandit's Plot Tooltip [Alfa]</pl_PL>
+    </Text>
+    <Text id="LOC_MOD_BANDITSPLOTTOOLTIP_DESCRIPTION">
+      <en_US>WORK IN PROGRESS. Replaces plot tooltip which shows tile info as randomly ordered unstructured list of features with Civilization V -like one which shows tile info as categorized list.[NEWLINE][NEWLINE]Read the recent change notes you can on the Steam Workshop page.</en_US>
+      <ru_RU>Мод заменяет стандартную карточку с неструктурированным и в случайном порядке описанием тайла на структурированную, похоже на то, как то было в Civilization V.</ru_RU>
+      <pl_PL>Zastępuje domyślne narzędzie podpowiedzi, które wyświetla informacje o polach jako randomową i nieuporządkowaną listę, do tej podobnej w Civilization V, która pokazuje informacje o polach w formie skategoryzowanej listy.</pl_PL>
+    </Text>
+    <Text id="LOC_MOD_BANDITSPLOTTOOLTIP_TEASER">
+      <en_US>WORK IN PROGRESS. Replaces plot tooltip with Civilization V -like.</en_US>
+    </Text>
+    <!-- template -->
+    <!--
+    <Text id="">
+      <en_US></en_US>
+      <fr_FR></fr_FR>
+      <de_DE></de_DE>
+      <it_IT></it_IT>
+      <es_ES></es_ES>
+      <ja_JP></ja_JP>
+      <ru_RU></ru_RU>
+      <pl_PL></pl_PL>
+      <ko_KR></ko_KR>
+      <zh_Hant_HK></zh_Hant_HK>
+      <zh_Hans_CN></zh_Hans_CN>
+      <pt_BR></pt_BR>
+    </Text>
+    -->
+  </LocalizedText>
   <ActionCriteria>
     <Criteria id="Expansion2">
       <GameCoreInUse>Expansion2</GameCoreInUse>
@@ -29,7 +60,6 @@
       <RuleSetInUse>RULESET_SCENARIO_BLACKDEATH</RuleSetInUse>
     </Criteria>
   </ActionCriteria>
-  <FrontEndActions />
   <InGameActions>
     <ReplaceUIScript id="BanditsPlotToolTip">
       <Properties>
