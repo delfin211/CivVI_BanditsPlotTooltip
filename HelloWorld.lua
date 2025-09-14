@@ -2,4 +2,67 @@
 -- Author: Bandit
 -- DateCreated: 01.08.2025 00:55:49
 --------------------------------------------------------------
-print("Hello World from the Lua Script")
+-- This file doesn't do anything
+-- but it is a short story of the mod development
+-- the timestamp above is when creation had started
+-- I'm writing this on 13.09.2025 at 22:21:20 UTC+7
+-- preparing to push the mod beta
+-- all the functionality is completed
+-- only left to make translations which was supposed to be the last thing before release
+-- I know that I'm very limited here and I need community to help
+-- And here's something completely off-topic:
+-- recently I discovered Strangers by Scratch21 and hell it's really beautiful song
+-- love it
+-- Also I want to thank GrimmsterZ for being my rubber duck :D
+--------------------------------------------------------------
+-- First couple days I spent trying to proof a concept that it's even possible to alter the tooltip
+-- I was new to lua and mod development in general and Civ VI in particular
+-- back then I was struggling a lot trying to make it at least work
+-- and not gonna lie I looked at code of already existing mods such as CQUI and Spy City Tooltip
+-- to see how they include files and in what context and if not those I'd probably drop it
+-- My sincere gratitude to the devs of those mods
+--------------------------------------------------------------
+-- 05.08.2025 01:25 the mod was first uploaded to Steam Workshop after 5 days in development
+-- then it was only available for friends as early prototype
+--------------------------------------------------------------
+-- 08.08.2025 21:30 the mod was made public on Steam Workshop
+--------------------------------------------------------------
+-- 12.08.2025 23:17 another update was released
+-- the update made the mod compatible with Gathering Storm expansion
+-- which was another challenge to overcome
+-- had to figure how to properly replace scripts and prevent replacement when more scripts in use
+--------------------------------------------------------------
+-- 19.08.2025 18:54 pushed the mod to alpha
+-- for that I removed all the duplicated code
+-- at first I just copied game files and was just modifying them and thankfully it worked
+--------------------------------------------------------------
+-- 23.08.2025 18:44 another update and I'm proud of this one really much
+-- made it use different punctuation and most importantly it's proper for different languages
+-- not completely yet but hey it's much better than just putting everywhere only european comma
+--------------------------------------------------------------
+-- 29.08.2025 15:06 another update and is not just a regular update
+-- I finally uploaded it on GitHub which I was delaying for long
+-- Also my huge thank to ThatMarchingArrow for Italian translation of my mod
+-- this update contains more things that I'm proud of but I won't duplicate change notes
+--------------------------------------------------------------
+-- 04.09.2025 20:56 my first suspended update
+-- My huge thanks to ViccStarr for Spanish translation
+-- though ThatMarchingArrow also translated a few things aswell
+-- The reason for suspension was that I forgot to update references in .modinfo
+-- after renaming 2 files
+-- and that for some weird reason game parser was showing errors when I updated references
+-- it's my first experience of fighting really weird issue
+-- the files were perfectly fine and there were no typos and no errors and no xml structure violations
+-- https://github.com/delfin211/CivVI_BanditsPlotTooltip/issues/3
+-- and it's my first magic issue when exactly the same files are not working and then working
+-- I fixed it by pulling old versions of files from archive and re-adding the same pieces of code
+-- when I made it work I uploaded those files to GitHub
+-- and there are no words to describe all my pain when I found out they were exacttly the same
+-- What was that even?
+-- 05.09.2025 20:54 the update was re-uploaded
+--------------------------------------------------------------
+-- 11.09.2025 20:26 the last update before pushing my mod to beta
+-- Here another magic issue happened but this time the parser behaves differently
+-- https://forums.civfanatics.com/threads/error-parsing-xml-file-cant-make-localization-files-work-as-supposed.699775/
+-- i have no damn idea what even to do to make it work as I wanted at first
+-- but I made a workaround and well at least it works this way
