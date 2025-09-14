@@ -74,7 +74,7 @@ Portuguese
 		<!-- Appeal -->
 		<!-- Replaces LOC_TOOLTIP_APPEAL -->
 		<Row Tag="LOC_MOD_TOOLTIP_APPEAL">
-			<Text>[COLOR:{3_Color}]Appeal[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+			<Text>[COLOR:{3_Color}]Appeal[ENDCOLOR]: {2_AppealValue} ~ {1_AppealDesc}</Text>
 		</Row>
 		
 		<!-- Defence Modifier -->
@@ -160,6 +160,9 @@ Portuguese
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="zh_Hans_CN">
 			<Text>拥有者</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CLAN" Language="zh_Hans_CN">
+			<Text>氏族</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="pt_BR">
 			<Text>Proprietário</Text>
@@ -300,7 +303,7 @@ Portuguese
 			<Text>({1_Amount}[ICON_Movement] na {2_RouteName[4]})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="pl_PL">
-			<Text>({1_Amount}[ICON_Movement] na {2_RouteName[4]}) [COLOR:{4_ColorWarning}]SPLĄDROWANA![ENDCOLOR])</Text>
+			<Text>({1_Amount}[ICON_Movement] na {2_RouteName[4]} [COLOR:{4_ColorWarning}](SPLĄDROWANA!)[ENDCOLOR])</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="ko_KR">
 			<Text>[COLOR:{2_ColorHeading}]이동 비용[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
@@ -340,25 +343,25 @@ Portuguese
 		</Replace>
 		<!-- Appeal -->
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="fr_FR">
-			<Text>[COLOR:{3_Color}]Attrait[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+			<Text>[COLOR:{3_Color}]Attrait[ENDCOLOR] : {2_AppealValue} ~ {1_AppealDesc}</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="de_DE">
 			<Text>[COLOR:{3_Color}]Anziehungskraft[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="it_IT">
-			<Text>[COLOR:{3_Color}]Appeal[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+			<Text>[COLOR:{3_Color}]Appeal[ENDCOLOR]: {2_AppealValue} ~ {1_AppealDesc}</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="es_ES">
-			<Text>[COLOR:{3_Color}]Atractivo[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+			<Text>[COLOR:{3_Color}]Atractivo[ENDCOLOR]: {2_AppealValue} ~ {1_AppealDesc}</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="ja_JP">
 			<Text>[COLOR:{3_Color}]アピール[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="ru_RU">
-			<Text>[COLOR:{3_Color}]Престиж[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+			<Text>[COLOR:{3_Color}]Престиж[ENDCOLOR]: {2_AppealValue} ~ {1_AppealDesc}</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="pl_PL">
-			<Text>[COLOR:{3_Color}]Atrakcyjność[ENDCOLOR]: {1_AppealDesc[7]} ({2_AppealValue})</Text>
+			<Text>[COLOR:{3_Color}]Atrakcyjność[ENDCOLOR]: {2_AppealValue} ~ {1_AppealDesc}</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="ko_KR">
 			<Text>[COLOR:{3_Color}]매력도[ENDCOLOR]: {1_AppealDesc}({2_AppealValue})</Text>
@@ -511,6 +514,15 @@ Portuguese
 		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="pl_PL">
 			<Text>od specjalistów: {1_Yields}</Text>
 		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="zh_Hans_CN">
+			<Text>收益</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT" Language="zh_Hans_CN">
+			<Text>来自区域：{1_Yields}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="zh_Hans_CN">
+			<Text>来自专家：{1_Yields}</Text>
+		</Replace>
 		<!-- Natural Wonder description -->
 		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="it_IT">
 			<Text>Descrizione</Text>
@@ -523,6 +535,9 @@ Portuguese
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="pl_PL">
 			<text>Opis</text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>描述</Text>
 		</Replace>
 		<!-- Contamination -->
 		<Replace Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT" Language="fr_FR">

@@ -38,8 +38,8 @@
 			<Text>{1_OwnerName}的寶藏</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="zh_Hans_CN">
-			<Text>{1_OwnerName}的宝藏</Text>
-		</Replace>
+			<Text>[COLOR:{2_Color}]宝藏来源[ENDCOLOR]：{1_OwnerName}</Text>
+		</Replace> 
 		<Replace Tag="LOC_MOD_PIRATES_PLOT_TOOLTIP_TREASURE_OWNER" Language="pt_BR">
 			<Text>Tesouro de {1_OwnerName}</Text>
 		</Replace>
