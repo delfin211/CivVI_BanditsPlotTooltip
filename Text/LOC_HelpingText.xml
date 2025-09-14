@@ -5,15 +5,6 @@
 <GameData>
 	<BaseGameText>
 		<!-- File optimization props -->
-		<Row Tag="LOC_MOD_TOOLTIP_COLORTAG_HEADING">
-			<Text>[COLOR:COLOR_MEDIUM_GREEN]{1_Content}[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="LOC_MOD_TOOLTIP_COLORTAG_WARNING">
-			<Text>[COLOR:Civ6Red]{1_Content}[ENDCOLOR]</Text>
-		</Row>
-		<Row Tag="LOC_MOD_TOOLTIP_COLORTAG_EMERGENCY">
-			<Text>[COLOR:Emergency_Bronze]{1_Content}[ENDCOLOR]</Text>
-		</Row>
 		<Row Tag="LOC_MOD_TOOLTIP_COLORTAG_CUSTOM">
 			<Text>[COLOR:{2_color}]{1_Content}[ENDCOLOR]</Text>
 		</Row>
