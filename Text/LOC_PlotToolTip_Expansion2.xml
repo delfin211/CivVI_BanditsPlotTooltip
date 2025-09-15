@@ -73,6 +73,26 @@
 		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="es_ES">
 			<Text>Rios</Text>
 		</Replace>
+		<!--
+		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="ja_JP">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_LAND_AREA" Language="ja_JP">
+			<Text></Text>
+		</Replace>
+		-->
+		<Replace Tag="LOC_MOD_TOOLTIP_MOUNTAIN_AREA" Language="ja_JP">
+			<Text>連峰</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_VOLCANO_UNNAMED" Language="ja_JP">
+			<Text>未命名</Text>
+		</Replace>
+		<Replace Tag="LOC_VOLCANO_INACTIVE_STRING" Language="ja_JP">
+			<Text>(休止中)</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="ja_JP">
+			<Text>川</Text>
+		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="ru_RU">
 			<Text>Акватория</Text>
 		</Replace>

@@ -140,6 +140,9 @@ Portuguese
 		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="ja_JP">
 			<Text>所有者</Text>
 		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CLAN" Language="ja_JP">
+			<Text>蛮族</Text>
+		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="ru_RU">
 			<Text>Владелец</Text>
 		</Replace>
@@ -162,7 +165,7 @@ Portuguese
 			<Text>拥有者</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_CLAN" Language="zh_Hans_CN">
-			<Text>氏族</Text>
+			<Text>蛮族氏族</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="pt_BR">
 			<Text>Proprietário</Text>
@@ -496,6 +499,15 @@ Portuguese
 		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="es_ES">
 			<Text>de especialistas: {1_Yields}</Text>
 		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="ja_JP">
+			<Text>生産</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT" Language="ja_JP">
+			<Text>地区: {1_Yields}</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS" Language="ja_JP">
+			<Text>専門家: {1_Yields}</Text>
+		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="ru_RU">
 			<Text>Производство</Text>
 		</Replace>
@@ -529,6 +541,9 @@ Portuguese
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="es_ES">
 			<Text>Descripción</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="ja_JP">
+			<Text>説明</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="ru_RU">
 			<Text>Описание</Text>
