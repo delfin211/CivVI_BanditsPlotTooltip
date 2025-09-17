@@ -50,12 +50,17 @@ Portuguese
 		<Row Tag="LOC_MOD_TOOLTIP_BUILDINGS">
 			<Text>Buildings</Text>
 		</Row>
-		
+
+		<!-- Resource -->
+		<Row Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH">
+			<Text>[COLOR:{2_color}](Requires {1_TechName})[ENDCOLOR]</Text>
+		</Row>
+
 		<!-- Terrain -->
 		<Row Tag="LOC_MOD_TOOLTIP_TERRAIN">
 			<Text>Terrain</Text>
 		</Row>
-		
+
 		<!-- Movement Cost -->
 		<!-- Replaces LOC_TOOLTIP_MOVEMENT_COST -->
 		<Row Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST">
@@ -70,31 +75,31 @@ Portuguese
 		<Row Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED">
 			<Text>[NEWLINE][COLOR:{3_ColorHeading}]Route Movement[ENDCOLOR]: {1_Amount} ({2_RouteName} [COLOR:{4_ColorWarning}](PILLAGED!)[ENDCOLOR])</Text>
 		</Row>
-		
+
 		<!-- Appeal -->
 		<!-- Replaces LOC_TOOLTIP_APPEAL -->
 		<Row Tag="LOC_MOD_TOOLTIP_APPEAL">
 			<Text>[COLOR:{3_Color}]Appeal[ENDCOLOR]: {2_AppealValue} ~ {1_AppealDesc}</Text>
 		</Row>
-		
+
 		<!-- Defence Modifier -->
 		<!-- Replaces LOC_TOOLTIP_DEFENSE_MODIFIER -->
 		<Row Tag="LOC_MOD_TOOLTIP_DEFENSE_MODIFIER">
 			<Text>Defense Modifier</Text>
 		</Row>
-		
+
 		<!-- Continent -->
 		<!-- Replaces LOC_TOOLTIP_CONTINENT -->
 		<Row Tag="LOC_MOD_TOOLTIP_CONTINENT">
 			<Text>Continent</Text>
 		</Row>
-		
+
 		<!-- Worked -->
 		<!-- Replaces LOC_TOOLTIP_PLOT_WORKED_TEXT -->
 		<Row Tag="LOC_MOD_TOOLTIP_WORKERS">
 			<Text>Worked by {1_Citizens}[ICON_Citizen] {1_Citizens: plural 1?Citizen; other?Citizens;}.</Text>
 		</Row>
-		
+
 		<!-- Yields -->
 		<Row Tag="LOC_MOD_TOOLTIP_YIELDS">
 			<Text>Yields</Text>
@@ -105,12 +110,12 @@ Portuguese
 		<Row Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS">
 			<Text>from specialists: {1_Yields}</Text>
 		</Row>
-		
+
 		<!-- Natural Wonder description -->
 		<Row Tag="LOC_MOD_TOOLTIP_DESCRIPTION">
 			<Text>Description</Text>
 		</Row>
-		
+
 		<!-- Contamination -->
 		<!-- Replaces LOC_TOOLTIP_PLOT_CONTAMINATED_TEXT -->
 		<Row Tag="LOC_MOD_TOOLTIP_PLOT_CONTAMINATED_TEXT">
@@ -204,6 +209,40 @@ Portuguese
 		<Replace Tag="LOC_MOD_TOOLTIP_BUILDINGS" Language="pt_BR">
 			<Text>Edificações</Text>
 		</Replace>
+		<!-- Resource -->
+		<Replace Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH" Language="fr_FR">
+			<Text>[COLOR:{2_color}](Nécessite {1_TechName})[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH" Language="de_DE">
+			<Text>[COLOR:{2_color}](Benötigt {1_TechName})[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH" Language="it_IT">
+			<Text>[COLOR:{2_color}](Richiede {1_TechName})[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH" Language="es_ES">
+			<Text>[COLOR:{2_color}](Necesita {1_TechName})[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH" Language="ja_JP">
+			<Text>[COLOR:{2_color}]（条件{1_TechName}）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH" Language="ru_RU">
+			<Text>[COLOR:{2_color}](Требуется: {1_TechName})[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH" Language="pl_PL">
+			<Text>[COLOR:{2_color}](Wymóg: {1_TechName})[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH" Language="ko_KR">
+			<Text>[COLOR:{2_color}]（필요 {1_TechName}）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH" Language="zh_Hant_HK">
+			<Text>[COLOR:{2_color}]（需求{1_TechName}）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH" Language="zh_Hans_CN">
+			<Text>[COLOR:{2_color}]（需求{1_TechName}）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_REQUIRED_TECH" Language="pt_BR">
+			<Text>[COLOR:{2_color}](Requer {1_TechName})[ENDCOLOR]</Text>
+		</Replace>
 		<!-- Terrain -->
 		<Replace Tag="LOC_MOD_TOOLTIP_TERRAIN" Language="fr_FR">
 			<Text>Terrain</Text>
@@ -285,7 +324,7 @@ Portuguese
 			<Text>[COLOR:{2_ColorHeading}]移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="ja_JP">
-			<Text>[NEWLINE][COLOR:{3_ColorHeading}]道路の移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName})</Text>
+			<Text>({2_RouteName}では {1_Amount}[ICON_Movement])</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="ja_JP">
 			<Text>[NEWLINE][COLOR:{3_ColorHeading}]道路の移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}、略奪に遭遇)</Text>
@@ -349,7 +388,7 @@ Portuguese
 			<Text>[COLOR:{3_Color}]Attrait[ENDCOLOR] : {2_AppealValue} ~ {1_AppealDesc}</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="de_DE">
-			<Text>[COLOR:{3_Color}]Anziehungskraft[ENDCOLOR]: {1_AppealDesc} ({2_AppealValue})</Text>
+			<Text>[COLOR:{3_Color}]Anziehungskraft[ENDCOLOR]: {2_AppealValue} ~ {1_AppealDesc}</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_APPEAL" Language="it_IT">
 			<Text>[COLOR:{3_Color}]Appeal[ENDCOLOR]: {2_AppealValue} ~ {1_AppealDesc}</Text>
@@ -500,7 +539,7 @@ Portuguese
 			<Text>de especialistas: {1_Yields}</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS" Language="ja_JP">
-			<Text>生産</Text>
+			<Text>産出物</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT" Language="ja_JP">
 			<Text>地区: {1_Yields}</Text>

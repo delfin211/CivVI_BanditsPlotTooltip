@@ -73,14 +73,12 @@
 		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="es_ES">
 			<Text>Rios</Text>
 		</Replace>
-		<!--
 		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="ja_JP">
-			<Text></Text>
+			<Text>水域</Text>
 		</Replace>
-		<Replace Tag="LOC_MOD_TOOLTIP_LAND_AREA" Language="ja_JP">
+		<!--<Replace Tag="LOC_MOD_TOOLTIP_LAND_AREA" Language="ja_JP">
 			<Text></Text>
-		</Replace>
-		-->
+		</Replace>-->
 		<Replace Tag="LOC_MOD_TOOLTIP_MOUNTAIN_AREA" Language="ja_JP">
 			<Text>連峰</Text>
 		</Replace>
