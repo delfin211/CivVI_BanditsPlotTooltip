@@ -23,6 +23,15 @@ local Palette:table = {
 	Land = "67,71,63,255"
 };
 
+-- Bandit: custom colors
+local Palette:table = {
+	Regular = "COLOR_MEDIUM_GREEN",
+	WarningLow = "219,109,23,255",
+	WarningHigh = "Civ6Red",
+	Water = "8,81,140,255",
+	Land = "67,71,63,255"
+};
+
 -- Bandit: this is needed for simple language processing, punctuation
 local Language:string = Options.GetAppOption("Language", "DisplayLanguage");
 
