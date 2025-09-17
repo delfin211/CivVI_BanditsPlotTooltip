@@ -79,7 +79,7 @@
 			<Text>[COLOR:{2_Color}]已強徵[ENDCOLOR]：{1_Num}回合</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="zh_Hans_CN">
-			<Text>[COLOR:{2_Color}]强征[ENDCOLOR]：{1_Num}回合</Text>
+			<Text>[COLOR:{2_Color}]征集[ENDCOLOR]：{1_Num}回合</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_PLOTINFO_COERCED_TURNS_LABEL" Language="pt_BR">
 			<Text>[COLOR:{2_Color}]Coagido[ENDCOLOR]: {1_Num} turnos</Text>

@@ -73,6 +73,24 @@
 		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="es_ES">
 			<Text>Rios</Text>
 		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="ja_JP">
+			<Text>水域</Text>
+		</Replace>
+		<!--<Replace Tag="LOC_MOD_TOOLTIP_LAND_AREA" Language="ja_JP">
+			<Text></Text>
+		</Replace>-->
+		<Replace Tag="LOC_MOD_TOOLTIP_MOUNTAIN_AREA" Language="ja_JP">
+			<Text>連峰</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_VOLCANO_UNNAMED" Language="ja_JP">
+			<Text>未命名</Text>
+		</Replace>
+		<Replace Tag="LOC_VOLCANO_INACTIVE_STRING" Language="ja_JP">
+			<Text>(休止中)</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="ja_JP">
+			<Text>川</Text>
+		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="ru_RU">
 			<Text>Акватория</Text>
 		</Replace>
@@ -109,6 +127,24 @@
 		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="pl_PL">
 			<Text>Rzeki</Text>
 		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="zh_Hans_CN">
+			<Text>水域</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_LAND_AREA" Language="zh_Hans_CN">
+			<Text>领地</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOUNTAIN_AREA" Language="zh_Hans_CN">
+			<Text>山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_VOLCANO_UNNAMED" Language="zh_Hans_CN">
+			<Text>无名火山</Text>
+		</Replace>
+		<Replace Tag="LOC_VOLCANO_INACTIVE_STRING" Language="zh_Hans_CN">
+			<Text>（休眠）</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="zh_Hans_CN">
+			<Text>河流</Text>
+		</Replace>
 		<!-- Disaster -->
 		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="it_IT">
 			<Text>Disastro</Text>
@@ -121,6 +157,9 @@
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="pl_PL">
 			<Text>Klęska</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="zh_Hans_CN">
+			<Text>灾害</Text>
 		</Replace>
 		<!-- Coastal Lowland -->
 		<Replace Tag="LOC_MOD_TOOLTIP_COASTAL_LOWLAND" Language="fr_FR">
