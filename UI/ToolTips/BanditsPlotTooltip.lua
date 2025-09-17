@@ -8,11 +8,11 @@ local SIZE_HEIGHT_PADDING	:number = 20;
 local m_isShowDebug    = (Options.GetAppOption("Debug", "EnableDebugPlotInfo") == 1);
 local m_isWorldBuilder = GameConfiguration.IsWorldBuilderEditor();
 
--- Bandit: ...
-mod_tooltip_isActive_Expansion2         = false;
-mod_tooltip_isActive_BarbarianClans     = Modding.IsModActive("19ED1A36-D744-4A58-8F8B-0376C2BA86E5");
-mod_tooltip_isActive_PiratesScenario    = Modding.IsModActive("A55FAFB4-9070-4597-9453-B28A99910CDA");
-mod_tooltip_isActive_BlackDeathScenario = Modding.IsModActive("C1F775D8-59B5-401B-B86D-78FAF3446EC7");
+-- Bandit: these consts are needed for tracking if any component is active to execute related code
+local mod_tooltip_isActive_Expansion2         = Modding.IsModActive("4873eb62-8ccc-4574-b784-dda455e74e68");
+local mod_tooltip_isActive_BarbarianClans     = Modding.IsModActive("19ED1A36-D744-4A58-8F8B-0376C2BA86E5");
+local mod_tooltip_isActive_PiratesScenario    = Modding.IsModActive("A55FAFB4-9070-4597-9453-B28A99910CDA");
+local mod_tooltip_isActive_BlackDeathScenario = Modding.IsModActive("C1F775D8-59B5-401B-B86D-78FAF3446EC7");
 
 -- Bandit: custom colors
 local Palette:table = {
@@ -29,20 +29,23 @@ local Language:string = Options.GetAppOption("Language", "DisplayLanguage");
 local PUNC_ROUND_BRACKETS:string = "LOC_PUNCTUATION_ROUND_BRACKETS";
 local PUNC_SEPARATOR_COLON:string = ": ";
 local PUNC_SEPARATOR_COMMA:string = ", ";
-local PUNC_SEPARATOR_ENUMERATION_COMMA = ", "; -- Bandit: some asian languages use a different comma for enumeration (aka lists of things)
+local PUNC_SEPARATOR_ENUMERATION_COMMA:string = ", "; -- Bandit: some asian languages use a different comma for enumeration (aka lists of things)
 local PUNC_SEPARATOR_SEMICOLON:string = "; ";
 local PUNC_FULL_STOP:string = ".";
+local PUNC_SPACE:string = " ";
 
 if (Language == "fr_FR") then
 	PUNC_SEPARATOR_COLON = " : ";
 elseif (Language == "ja_JP") then
 	PUNC_SEPARATOR_COMMA = Locale.Lookup("LOC_JA_PUNCTUATION_COMMA");
+	PUNC_SPACE = "";
 elseif (Language == "zh_Hant_HK" or Language == "zh_Hans_CN") then
 	PUNC_ROUND_BRACKETS = "LOC_ZH_PUNCTUATION_ROUND_BRACKETS";
 	PUNC_SEPARATOR_COLON = Locale.Lookup("LOC_ZH_PUNCTUATION_COLON");
 	PUNC_SEPARATOR_COMMA = Locale.Lookup("LOC_ZH_PUNCTUATION_ENUMERATION_COMMA"); -- fix it!
 	PUNC_SEPARATOR_SEMICOLON = Locale.Lookup("LOC_ZH_PUNCTUATION_SEMICOLON");
 	PUNC_FULL_STOP = Locale.Lookup("LOC_ZH_PUNCTUATION_FULL_STOP");
+	PUNC_SPACE = "";
 end
 
 -- Bandit: custom functions, needed for readability
@@ -127,7 +130,6 @@ function GetDetails(data)
 			szOwnerString = szOwnerString..PUNC_SEPARATOR_COMMA..Locale.Lookup(pPlayerConfig:GetPlayerName());
 		end
 
-		--table.insert(details, Locale.Lookup("LOC_MOD_TOOLTIP_OWNER", szOwnerString, data.OwningCityName));
 		RowOwnership = CreateHeading("LOC_MOD_TOOLTIP_OWNER")..Locale.Lookup(data.OwningCityName)..PUNC_SEPARATOR_COMMA..szOwnerString;
 	end
 
@@ -136,6 +138,7 @@ function GetDetails(data)
 		RowNationalPark = CreateHeading("LOC_HUD_MAP_SEARCH_TERMS_NATIONAL_PARK")..Locale.Lookup(data.NationalPark);
 	end
 
+	-- Bandit: Resource
 	if (data.ResourceType ~= nil) then
 		--if it's a resource that requires a tech to improve, let the player know that in the tooltip
 		local resourceType = data.ResourceType;
@@ -234,7 +237,7 @@ function GetDetails(data)
 							end
 						else
 							if ((valid_feature == true and valid_terrain == true) or valid_resources == true) then
-								RowResource = RowResource.." "..ColorText(Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)), Palette.WarningHigh);
+								RowResource = RowResource..PUNC_SPACE..Locale.Lookup("LOC_MOD_TOOLTIP_REQUIRED_TECH", techType.Name, Palette.WarningHigh);
 							end
 						end
 					end
@@ -245,7 +248,7 @@ function GetDetails(data)
 			if (resourceTechType ~= nil and ((valid_feature == true and valid_terrain == true) or valid_resources == true)) then
 				local techType = GameInfo.Technologies[resourceTechType];
 				if (techType ~= nil) then
-					RowResource = RowResource.." "..ColorText(Locale.Lookup(PUNC_ROUND_BRACKETS, Locale.Lookup("LOC_TOOLTIP_REQUIRES").." "..Locale.Lookup(techType.Name)), Palette.WarningLow);
+					RowResource = RowResource..PUNC_SPACE..Locale.Lookup("LOC_MOD_TOOLTIP_REQUIRED_TECH", techType.Name, Palette.WarningLow);
 				end
 			end
 		end
@@ -254,7 +257,7 @@ function GetDetails(data)
 		end
 	end
 
-	function ParseYields(data)
+	local function ParseYields(data)
 		local yields:string = "";
 		local i = 0;
 		for yieldType, v in pairs(data) do
@@ -271,13 +274,13 @@ function GetDetails(data)
 		return yields;
 	end -- function ParseYields
 
-	function ParseTourism()
+	local function ParseTourism()
 		local tourism = localPlayer:GetCulture():GetTourismAt(data.Index);
 		if (tourism > 0) then
 			if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA end
 			RowYields = RowYields..tourism.."[ICON_Tourism]";
 		end
-	end
+	end -- function ParseTourism
 
 	-- CITY TILE
 	if (data.IsCity == true and data.DistrictType ~= nil) then
@@ -297,9 +300,9 @@ function GetDetails(data)
 			-- Inherent district yields
 			RowDistrict = CreateHeading("LOC_DISTRICT_NAME")..Locale.Lookup(GameInfo.Districts[data.DistrictType].Name);
 			if (data.DistrictPillaged) then
-				RowDistrict = RowDistrict .. " " .. Locale.Lookup("LOC_TOOLTIP_PLOT_PILLAGED_TEXT");
+				RowDistrict = RowDistrict .. PUNC_SPACE .. Locale.Lookup("LOC_TOOLTIP_PLOT_PILLAGED_TEXT");
 			elseif (not data.DistrictComplete) then
-				RowDistrict = RowDistrict .. " " .. Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT");
+				RowDistrict = RowDistrict .. PUNC_SPACE .. Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT");
 			end
 
 			if (data.DistrictYields ~= nil) and (table.count(data.DistrictYields) > 0) then RowYields = ParseYields(data.DistrictYields) end
@@ -343,7 +346,7 @@ function GetDetails(data)
 				RowImprovement = CreateHeading("LOC_IMPROVEMENT_NAME")..Locale.Lookup(GameInfo.Improvements[data.ImprovementType].Name);
 			end
 			if (data.ImprovementPillaged) then
-				RowImprovement = RowImprovement.." "..Locale.Lookup("LOC_TOOLTIP_PLOT_PILLAGED_TEXT");
+				RowImprovement = RowImprovement..PUNC_SPACE..Locale.Lookup("LOC_TOOLTIP_PLOT_PILLAGED_TEXT");
 			end
 		end
 
@@ -364,7 +367,7 @@ function GetDetails(data)
 			local cityBuildings = data.OwnerCity:GetBuildings();
 			if (data.WonderType ~= nil) then
 				RowBuildings = CreateHeading("LOC_WONDER_NAME")..Locale.Lookup(GameInfo.Buildings[data.WonderType].Name);
-				if (data.WonderCompete == false) then RowBuildings = RowBuildings.." "..Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT"); end
+				if (data.WonderCompete == false) then RowBuildings = RowBuildings..PUNC_SPACE..Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT"); end
 				if (ResourceExtraction ~= "") then RowYields = ResourceExtraction end
 				ParseTourism();
 				if (RowYields ~= "") then RowYields = CreateHeading("LOC_MOD_TOOLTIP_YIELDS")..RowYields end
@@ -380,7 +383,7 @@ function GetDetails(data)
 						-- Bandit: buildings index begins with 1
 						if (i > 1) then RowBuildings = RowBuildings..PUNC_SEPARATOR_COMMA; end
 						RowBuildings = RowBuildings..Locale.Lookup(v);
-						if (data.BuildingsPillaged[i]) then RowBuildings = RowBuildings.." "..Locale.Lookup("LOC_TOOLTIP_PLOT_PILLAGED_TEXT"); end
+						if (data.BuildingsPillaged[i]) then RowBuildings = RowBuildings..PUNC_SPACE..Locale.Lookup("LOC_TOOLTIP_PLOT_PILLAGED_TEXT"); end
 					end
 					local iSlots = cityBuildings:GetNumGreatWorkSlots(data.BuildingTypes[i]);
 					local greatWorks:string = "";
@@ -396,7 +399,7 @@ function GetDetails(data)
 							greatWorks = greatWorks..greatWorkIcon.." "..Locale.Lookup(GameInfo.GreatWorks[greatWorkType].Name);
 						end
 					end
-					if (greatWorks ~= "") then RowBuildings = RowBuildings.." "..Locale.Lookup(PUNC_ROUND_BRACKETS, greatWorks); end
+					if (greatWorks ~= "") then RowBuildings = RowBuildings..PUNC_SPACE..Locale.Lookup(PUNC_ROUND_BRACKETS, greatWorks); end
 				--end
 			end
 		end
@@ -431,7 +434,7 @@ function GetDetails(data)
 					else
 						szAdditionalString = Locale.Lookup("LOC_TOOLTIP_PLOT_WOODS_SECONDARY");
 					end
-					szFeatureString = szFeatureString .. " " .. szAdditionalString;
+					szFeatureString = szFeatureString .. PUNC_SPACE .. szAdditionalString;
 				end
 			end
 			RowTerrain = RowTerrain..PUNC_SEPARATOR_COMMA..szFeatureString;
@@ -456,11 +459,11 @@ function GetDetails(data)
 				RowNamedArea = CreateHeading_Color("LOC_FEATURE_VOLCANO_NAME", Palette.Land)..Locale.Lookup("LOC_MOD_VOLCANO_UNNAMED");
 			end
 			if (data.Erupting) then
-				RowNamedArea = RowNamedArea.." "..Locale.Lookup("LOC_VOLCANO_ERUPTING_STRING");
+				RowNamedArea = RowNamedArea..PUNC_SPACE..Locale.Lookup("LOC_VOLCANO_ERUPTING_STRING");
 			elseif (data.Active) then
-				RowNamedArea = RowNamedArea.." "..Locale.Lookup("LOC_VOLCANO_ACTIVE_STRING");
+				RowNamedArea = RowNamedArea..PUNC_SPACE..Locale.Lookup("LOC_VOLCANO_ACTIVE_STRING");
 			else
-				RowNamedArea = RowNamedArea.." "..Locale.Lookup("LOC_VOLCANO_INACTIVE_STRING");
+				RowNamedArea = RowNamedArea..PUNC_SPACE..Locale.Lookup("LOC_VOLCANO_INACTIVE_STRING");
 			end
 		end
 
@@ -524,9 +527,9 @@ function GetDetails(data)
 		if (data.CoastalLowland ~= -1) then
 			RowCoastalLowland = CreateHeading("LOC_MOD_TOOLTIP_COASTAL_LOWLAND")..Locale.Lookup("LOC_MOD_TOOLTIP_HEIGHT", data.CoastalLowland+1);
 			if (data.Submerged) then
-				RowCoastalLowland = RowCoastalLowland.." "..Locale.Lookup("LOC_COASTAL_LOWLAND_SUBMERGED");
+				RowCoastalLowland = RowCoastalLowland..PUNC_SPACE..Locale.Lookup("LOC_COASTAL_LOWLAND_SUBMERGED");
 			elseif (data.Flooded) then
-				RowCoastalLowland = RowCoastalLowland.." "..Locale.Lookup("LOC_COASTAL_LOWLAND_FLOODED");
+				RowCoastalLowland = RowCoastalLowland..PUNC_SPACE..Locale.Lookup("LOC_COASTAL_LOWLAND_FLOODED");
 			end
 		end
 	end
@@ -541,11 +544,11 @@ function GetDetails(data)
 			local routeInfo = GameInfo.Routes[data.RouteType];
 			if (routeInfo ~= nil and routeInfo.MovementCost ~= nil and routeInfo.Name ~= nil) then
 				if(data.RoutePillaged) then
-					-- Bandit: tags order:                                                                           1_Amount                2_RouteName     3_ColorHeading   4_ColorWarning
-					RowMovementCost = RowMovementCost.." "..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED", routeInfo.MovementCost, routeInfo.Name, Palette.Regular, Palette.WarningHigh);
+					-- Bandit: tags order:                                                                                  1_Amount                2_RouteName     3_ColorHeading   4_ColorWarning
+					RowMovementCost = RowMovementCost..PUNC_SPACE..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED", routeInfo.MovementCost, routeInfo.Name, Palette.Regular, Palette.WarningHigh);
 				else
-					-- Bandit: tags order:                                                                  1_Amount                2_RouteName     3_ColorHeading
-					RowMovementCost = RowMovementCost.." "..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT", routeInfo.MovementCost, routeInfo.Name, Palette.Regular);
+					-- Bandit: tags order:                                                                         1_Amount                2_RouteName     3_ColorHeading
+					RowMovementCost = RowMovementCost..PUNC_SPACE..Locale.Lookup("LOC_MOD_TOOLTIP_ROUTE_MOVEMENT", routeInfo.MovementCost, routeInfo.Name, Palette.Regular);
 				end
 			end
 		end
