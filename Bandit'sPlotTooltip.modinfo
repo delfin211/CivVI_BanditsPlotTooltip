@@ -21,12 +21,14 @@
 			<es_ES></es_ES>
 			<ja_JP></ja_JP>
 			-->
-			<ru_RU>Bandit's Plot Tooltip (Карточка тайла) [Бета]</ru_RU>
+			<ru_RU>Bandit's Plot Tooltip (Карточка тайла) [Бета]</ru_RU>
 			<pl_PL>Bandit's Plot Tooltip [Beta]</pl_PL>
 			<!--
 			<ko_KR></ko_KR>
 			<zh_Hant_HK></zh_Hant_HK>
-			<zh_Hans_CN></zh_Hans_CN>
+			-->
+			<zh_Hans_CN>Bandit 的单元格提示信息 [Beta]</zh_Hans_CN>
+			<!--
 			<pt_BR></pt_BR>
 			-->
 		</Text>
@@ -35,7 +37,9 @@
 			<!--
 			<fr_FR></fr_FR>
 			<de_DE></de_DE>
-			<it_IT></it_IT>
+			-->
+			<it_IT>Tooltip per le caselle stile Civilization V.</it_IT>
+			<!--
 			<es_ES></es_ES>
 			<ja_JP></ja_JP>
 			-->
@@ -44,7 +48,9 @@
 			<!--
 			<ko_KR></ko_KR>
 			<zh_Hant_HK></zh_Hant_HK>
-			<zh_Hans_CN></zh_Hans_CN>
+			-->
+			<zh_Hans_CN>类似《文明 V》风格的单元格提示（单元格信息卡）。</zh_Hans_CN>
+			<!--
 			<pt_BR></pt_BR>
 			-->
 		</Text>
@@ -53,7 +59,9 @@
 			<!--
 			<fr_FR></fr_FR>
 			<de_DE></de_DE>
-			<it_IT></it_IT>
+			-->
+			<it_IT>a Grimmsterz per essere stato il mio rubber duck e anche a tutti i traduttori.</it_IT>
+			<!--
 			<es_ES></es_ES>
 			<ja_JP></ja_JP>
 			-->
@@ -62,7 +70,9 @@
 			<!--
 			<ko_KR></ko_KR>
 			<zh_Hant_HK></zh_Hant_HK>
-			<zh_Hans_CN></zh_Hans_CN>
+			-->
+			<zh_Hans_CN>感谢 GrimmsterZ 一直当我的‘橡皮鸭’，同时也要感谢所有翻译者。</zh_Hans_CN>
+			<!--
 			<pt_BR></pt_BR>
 			-->
 		</Text>
@@ -76,11 +86,13 @@
 			<ja_JP></ja_JP>
 			-->
 			<ru_RU>Делает структуру карточки тайла похожей на предшественника - Civilization V! Добавляет цветные заголовки строкам, отображение туризма в производстве и иконки ресурсам, шедеврам, и т.д. Также исправляет ошибки и недочёты стандартной карточки Civ VI.</ru_RU>
-			<pl_PL>Zastępuje strukturę domyślnego narzędzia podpowiedzi (karty informacji o polu) strukturą wzorowaną na poprzedniku, czyli Civilization V! Dodaje kolorowe nagłówki do wierszy oraz ikony do zasobów, wielkich dzieł itp. Naprawia też istniejące problemy i niedociągnięcia w narzędziu podpowiedzi w Civ VI.[NEWLINE][NEWLINE]Polskie tłumaczenie: SomePolishGuy</pl_PL>
+			<pl_PL>Zastępuje strukturę domyślnego narzędzia podpowiedzi (karty informacji o polu) strukturą wzorowaną na poprzedniku, czyli Civilization V! Dodaje kolorowe nagłówki do wierszy, wyświetlanie turystyki w Plonach oraz ikony do zasobów, wielkich dzieł itp. Naprawia też istniejące problemy i niedociągnięcia w narzędziu podpowiedzi w Civ VI.[NEWLINE][NEWLINE]Polskie tłumaczenie: SomePolishGuy</pl_PL>
 			<!--
 			<ko_KR></ko_KR>
 			<zh_Hant_HK></zh_Hant_HK>
-			<zh_Hans_CN></zh_Hans_CN>
+			-->
+			<zh_Hans_CN>将单元格提示（单元格信息卡）的结构改为类似前作《文明 V》！为各行增加彩色标题，在信息中显示旅游业绩，并为资源、巨作等添加图标。同时修复了《文明 VI》提示信息中已有的问题与错误。[NEWLINE][NEWLINE]Chinese translation: 云龙兄你不厚道哇</zh_Hans_CN>
+			<!--
 			<pt_BR></pt_BR>
 			-->
 		</Text>
@@ -117,6 +129,11 @@
 			<RuleSetInUse>RULESET_SCENARIO_BLACKDEATH</RuleSetInUse>
 		</Criteria>
 	</ActionCriteria>
+	<FrontEndActions>
+		<UpdateText id="BanditsPlotTooltipFrontEndText">
+			<File Priority="1">Text/LOC_FrontEndReplacements.xml</File>
+		</UpdateText>
+	</FrontEndActions>
 	<InGameActions>
 		<ReplaceUIScript id="BanditsPlotToolTip">
 			<Properties>
@@ -212,6 +229,7 @@
 	</InGameActions>
 	<Files>
 		<File>HelloWorld.lua</File>
+		<file>Text/LOC_FrontEndReplacements.xml</file>
 		<File>Text/LOC_GrammaticalAdditions.xml</File>
 		<File>Text/LOC_GrammaticalAdditions_Expansion2.xml</File>
 		<File>Text/LOC_HelpingText.xml</File>

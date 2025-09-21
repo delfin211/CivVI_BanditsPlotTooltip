@@ -26,26 +26,30 @@ local Palette:table = {
 -- Bandit: this is needed for simple language processing, punctuation
 local Language:string = Options.GetAppOption("Language", "DisplayLanguage");
 
-local PUNC_ROUND_BRACKETS:string = "LOC_PUNCTUATION_ROUND_BRACKETS";
+local PUNC_ROUND_BRACKETS:string = "PUNCTUATION_ROUND_BRACKETS";
 local PUNC_SEPARATOR_COLON:string = ": ";
 local PUNC_SEPARATOR_COMMA:string = ", ";
 local PUNC_SEPARATOR_ENUMERATION_COMMA:string = ", "; -- Bandit: some asian languages use a different comma for enumeration (aka lists of things)
 local PUNC_SEPARATOR_SEMICOLON:string = "; ";
 local PUNC_FULL_STOP:string = ".";
 local PUNC_SPACE:string = " ";
+local PUNC_SPACE_YIELDS:string = " "; -- Bandit: (probably) temporal
 
 if (Language == "fr_FR") then
 	PUNC_SEPARATOR_COLON = " : ";
 elseif (Language == "ja_JP") then
-	PUNC_SEPARATOR_COMMA = Locale.Lookup("LOC_JA_PUNCTUATION_COMMA");
+	PUNC_ROUND_BRACKETS = "PUNCTUATION_FULLWIDTH_ROUND_BRACKETS";
+	PUNC_SEPARATOR_COMMA = Locale.Lookup("PUNCTUATION_IDEOGRAPHIC_COMMA");
+	PUNC_SEPARATOR_SEMICOLON = Locale.Lookup("PUNCTUATION_FULLWIDTH_SEMICOLON");
 	PUNC_SPACE = "";
 elseif (Language == "zh_Hant_HK" or Language == "zh_Hans_CN") then
-	PUNC_ROUND_BRACKETS = "LOC_ZH_PUNCTUATION_ROUND_BRACKETS";
-	PUNC_SEPARATOR_COLON = Locale.Lookup("LOC_ZH_PUNCTUATION_COLON");
-	PUNC_SEPARATOR_COMMA = Locale.Lookup("LOC_ZH_PUNCTUATION_ENUMERATION_COMMA"); -- fix it!
-	PUNC_SEPARATOR_SEMICOLON = Locale.Lookup("LOC_ZH_PUNCTUATION_SEMICOLON");
-	PUNC_FULL_STOP = Locale.Lookup("LOC_ZH_PUNCTUATION_FULL_STOP");
+	PUNC_ROUND_BRACKETS = "PUNCTUATION_FULLWIDTH_ROUND_BRACKETS";
+	PUNC_SEPARATOR_COLON = Locale.Lookup("PUNCTUATION_FULLWIDTH_COLON");
+	PUNC_SEPARATOR_COMMA = Locale.Lookup("PUNCTUATION_IDEOGRAPHIC_COMMA");
+	PUNC_SEPARATOR_SEMICOLON = Locale.Lookup("PUNCTUATION_FULLWIDTH_SEMICOLON");
+	PUNC_FULL_STOP = Locale.Lookup("PUNCTUATION_IDEOGRAPHIC_FULL_STOP");
 	PUNC_SPACE = "";
+	PUNC_SPACE_YIELDS = "";
 end
 
 -- Bandit: custom functions, needed for readability
@@ -292,7 +296,7 @@ function GetDetails(data)
 			RowYields = RowYields..ResourceExtraction;
 		end
 		ParseTourism();
-		if (RowYields ~= "")              then RowYields = ColorText("LOC_MOD_TOOLTIP_YIELDS", Palette.Regular).." "..Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT", RowYields) end
+		if (RowYields ~= "")              then RowYields = ColorText("LOC_MOD_TOOLTIP_YIELDS", Palette.Regular)..PUNC_SPACE_YIELDS..Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_DISTRICT", RowYields) end
 
 	-- DISTRICT TILE
 	elseif (data.DistrictID ~= -1 and data.DistrictType ~= nil) then
@@ -300,9 +304,9 @@ function GetDetails(data)
 			-- Inherent district yields
 			RowDistrict = CreateHeading("LOC_DISTRICT_NAME")..Locale.Lookup(GameInfo.Districts[data.DistrictType].Name);
 			if (data.DistrictPillaged) then
-				RowDistrict = RowDistrict .. PUNC_SPACE .. Locale.Lookup("LOC_TOOLTIP_PLOT_PILLAGED_TEXT");
+				RowDistrict = RowDistrict .. PUNC_SPACE .. ColorText("LOC_TOOLTIP_PLOT_PILLAGED_TEXT", Palette.WarningHigh);
 			elseif (not data.DistrictComplete) then
-				RowDistrict = RowDistrict .. PUNC_SPACE .. Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT");
+				RowDistrict = RowDistrict..PUNC_SPACE..Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT");
 			end
 
 			if (data.DistrictYields ~= nil) and (table.count(data.DistrictYields) > 0) then RowYields = ParseYields(data.DistrictYields) end
@@ -321,7 +325,7 @@ function GetDetails(data)
 					RowYields = RowYields..Locale.Lookup("LOC_MOD_TOOLTIP_YIELDS_FROM_SPECIALISTS", ParseYields(data.Yields));
 				end
 			end
-			if (RowYields ~= "") then RowYields = ColorText("LOC_MOD_TOOLTIP_YIELDS", Palette.Regular).." "..RowYields; end
+			if (RowYields ~= "") then RowYields = ColorText("LOC_MOD_TOOLTIP_YIELDS", Palette.Regular)..PUNC_SPACE_YIELDS..RowYields; end
 		end
 
 	-- OTHER TILE
@@ -346,7 +350,7 @@ function GetDetails(data)
 				RowImprovement = CreateHeading("LOC_IMPROVEMENT_NAME")..Locale.Lookup(GameInfo.Improvements[data.ImprovementType].Name);
 			end
 			if (data.ImprovementPillaged) then
-				RowImprovement = RowImprovement..PUNC_SPACE..Locale.Lookup("LOC_TOOLTIP_PLOT_PILLAGED_TEXT");
+				RowImprovement = RowImprovement..PUNC_SPACE..ColorText("LOC_TOOLTIP_PLOT_PILLAGED_TEXT", Palette.WarningHigh);
 			end
 		end
 
@@ -363,18 +367,17 @@ function GetDetails(data)
 	-- For districts, city center show all building info including Great Works
 	-- For wonders, just show Great Work info
 	if (data.IsCity or data.WonderType ~= nil or data.DistrictID ~= -1) then
-		if (data.BuildingNames ~= nil and table.count(data.BuildingNames) > 0) then
-			local cityBuildings = data.OwnerCity:GetBuildings();
-			if (data.WonderType ~= nil) then
-				RowBuildings = CreateHeading("LOC_WONDER_NAME")..Locale.Lookup(GameInfo.Buildings[data.WonderType].Name);
-				if (data.WonderCompete == false) then RowBuildings = RowBuildings..PUNC_SPACE..Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT"); end
-				if (ResourceExtraction ~= "") then RowYields = ResourceExtraction end
-				ParseTourism();
-				if (RowYields ~= "") then RowYields = CreateHeading("LOC_MOD_TOOLTIP_YIELDS")..RowYields end
-			else
-				RowBuildings = CreateHeading("LOC_MOD_TOOLTIP_BUILDINGS");
-			end
+		if (data.WonderType ~= nil) then
+			RowBuildings = CreateHeading("LOC_WONDER_NAME")..Locale.Lookup(GameInfo.Buildings[data.WonderType].Name);
+			if (data.WonderComplete == false) then RowBuildings = RowBuildings..PUNC_SPACE..Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT"); end
+			if (ResourceExtraction ~= "") then RowYields = ResourceExtraction end
+			ParseTourism();
+			if (RowYields ~= "") then RowYields = CreateHeading("LOC_MOD_TOOLTIP_YIELDS")..RowYields end
+		end
 
+		if (data.BuildingNames ~= nil and table.count(data.BuildingNames) > 0) then
+			if (data.WonderType == nil) then RowBuildings = CreateHeading("LOC_MOD_TOOLTIP_BUILDINGS"); end
+			local cityBuildings = data.OwnerCity:GetBuildings();
 			for i, v in ipairs(data.BuildingNames) do
 				--print(i, v);
 				--print(GameInfo.Buildings[v]);
@@ -383,7 +386,7 @@ function GetDetails(data)
 						-- Bandit: buildings index begins with 1
 						if (i > 1) then RowBuildings = RowBuildings..PUNC_SEPARATOR_COMMA; end
 						RowBuildings = RowBuildings..Locale.Lookup(v);
-						if (data.BuildingsPillaged[i]) then RowBuildings = RowBuildings..PUNC_SPACE..Locale.Lookup("LOC_TOOLTIP_PLOT_PILLAGED_TEXT"); end
+						if (data.BuildingsPillaged[i]) then RowBuildings = RowBuildings..PUNC_SPACE..ColorText("LOC_TOOLTIP_PLOT_PILLAGED_TEXT", Palette.WarningHigh); end
 					end
 					local iSlots = cityBuildings:GetNumGreatWorkSlots(data.BuildingTypes[i]);
 					local greatWorks:string = "";
@@ -396,6 +399,7 @@ function GetDetails(data)
 							local greatWorkIcon:string = Locale.Lookup("ICON_"..GameInfo.GreatWorks[greatWorkType].GreatWorkObjectType);
 							if (iter == 0) then iter = 1 else greatWorks = greatWorks..PUNC_SEPARATOR_COMMA end
 							-- Bandit: the space is essential here, its absence causes wrap issues and sometimes great work icon might overflow the tooltip border
+							-- Bandit: non-breaking space doesn't work
 							greatWorks = greatWorks..greatWorkIcon.." "..Locale.Lookup(GameInfo.GreatWorks[greatWorkType].Name);
 						end
 					end
@@ -681,9 +685,9 @@ function View(data:table)
 			end
 		end
 		if m_isWorldBuilder then
-			table.insert(debugInfo, "Hex #" .. tostring(data.Index) .. " ("..tostring(data.X) .. "," .. tostring(data.Y) .. ")");
+			table.insert(debugInfo, "Hex #"..tostring(data.Index)..PUNC_SPACE..Locale.Lookup(PUNC_ROUND_BRACKETS, tostring(data.X)..","..tostring(data.Y)));
 		else
-			table.insert(debugInfo, "Debug #" .. tostring(data.Index) .. " ("..tostring(data.X) .. "," .. tostring(data.Y) .. "), vis:" .. tostring(iVisCount));
+			table.insert(debugInfo, "Debug #"..tostring(data.Index)..PUNC_SPACE..Locale.Lookup(PUNC_ROUND_BRACKETS, tostring(data.X)..","..tostring(data.Y))..", vis:"..tostring(iVisCount));
 		end
 	end
 	
@@ -739,4 +743,3 @@ function View(data:table)
 end
 
 print("Bandit's tooltip loaded!");
-

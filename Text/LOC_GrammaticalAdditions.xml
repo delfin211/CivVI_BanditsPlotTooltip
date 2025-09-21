@@ -65,5 +65,21 @@
 			<Gender>feminine</Gender>
 			<Plurality>1</Plurality>
 		</Replace>
+		
+		<!-- Construction -->
+		<Replace Tag="LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT" Language="ru_RU">
+			<Text>(сторится)</Text>
+		</Replace>
+
+		<!-- Pillaged -->
+		<Replace Tag="LOC_TOOLTIP_PLOT_PILLAGED_TEXT" Language="ja_JP">
+			<Text>（略奪）</Text><!-- put fullwidth brackets -->
+		</Replace>
+		<Replace Tag="LOC_TOOLTIP_PLOT_PILLAGED_TEXT" Language="ko_KR">
+			<Text>（약탈당함）</Text><!-- put fullwidth brackets -->
+		</Replace>
+		<Replace Tag="LOC_TOOLTIP_PLOT_PILLAGED_TEXT" Language="zh_Hant_HK">
+			<Text>（已掠奪）</Text><!-- put fullwidth brackets -->
+		</Replace>
 	</LocalizedText>
 </GameData>

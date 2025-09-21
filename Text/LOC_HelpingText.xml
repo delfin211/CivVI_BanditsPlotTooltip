@@ -8,7 +8,6 @@
 		<Row Tag="LOC_MOD_TOOLTIP_COLORTAG_CUSTOM">
 			<Text>[COLOR:{2_color}]{1_Content}[ENDCOLOR]</Text>
 		</Row>
-		<!-- Arguments -->
 		<!-- Great Work Icons -->
 		<Row Tag="ICON_GREATWORKOBJECT_SCULPTURE">
 			<Text>[ICON_GreatWork_Sculpture]</Text>
@@ -35,30 +34,27 @@
 			<Text>[ICON_GreatWork_Relic]</Text>
 		</Row>
 		<!-- Just a little punctuation thing, fallback for non-Chinese round brackets -->
-		<Row Tag="LOC_PUNCTUATION_ROUND_BRACKETS">
+		<Row Tag="PUNCTUATION_ROUND_BRACKETS">
 			<Text>({1_Content})</Text>
 		</Row>
 		<!-- This is needed for correct display of non-ASCII asian punctuation symbols -->
-		<Row Tag="LOC_JA_PUNCTUATION_COMMA">
-			<Text>、</Text>
+		<Row Tag="PUNCTUATION_IDEOGRAPHIC_COMMA">
+			<Text>、</Text><!-- U+3001 -->
 		</Row>
-		<Row Tag="LOC_ZH_PUNCTUATION_COLON">
-			<Text>：</Text>
+		<Row Tag="PUNCTUATION_IDEOGRAPHIC_FULL_STOP">
+			<Text>。</Text><!-- U+3002 -->
 		</Row>
-		<Row Tag="LOC_ZH_PUNCTUATION_COMMA">
-			<Text>，</Text>
+		<Row Tag="PUNCTUATION_FULLWIDTH_COMMA">
+			<Text>，</Text><!-- U+FF0C -->
 		</Row>
-		<Row Tag="LOC_ZH_PUNCTUATION_ENUMERATION_COMMA">
-			<Text>、</Text>
+		<Row Tag="PUNCTUATION_FULLWIDTH_COLON">
+			<Text>：</Text><!-- U+FF1A -->
 		</Row>
-		<Row Tag="LOC_ZH_PUNCTUATION_SEMICOLON">
-			<Text>；</Text>
+		<Row Tag="PUNCTUATION_FULLWIDTH_SEMICOLON">
+			<Text>；</Text><!-- U+FF1B -->
 		</Row>
-		<Row Tag="LOC_ZH_PUNCTUATION_FULL_STOP">
-			<Text>。</Text>
-		</Row>
-		<Row Tag="LOC_ZH_PUNCTUATION_ROUND_BRACKETS">
-			<Text>（{1_Content}）</Text>
+		<Row Tag="PUNCTUATION_FULLWIDTH_ROUND_BRACKETS">
+			<Text>（{1_Content}）</Text><!-- U+FF08 and U+FF09-->
 		</Row>
 	</BaseGameText>
 </GameData>
