@@ -130,6 +130,9 @@ Portuguese
 		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="de_DE">
 			<Text>Besitzer</Text>
 		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_CLAN" Language="de_DE">
+			<Text>Clan</Text>
+		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_OWNER" Language="it_IT">
 			<Text>Possessore</Text>
 		</Replace>
@@ -328,11 +331,16 @@ Portuguese
 			<Text>[COLOR:{2_ColorHeading}]移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT" Language="ja_JP">
-			<Text>({2_RouteName}では {1_Amount}[ICON_Movement])</Text>
+			<Text>（{2_RouteName}では{1_Amount}[ICON_Movement]）</Text>
 		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="ja_JP">
+			<Text>（{2_RouteName}では{1_Amount}[ICON_Movement][COLOR:{4_ColorWarning}]（略奪に遭遇）[ENDCOLOR]）</Text>
+		</Replace>
+		<!--
 		<Replace Tag="LOC_MOD_TOOLTIP_ROUTE_MOVEMENT_PILLAGED" Language="ja_JP">
 			<Text>[NEWLINE][COLOR:{3_ColorHeading}]道路の移動コスト[ENDCOLOR]: {1_Amount}[ICON_Movement] ({2_RouteName}、[COLOR:{4_ColorWarning}]略奪に遭遇[ENDCOLOR])</Text>
 		</Replace>
+		-->
 		<Replace Tag="LOC_MOD_TOOLTIP_MOVEMENT_COST" Language="ru_RU">
 			<Text>[COLOR:{2_ColorHeading}]Цена перемещения[ENDCOLOR]: {1_Amount}[ICON_Movement]</Text>
 		</Replace>
@@ -585,6 +593,9 @@ Portuguese
 		</Replace>
 
 		<!-- Natural Wonder description -->
+		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="de_DE">
+			<Text>Beschreibung</Text>
+		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_DESCRIPTION" Language="it_IT">
 			<Text>Descrizione</Text>
 		</Replace>

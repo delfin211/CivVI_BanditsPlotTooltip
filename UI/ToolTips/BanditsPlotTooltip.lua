@@ -1,5 +1,22 @@
 include("PlotToolTip");
 
+-- TODO list
+-- make it show product items icons for Corporations mode
+-- unify yields order
+
+local PlotTooltipOptions:table = {
+	-- Possible formats
+	-- 0: City, Civilization, Player name
+	-- 1: City (Civilization, Player name)
+	OwnershipFormat = 0,
+	ShowWorldWonderDescription = false
+	-- ShowImprovementIcons
+	-- ShowDistrictIcons
+	-- ShowBuildingsIcons
+	-- ShowUnits
+};
+
+
 -- Bandit: I copied these constants because modified "View" function depends on these.
 local SIZE_WIDTH_MARGIN		:number = 20;
 local SIZE_HEIGHT_PADDING	:number = 20;
@@ -90,7 +107,7 @@ function GetDetails(data)
 	local RowOwnership:string = "";
 	local RowNationalPark:string = "";
 	local RowNaturalWonder:string = "";
-	local RowNaturalWonderDescription:string = "";
+	local RowWonderDescription:string = "";
 	local RowDistrict:string = "";
 	local RowBuildings:string = ""; -- Bandit: World wonders are considered building in wonder district
 	local RowImprovement:string = "";
@@ -134,7 +151,11 @@ function GetDetails(data)
 			szOwnerString = szOwnerString..PUNC_SEPARATOR_COMMA..Locale.Lookup(pPlayerConfig:GetPlayerName());
 		end
 
-		RowOwnership = CreateHeading("LOC_MOD_TOOLTIP_OWNER")..Locale.Lookup(data.OwningCityName)..PUNC_SEPARATOR_COMMA..szOwnerString;
+		if (PlotTooltipOptions.OwnershipFormat == 1) then
+			RowOwnership = CreateHeading("LOC_MOD_TOOLTIP_OWNER")..Locale.Lookup(data.OwningCityName)..PUNC_SPACE..Locale.Lookup(PUNC_ROUND_BRACKETS, szOwnerString);
+		else
+			RowOwnership = CreateHeading("LOC_MOD_TOOLTIP_OWNER")..Locale.Lookup(data.OwningCityName)..PUNC_SEPARATOR_COMMA..szOwnerString;
+		end
 	end
 
 	-- Bandit: National Park
@@ -231,7 +252,8 @@ function GetDetails(data)
 							if (mod_tooltip_isActive_Expansion2 and (data.DistrictType ~= nil or (data.ImprovementType and not data.ImprovementPillaged and data.ImprovementType == requiredImprovement))) then
 								local kConsumption:table = GameInfo.Resource_Consumption[data.ResourceType];
 								if (kConsumption ~= nil and data.Owner ~= nil) then
-									if (kConsumption.Accumulate and Players[data.Owner]:GetTechs():HasTech(techType.Index)) then
+									local pPlayer = Players[data.Owner];
+									if (kConsumption.Accumulate and pPlayer:GetTechs():HasTech(techType.Index) and pPlayer:GetResources():IsResourceVisible(resourceHash)) then
 										local iExtraction = kConsumption.ImprovedExtractionRate;
 										if (iExtraction > 0) then
 											ResourceExtraction = iExtraction.."[ICON_"..data.ResourceType.."]";
@@ -279,10 +301,12 @@ function GetDetails(data)
 	end -- function ParseYields
 
 	local function ParseTourism()
-		local tourism = localPlayer:GetCulture():GetTourismAt(data.Index);
-		if (tourism > 0) then
-			if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA end
-			RowYields = RowYields..tourism.."[ICON_Tourism]";
+		if (not m_isWorldBuilder) then
+			local tourism = localPlayer:GetCulture():GetTourismAt(data.Index);
+			if (tourism > 0) then
+				if (RowYields ~= "") then RowYields = RowYields..PUNC_SEPARATOR_COMMA end
+				RowYields = RowYields..tourism.."[ICON_Tourism]";
+			end
 		end
 	end -- function ParseTourism
 
@@ -304,7 +328,7 @@ function GetDetails(data)
 			-- Inherent district yields
 			RowDistrict = CreateHeading("LOC_DISTRICT_NAME")..Locale.Lookup(GameInfo.Districts[data.DistrictType].Name);
 			if (data.DistrictPillaged) then
-				RowDistrict = RowDistrict .. PUNC_SPACE .. ColorText("LOC_TOOLTIP_PLOT_PILLAGED_TEXT", Palette.WarningHigh);
+				RowDistrict = RowDistrict..PUNC_SPACE..ColorText("LOC_TOOLTIP_PLOT_PILLAGED_TEXT", Palette.WarningHigh);
 			elseif (not data.DistrictComplete) then
 				RowDistrict = RowDistrict..PUNC_SPACE..Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT");
 			end
@@ -369,6 +393,7 @@ function GetDetails(data)
 	if (data.IsCity or data.WonderType ~= nil or data.DistrictID ~= -1) then
 		if (data.WonderType ~= nil) then
 			RowBuildings = CreateHeading("LOC_WONDER_NAME")..Locale.Lookup(GameInfo.Buildings[data.WonderType].Name);
+			if (PlotTooltipOptions.ShowWorldWonderDescription) then RowWonderDescription = CreateHeading("LOC_MOD_TOOLTIP_DESCRIPTION")..Locale.Lookup(GameInfo.Buildings[data.WonderType].Description); end
 			if (data.WonderComplete == false) then RowBuildings = RowBuildings..PUNC_SPACE..Locale.Lookup("LOC_TOOLTIP_PLOT_CONSTRUCTION_TEXT"); end
 			if (ResourceExtraction ~= "") then RowYields = ResourceExtraction end
 			ParseTourism();
@@ -397,6 +422,13 @@ function GetDetails(data)
 						if (greatWorkIndex ~= -1) then
 							local greatWorkType:number = cityBuildings:GetGreatWorkTypeFromIndex(greatWorkIndex);
 							local greatWorkIcon:string = Locale.Lookup("ICON_"..GameInfo.GreatWorks[greatWorkType].GreatWorkObjectType);
+							--if (GameInfo.GreatWorks[greatWorkType].GreatWorkObjectType == "GREATWORKOBJECT_PRODUCT") then
+							--	local resource = GameInfo.GreatWorks[greatWorkType].GreatWorkType:gsub("GREATWORK_PRODUCT_", "");
+							--	resource = resource:sub(1, #resource - 2);	-- remove the _1/_2/_3/_4/_5 from the end
+							--	--greatWorkIcon = "[ICON_MONOPOLIES_AND_CORPS_RESOURCE_"..resource.."]";
+							--	greatWorkIcon = "[ICON_GREATWORK_PRODUCT]"
+							--else
+							--end
 							if (iter == 0) then iter = 1 else greatWorks = greatWorks..PUNC_SEPARATOR_COMMA end
 							-- Bandit: the space is essential here, its absence causes wrap issues and sometimes great work icon might overflow the tooltip border
 							-- Bandit: non-breaking space doesn't work
@@ -424,7 +456,7 @@ function GetDetails(data)
 	if (data.FeatureType ~= nil) then
 		if (GameInfo.Features[data.FeatureType].NaturalWonder) then
 			RowNaturalWonder = CreateHeading("LOC_NATURAL_WONDER_NAME")..Locale.Lookup(GameInfo.Features[data.FeatureType].Name);
-			RowNaturalWonderDescription = CreateHeading("LOC_MOD_TOOLTIP_DESCRIPTION")..Locale.Lookup(GameInfo.Features[data.FeatureType].Description);
+			RowWonderDescription = CreateHeading("LOC_MOD_TOOLTIP_DESCRIPTION")..Locale.Lookup(GameInfo.Features[data.FeatureType].Description);
 			if (data.IsVolcano) then RowTerrain = RowTerrain..PUNC_SEPARATOR_COMMA..Locale.Lookup("LOC_FEATURE_VOLCANO_NAME") end
 		else
 			local szFeatureString = Locale.Lookup(GameInfo.Features[data.FeatureType].Name);
@@ -655,7 +687,7 @@ function GetDetails(data)
 	if (RowAppeal ~= "") then table.insert(details, RowAppeal); end
 	if (RowDefenceModifier ~= "") then table.insert(details, RowDefenceModifier); end
 	if (RowContinent ~= "") then table.insert(details, RowContinent); end
-	if (RowNaturalWonderDescription ~= "") then table.insert(details, RowNaturalWonderDescription); end
+	if (RowWonderDescription ~= "") then table.insert(details, RowWonderDescription); end
 	if (RowYields ~= "") then table.insert(details, RowYields); end
 	if (RowWorked ~= "") then table.insert(details, RowWorked); end
 	if (RowCoastalLowland ~= "") then table.insert(details, RowCoastalLowland); end
@@ -742,4 +774,4 @@ function View(data:table)
 	Controls.TooltipMain:SetHide(false);
 end
 
-print("Bandit's tooltip loaded!");
+print("Bandit's plot tooltip loaded!");

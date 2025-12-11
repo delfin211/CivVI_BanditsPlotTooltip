@@ -37,6 +37,24 @@
 	</EnglishText>
 	<LocalizedText>
 		<!-- Named Area -->
+		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="de_DE">
+			<Text>Gebiet</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_LAND_AREA" Language="de_DE">
+			<Text>Gebiet</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_MOUNTAIN_AREA" Language="de_DE">
+			<Text>Gebirge</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_VOLCANO_UNNAMED" Language="de_DE">
+			<Text>Name benannt</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="de_DE">
+			<Text>Flüsse</Text>
+		</Replace>
+		<Replace Tag="LOC_VOLCANO_INACTIVE_STRING" Language="de_DE">
+			<Text>(inaktiv)</Text>
+		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="it_IT">
 			<Text>Territorio</Text>
 		</Replace>
@@ -86,7 +104,7 @@
 			<Text>未命名</Text>
 		</Replace>
 		<Replace Tag="LOC_VOLCANO_INACTIVE_STRING" Language="ja_JP">
-			<Text>(休止中)</Text>
+			<Text>（休止中）</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="ja_JP">
 			<Text>川</Text>
@@ -127,6 +145,9 @@
 		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="pl_PL">
 			<Text>Rzeki</Text>
 		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="zh_Hant_HK">
+			<Text>河流</Text>
+		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_WATER_AREA" Language="zh_Hans_CN">
 			<Text>水域</Text>
 		</Replace>
@@ -145,12 +166,24 @@
 		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="zh_Hans_CN">
 			<Text>河流</Text>
 		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="ko_KR">
+			<Text>강</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_RIVERS" Language="pt_BR">
+			<Text>Rios</Text>
+		</Replace>
 		<!-- Disaster -->
+		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="de_DE">
+			<Text>Naturkatastrophe</Text>
+		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="it_IT">
 			<Text>Disastro</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="es_ES">
 			<Text>Desastre</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="ja_JP">
+			<Text>災害</Text>
 		</Replace>
 		<Replace Tag="LOC_MOD_TOOLTIP_DISASTER" Language="ru_RU">
 			<Text>Происшестве</Text>

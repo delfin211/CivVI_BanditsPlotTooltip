@@ -5,6 +5,11 @@
 <GameData>
 	<LocalizedText>
 		<!-- Roads -->
+		<Replace Tag="LOC_ROUTE_RAILROAD_NAME" Language="de_DE">
+			<Text>Eisenbahn</Text>
+			<Gender>f</Gender>
+			<Plurality>1</Plurality>
+		</Replace>
 		<Replace Tag="LOC_ROUTE_RAILROAD_NAME" Language="es_ES">
 			<Text>Ferrocarril</Text>
 			<Gender>masculine</Gender>

@@ -33,6 +33,9 @@
 		<Row Tag="ICON_GREATWORKOBJECT_RELIC">
 			<Text>[ICON_GreatWork_Relic]</Text>
 		</Row>
+		<Row Tag="ICON_GREATWORKOBJECT_PRODUCT">
+			<Text>[ICON_GreatWork_Product]</Text>
+		</Row>
 		<!-- Just a little punctuation thing, fallback for non-Chinese round brackets -->
 		<Row Tag="PUNCTUATION_ROUND_BRACKETS">
 			<Text>({1_Content})</Text>

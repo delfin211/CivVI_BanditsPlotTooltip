@@ -5,6 +5,20 @@
 <GameData>
 	<LocalizedText>
 		<!-- Roads -->
+		<!--
+		<Replace Tag="LOC_ROUTE_ANCIENT_ROAD_NAME" Language="de_DE">
+			<Text>Altertums-Straße</Text>
+		</Replace>
+		<Replace Tag="LOC_ROUTE_MEDIEVAL_ROAD_NAME" Language="de_DE">
+			<Text>Klassische Straße</Text>
+		</Replace>
+		<Replace Tag="LOC_ROUTE_INDUSTRIAL_ROAD_NAME" Language="de_DE">
+			<Text>Industriezeitalter-Straße</Text>
+		</Replace>
+		<Replace Tag="LOC_ROUTE_MODERN_ROAD_NAME" Language="de_DE">
+			<Text>Moderne Straße</Text>
+		</Replace>
+		-->
 		<Replace Tag="LOC_ROUTE_ANCIENT_ROAD_NAME" Language="es_ES">
 			<Text>Carretera antigua</Text>
 			<Gender>feminine</Gender>

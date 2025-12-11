@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="a939c131-1a59-4ccc-b1c0-1df9aabe61d7" version="1">
+<Mod id="a939c131-1a59-4ccc-b1c0-1df9aabe61d7" version="0.5">
 	<Properties>
 		<Name>LOC_MOD_BANDITSPLOTTOOLTIP_NAME</Name>
 		<Description>LOC_MOD_BANDITSPLOTTOOLTIP_DESCRIPTION</Description>
-		<Created>1758114603</Created>
+		<Created>1765144149</Created>
 		<Teaser>LOC_MOD_BANDITSPLOTTOOLTIP_TEASER</Teaser>
 		<Authors>Bandit Heeler</Authors>
 		<Homepage>https://github.com/delfin211/CivVI_BanditsPlotTooltip/</Homepage>
@@ -19,8 +19,8 @@
 			<de_DE></de_DE>
 			<it_IT></it_IT>
 			<es_ES></es_ES>
-			<ja_JP></ja_JP>
 			-->
+			<ja_JP>バンディットの土地ツールチップ</ja_JP>
 			<ru_RU>Bandit's Plot Tooltip (Карточка тайла) [Бета]</ru_RU>
 			<pl_PL>Bandit's Plot Tooltip [Beta]</pl_PL>
 			<!--
@@ -41,8 +41,8 @@
 			<it_IT>Tooltip per le caselle stile Civilization V.</it_IT>
 			<!--
 			<es_ES></es_ES>
-			<ja_JP></ja_JP>
 			-->
+			<ja_JP>シヴィリゼーションＶのような土地ツールチップ（タイルの説明）</ja_JP>
 			<ru_RU>Карточка с информацией о тайле в стиле Civlization V.</ru_RU>
 			<pl_PL>Karta informacji o polu w stylu narzędzia podpowiedzi jak w Civilization V.</pl_PL>
 			<!--
@@ -55,7 +55,7 @@
 			-->
 		</Text>
 		<Text id="LOC_MOD_BANDITSPLOTTOOLTIP_SPECIALTHANKS">
-			<en_US>GrimmsterZ for being my rubber duck also to all the translators.</en_US>
+			<en_US>GrimmsterZ for being my rubber duck, also to all the translators.</en_US>
 			<!--
 			<fr_FR></fr_FR>
 			<de_DE></de_DE>
@@ -63,8 +63,8 @@
 			<it_IT>a Grimmsterz per essere stato il mio rubber duck e anche a tutti i traduttori.</it_IT>
 			<!--
 			<es_ES></es_ES>
-			<ja_JP></ja_JP>
 			-->
+			<ja_JP>Grimmsterz、私のラバーダックになってくれてありがとう。翻訳者の皆さんにも感謝します。</ja_JP>
 			<ru_RU>GrimmsterZ за отыгрывание роли резинового утёнка, а также переводчикам.</ru_RU>
 			<pl_PL>GrimmsterZ za bycie moją gumową kaczuszką oraz dla pozostałych tłumaczy.</pl_PL>
 			<!--
@@ -77,21 +77,21 @@
 			-->
 		</Text>
 		<Text id="LOC_MOD_BANDITSPLOTTOOLTIP_DESCRIPTION">
-			<en_US>Makes plot tooltip (tile info card) structure akin to predecessor, Civilization V! Adds colored headings to rows, display of Tourism in Yields and icons to resources, great works, etc. Also fixes existing issues and goofs in Civ VI tooltip.[NEWLINE][NEWLINE]You can track localization progress or help localize on the Steam Workshop page or GitHub repository.</en_US>
+			<en_US>Makes plot tooltip (tile info card) structure akin to predecessor, Civilization V! Adds colored headings to rows, display of Tourism in Yields and icons to resources, great works, etc. Also fixes existing issues and goofs in Civ VI tooltip.[NEWLINE][NEWLINE]You can track localization progress or help localize on the Steam Workshop page or GitHub repository.</en_US>
 			<!--
 			<fr_FR></fr_FR>
 			<de_DE></de_DE>
 			<it_IT></it_IT>
 			<es_ES></es_ES>
-			<ja_JP></ja_JP>
 			-->
-			<ru_RU>Делает структуру карточки тайла похожей на предшественника - Civilization V! Добавляет цветные заголовки строкам, отображение туризма в производстве и иконки ресурсам, шедеврам, и т.д. Также исправляет ошибки и недочёты стандартной карточки Civ VI.</ru_RU>
-			<pl_PL>Zastępuje strukturę domyślnego narzędzia podpowiedzi (karty informacji o polu) strukturą wzorowaną na poprzedniku, czyli Civilization V! Dodaje kolorowe nagłówki do wierszy, wyświetlanie turystyki w Plonach oraz ikony do zasobów, wielkich dzieł itp. Naprawia też istniejące problemy i niedociągnięcia w narzędziu podpowiedzi w Civ VI.[NEWLINE][NEWLINE]Polskie tłumaczenie: SomePolishGuy</pl_PL>
+			<!--<ja_JP>土地ツールチップ(タイルの説明)を前作のシヴィライゼーションVのと同じようにするMODです！項目名に色をつけ、産出物の欄に観光力を表示し、資源や傑作などにアイコンを追加します。それに、シヴィライゼーションVIツールチップの元々の問題点やミスを直します。[NEWLINE][NEWLINE]和訳：Pakutto</ja_JP>-->
+			<ru_RU>Делает структуру карточки тайла похожей на предшественника — Civilization V! Добавляет цветные заголовки строкам, отображение туризма в производстве и иконки ресурсам, шедеврам, и т.д. Также исправляет ошибки и недочёты стандартной карточки Civ VI.</ru_RU>
+			<pl_PL>Zastępuje strukturę domyślnego narzędzia podpowiedzi (karty informacji o polu) strukturą wzorowaną na poprzedniku, czyli Civilization V! Dodaje kolorowe nagłówki do wierszy, wyświetlanie turystyki w Plonach oraz ikony do zasobów, wielkich dzieł itp. Naprawia też istniejące problemy i niedociągnięcia w narzędziu podpowiedzi w Civ VI.[NEWLINE][NEWLINE]Polskie tłumaczenie: SomePolishGuy</pl_PL>
 			<!--
 			<ko_KR></ko_KR>
-			<zh_Hant_HK></zh_Hant_HK>
+			<zh_Hant_HK>繁體中文翻譯：</zh_Hant_HK>
 			-->
-			<zh_Hans_CN>将单元格提示（单元格信息卡）的结构改为类似前作《文明 V》！为各行增加彩色标题，在信息中显示旅游业绩，并为资源、巨作等添加图标。同时修复了《文明 VI》提示信息中已有的问题与错误。[NEWLINE][NEWLINE]Chinese translation: 云龙兄你不厚道哇</zh_Hans_CN>
+			<zh_Hans_CN>将单元格提示（单元格信息卡）的结构改为类似前作《文明 V》！为各行增加彩色标题，在信息中显示旅游业绩，并为资源、巨作等添加图标。同时修复了《文明 VI》提示信息中已有的问题与错误。[NEWLINE][NEWLINE]简体中文翻译：云龙兄你不厚道哇</zh_Hans_CN>
 			<!--
 			<pt_BR></pt_BR>
 			-->
@@ -99,7 +99,7 @@
 		<!-- Translators:
 		English: Bandit Heeler
 		French
-		German
+		German: VNull
 		Italian: ThatMrchingArrow
 		Spanish: ViccStarr, ThatMrchingArrow
 		Japanese: Pakutto
@@ -111,6 +111,11 @@
 		Portuguese
 		-->
 	</LocalizedText>
+	<Blocks>
+		<Mod id="48a05e31-a3fa-4866-b31a-893be2b42aa1" title="Cheat Spy City Tooltip" /><!-- https://steamcommunity.com/sharedfiles/filedetails/?id=1674348013 -->
+		<Mod id="a4dbe382-6bb9-41fc-8071-58d6d38d3ac7" title="Spy City Tooltip" /><!-- https://steamcommunity.com/sharedfiles/filedetails/?id=1674987878 -->
+		<Mod id="1d44b5e7-753e-405b-af24-5ee634ec8a01" title="CQUI" /><!-- https://steamcommunity.com/sharedfiles/filedetails/?id=2115302648 -->
+	</Blocks>
 	<ActionCriteria>
 		<Criteria id="Expansion2">
 			<GameCoreInUse>Expansion2</GameCoreInUse>
@@ -229,7 +234,7 @@
 	</InGameActions>
 	<Files>
 		<File>HelloWorld.lua</File>
-		<file>Text/LOC_FrontEndReplacements.xml</file>
+		<File>Text/LOC_FrontEndReplacements.xml</File>
 		<File>Text/LOC_GrammaticalAdditions.xml</File>
 		<File>Text/LOC_GrammaticalAdditions_Expansion2.xml</File>
 		<File>Text/LOC_HelpingText.xml</File>
